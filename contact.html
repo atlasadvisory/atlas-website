@@ -5,11 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contato — Atlas Advisory</title>
 <meta name="description" content="Agende uma consulta gratuita com a Atlas Advisory. Atendemos em português, inglês e mandarim.">
-<!-- Tally embed script -->
-<script async src="https://tally.so/widgets/embed.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script async src="https://tally.so/widgets/embed.js"></script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -53,73 +52,60 @@ li[data-lang].on{display:list-item!important}
 .mobile-menu .ml{display:flex;gap:8px;margin-top:20px}
 .mobile-menu .lang-btn{font-size:13px;padding:8px 16px;background:var(--g50);border-radius:8px;color:var(--g600)}
 .mobile-menu .lang-btn.on{background:var(--navy05);color:var(--navy)}
+.mobile-menu .nav-cta{display:block;text-align:center;margin-top:16px;padding:14px}
 
-/* PAGE HERO */
-.page-hero{padding-top:var(--nav-h);background:var(--navy);min-height:360px;display:flex;align-items:center;position:relative;overflow:hidden}
+/* HERO */
+.page-hero{padding-top:var(--nav-h);background:var(--navy);min-height:320px;display:flex;align-items:center;position:relative;overflow:hidden}
 .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 80% 40%,rgba(255,255,255,.05) 0%,transparent 60%)}
 .ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 20%,transparent 75%)}
-.ph-inner{position:relative;z-index:2;width:100%;max-width:1160px;margin:0 auto;padding:80px 5%}
-.ph-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--navy2);margin-bottom:22px;opacity:0;animation:fadeUp .7s var(--eout) .1s forwards}
+.ph-inner{position:relative;z-index:2;width:100%;max-width:1160px;margin:0 auto;padding:72px 5%}
+.ph-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--navy2);margin-bottom:20px;opacity:0;animation:fadeUp .7s var(--eout) .1s forwards}
 .ph-tag::before{content:'';width:20px;height:1.5px;background:var(--navy2)}
-.ph-h1{font-family:var(--serif);font-size:clamp(28px,5vw,56px);font-weight:400;line-height:1.1;letter-spacing:-.02em;color:#fff;margin-bottom:16px;opacity:0;animation:fadeUp .7s var(--eout) .2s forwards}
+.ph-h1{font-family:var(--serif);font-size:clamp(28px,5vw,52px);font-weight:400;line-height:1.1;letter-spacing:-.02em;color:#fff;margin-bottom:14px;opacity:0;animation:fadeUp .7s var(--eout) .2s forwards}
 .ph-h1 em{font-style:italic;color:var(--navy2)}
-.ph-sub{font-size:17px;font-weight:300;line-height:1.75;color:rgba(255,255,255,.6);max-width:520px;opacity:0;animation:fadeUp .7s var(--eout) .3s forwards}
+.ph-sub{font-size:17px;font-weight:300;line-height:1.75;color:rgba(255,255,255,.6);max-width:480px;opacity:0;animation:fadeUp .7s var(--eout) .3s forwards}
 
-/* MAIN GRID */
-.main{padding:80px 5%;max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:start}
+/* MAIN LAYOUT */
+.main-wrap{background:var(--g50);padding:72px 5%}
+.main{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start}
 
-/* TALLY EMBED CARD */
+/* FORM CARD */
 .form-card{background:var(--white);border:1px solid var(--g100);border-radius:20px;padding:40px;box-shadow:0 4px 40px rgba(15,45,82,.07)}
-.form-card-header{margin-bottom:28px}
 .form-title{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--ink);margin-bottom:6px}
-.form-sub{font-size:14px;color:var(--g600);line-height:1.6}
-.tally-wrap{border-radius:12px;overflow:hidden;background:var(--g50);min-height:500px}
-.tally-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:48px 24px;text-align:center;min-height:500px}
-.tally-placeholder-icon{width:56px;height:56px;background:var(--navy05);border-radius:14px;display:flex;align-items:center;justify-content:center}
-.tally-placeholder-icon svg{width:28px;height:28px;stroke:var(--navy5);fill:none;stroke-width:1.5}
+.form-sub{font-size:14px;color:var(--g600);margin-bottom:28px;line-height:1.6}
+.tally-wrap{border-radius:12px;overflow:hidden;background:var(--g50);min-height:480px}
+.tally-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:48px 24px;text-align:center;min-height:480px}
+.tally-placeholder-icon{width:52px;height:52px;background:var(--navy05);border-radius:12px;display:flex;align-items:center;justify-content:center}
+.tally-placeholder-icon svg{width:26px;height:26px;stroke:var(--navy5);fill:none;stroke-width:1.5}
 .tally-placeholder-title{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink)}
-.tally-placeholder-desc{font-size:13px;color:var(--g600);line-height:1.7;max-width:320px}
-.tally-placeholder-code{font-size:12px;background:var(--g100);border-radius:6px;padding:6px 12px;color:var(--navy5);font-family:monospace;margin-top:4px}
+.tally-placeholder-desc{font-size:13px;color:var(--g600);line-height:1.7;max-width:300px}
+.tally-placeholder-code{font-size:12px;background:var(--g100);border-radius:6px;padding:5px 12px;color:var(--navy5);font-family:monospace}
 .tally-note{font-size:12px;color:var(--g400);text-align:center;margin-top:14px;line-height:1.6}
 
 /* INFO SIDE */
-.info-side{}
-.info-eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--navy5);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.info-eyebrow{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--navy5);margin-bottom:12px;display:flex;align-items:center;gap:10px}
 .info-eyebrow::before{content:'';width:20px;height:1.5px;background:var(--navy5)}
-.info-title{font-family:var(--serif);font-size:clamp(24px,3vw,36px);font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:20px}
+.info-title{font-family:var(--serif);font-size:clamp(22px,2.8vw,34px);font-weight:400;line-height:1.2;color:var(--ink);margin-bottom:16px}
 .info-title em{font-style:italic;color:var(--navy)}
-.info-lead{font-size:16px;font-weight:300;color:var(--g600);line-height:1.8;margin-bottom:36px}
+.info-lead{font-size:15px;font-weight:300;color:var(--g600);line-height:1.8;margin-bottom:32px}
 
-/* Contact channels */
-.channels{display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+/* CHANNELS */
+.channels-label{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--g400);margin-bottom:14px}
+.channels{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
 .channel{display:flex;align-items:center;gap:16px;padding:18px 20px;background:var(--white);border:1px solid var(--g100);border-radius:14px;text-decoration:none;transition:all .3s var(--ease);color:var(--ink)}
 .channel:hover{transform:translateY(-3px);box-shadow:0 8px 28px rgba(15,45,82,.09);border-color:var(--navy2)}
 .channel-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.channel-icon svg{width:22px;height:22px;fill:none;stroke-width:1.5;transition:transform .2s}
-.channel:hover .channel-icon svg{transform:scale(1.1)}
-.ch-email .channel-icon{background:#E8F0FE}
-.ch-email .channel-icon svg{stroke:#1A4A8C}
+.channel-icon svg{width:22px;height:22px;fill:none;stroke-width:1.5}
 .ch-whatsapp .channel-icon{background:#E8F5EE}
 .ch-whatsapp .channel-icon svg{stroke:#1A6B4A}
 .ch-wechat .channel-icon{background:#E8F5EE}
 .ch-wechat .channel-icon svg{stroke:#1A6B4A}
-.ch-linkedin .channel-icon{background:#E8F0FE}
-.ch-linkedin .channel-icon svg{stroke:#1A4A8C}
-.channel-text{}
 .channel-label{font-size:11px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--g400);margin-bottom:3px}
 .channel-value{font-size:14px;font-weight:500;color:var(--ink)}
 .channel-sub{font-size:12px;color:var(--g600);margin-top:2px}
 
-/* Language promise */
-.lang-promise{background:var(--navy);border-radius:16px;padding:28px;margin-bottom:32px}
-.lp-title{font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:16px}
-.lp-langs{display:flex;gap:10px;flex-direction:column}
-.lp-lang{display:flex;align-items:center;gap:12px;padding:12px 14px;background:rgba(255,255,255,.06);border-radius:10px;border:1px solid rgba(255,255,255,.08)}
-.lp-flag{font-size:18px;width:28px;text-align:center}
-.lp-name{font-size:14px;font-weight:500;color:#fff}
-.lp-note{font-size:12px;color:rgba(255,255,255,.45);margin-left:auto}
-
 /* FAQ */
+.faq-wrap{background:var(--white);border:1px solid var(--g100);border-radius:16px;padding:28px}
 .faq-title{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink);margin-bottom:20px}
 .faq-item{border-bottom:1px solid var(--g100);padding:16px 0}
 .faq-item:last-child{border-bottom:none}
@@ -129,18 +115,11 @@ li[data-lang].on{display:list-item!important}
 .faq-a{font-size:13px;color:var(--g600);line-height:1.75;max-height:0;overflow:hidden;transition:max-height .3s var(--ease),padding .2s}
 .faq-item.open .faq-a{max-height:300px;padding-top:10px}
 
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--eout),transform .7s var(--eout)}
-.reveal.vis{opacity:1;transform:none}
-.d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}
-
-/* Footer */
+/* FOOTER */
 footer{background:#1C2B3A;padding:72px 5% 36px}
 .footer-top{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:36px}
 .f-brand-name{font-family:var(--serif);font-size:22px;font-weight:400;color:#fff;margin-bottom:14px}
 .f-tagline{font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;max-width:240px;margin-bottom:22px}
-.f-contact a{display:block;font-size:13px;color:rgba(255,255,255,.45);margin-bottom:6px;transition:color .2s}
-.f-contact a:hover{color:rgba(255,255,255,.85)}
 .f-col-title{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:18px}
 .f-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
 .f-col ul a{font-size:13px;color:rgba(255,255,255,.45);transition:color .2s}
@@ -151,24 +130,32 @@ footer{background:#1C2B3A;padding:72px 5% 36px}
 .f-lang-btn{font-size:11px;font-weight:500;padding:4px 10px;border:none;background:transparent;border-radius:6px;color:rgba(255,255,255,.3);cursor:pointer;transition:all .2s}
 .f-lang-btn.on{background:rgba(255,255,255,.08);color:rgba(255,255,255,.8)}
 
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--eout),transform .7s var(--eout)}
+.reveal.vis{opacity:1;transform:none}
+.d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}
+
+/* RESPONSIVE */
 @media(max-width:1024px){
-  .main{grid-template-columns:1fr;gap:48px}
+  .main{grid-template-columns:1fr;gap:40px}
   .footer-top{grid-template-columns:1fr 1fr;gap:32px}
 }
 @media(max-width:768px){
   :root{--nav-h:60px}
   .nav-links,.lang-switch,.nav-cta{display:none!important}
   .ham{display:flex}
-  .ph-inner{padding:60px 5%}
+  .ph-inner{padding:56px 5%}
+  .main-wrap{padding:56px 5%}
   .form-card{padding:28px}
-  .form-row{grid-template-columns:1fr}
   .footer-top{grid-template-columns:1fr}
   .footer-bottom{flex-direction:column;gap:16px;text-align:center}
-  .main{padding:56px 5%}
 }
 </style>
 </head>
 <body>
+
+<!-- NAV -->
 <nav class="nav" id="nav">
   <a href="/index.html" class="nav-wordmark">Atlas <span>Advisory</span></a>
   <ul class="nav-links">
@@ -200,38 +187,34 @@ footer{background:#1C2B3A;padding:72px 5% 36px}
     <button class="lang-btn" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('zh')">中文</button>
   </div>
+  <a href="/contact.html" class="nav-cta"><span data-lang="pt" class="on">Consulta Gratuita</span><span data-lang="en">Free Consultation</span><span data-lang="zh">免费咨询</span></a>
 </div>
 
 <!-- HERO -->
 <div class="page-hero">
   <div class="ph-grid"></div>
   <div class="ph-inner">
-    <div class="ph-tag">
-      <span data-lang="pt" class="on">Fale conosco</span>
-      <span data-lang="en">Get in touch</span>
-      <span data-lang="zh">联系我们</span>
-    </div>
+    <div class="ph-tag"><span data-lang="pt" class="on">Fale conosco</span><span data-lang="en">Get in touch</span><span data-lang="zh">联系我们</span></div>
     <h1 class="ph-h1">
       <span data-lang="pt" class="on">Vamos conversar.<br><em>Sem compromisso.</em></span>
       <span data-lang="en">Let's talk.<br><em>No commitment.</em></span>
       <span data-lang="zh">让我们谈谈。<br><em>无需承诺。</em></span>
     </h1>
     <p class="ph-sub">
-      <span data-lang="pt" class="on">30 minutos. Em português, inglês ou mandarim — você escolhe. Respondemos em até 24 horas.</span>
-      <span data-lang="en">30 minutes. In Portuguese, English or Mandarin — your choice. We respond within 24 hours.</span>
-      <span data-lang="zh">30分钟。葡萄牙语、英语或普通话——由您选择。24小时内回复。</span>
+      <span data-lang="pt" class="on">30 minutos. Em português, inglês ou mandarim. Respondemos em até 24 horas.</span>
+      <span data-lang="en">30 minutes. In Portuguese, English or Mandarin. We respond within 24 hours.</span>
+      <span data-lang="zh">30分钟。葡萄牙语、英语或普通话。24小时内回复。</span>
     </p>
   </div>
 </div>
 
 <!-- MAIN -->
-<div style="background:var(--g50);padding:80px 5%;">
-<div class="main" style="padding:0">
+<div class="main-wrap">
+  <div class="main">
 
-  <!-- FORM SIDE — TALLY EMBED -->
-  <div class="reveal">
-    <div class="form-card">
-      <div class="form-card-header">
+    <!-- FORM — TALLY EMBED -->
+    <div class="reveal">
+      <div class="form-card">
         <h2 class="form-title">
           <span data-lang="pt" class="on">Agende sua consulta gratuita</span>
           <span data-lang="en">Book your free consultation</span>
@@ -242,283 +225,139 @@ footer{background:#1C2B3A;padding:72px 5% 36px}
           <span data-lang="en">Fill in the form below. We respond within 24 hours in your preferred language.</span>
           <span data-lang="zh">请填写下方表格。我们将在24小时内以您的首选语言回复您。</span>
         </p>
-      </div>
-
-      <!-- ═══════════════════════════════════════
-           TALLY EMBED
-           
-           INSTRUÇÕES DE CONFIGURAÇÃO:
-           1. Acesse tally.so e crie sua conta gratuita
-           2. Crie um novo formulário com os campos:
-              - Nome completo
-              - Email
-              - Empresa (opcional)
-              - Interesse principal (dropdown)
-              - Idioma de preferência (PT / EN / ZH)
-              - Mensagem (opcional)
-           3. Configure as notificações por email em:
-              Form Settings → Email Notifications
-           4. Copie o Form ID da URL do seu formulário
-              (ex: tally.so/r/XXXXXXX → ID = XXXXXXX)
-           5. Substitua "TALLY_FORM_ID" abaixo pelo ID real
-           
-           DICA: Para o embed ficar no visual do site,
-           em Tally > Share > Embed > escolha o modo
-           "Inline" e desmarque "Show form title"
-      ════════════════════════════════════════ -->
-      <div class="tally-wrap">
-
-        <!-- EMBED ATIVO: substitua TALLY_FORM_ID pelo ID real -->
-        <iframe
-          data-tally-src="https://tally.so/embed/TALLY_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-          loading="lazy"
-          width="100%"
-          height="500"
-          frameborder="0"
-          marginheight="0"
-          marginwidth="0"
-          title="Formulário de Contato — Atlas Advisory"
-          style="border:none;background:transparent;"
-        ></iframe>
-
-        <!-- PLACEHOLDER — visível até o Tally ID ser configurado -->
-        <div class="tally-placeholder" id="tally-placeholder">
-          <div class="tally-placeholder-icon">
-            <svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M9 8h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg>
+        <div class="tally-wrap">
+          <!-- Substitua TALLY_FORM_ID pelo seu ID real do Tally -->
+          <iframe
+            data-tally-src="https://tally.so/embed/TALLY_FORM_ID?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy" width="100%" height="480" frameborder="0"
+            marginheight="0" marginwidth="0"
+            title="Formulário de Contato — Atlas Advisory"
+            style="border:none;background:transparent;">
+          </iframe>
+          <div class="tally-placeholder" id="tally-placeholder">
+            <div class="tally-placeholder-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M9 8h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg></div>
+            <p class="tally-placeholder-title"><span data-lang="pt" class="on">Formulário em configuração</span><span data-lang="en">Form setup in progress</span><span data-lang="zh">表单配置中</span></p>
+            <p class="tally-placeholder-desc"><span data-lang="pt" class="on">Crie sua conta em tally.so, configure o formulário e substitua o ID no código HTML.</span><span data-lang="en">Create your account at tally.so, set up the form, and replace the ID in the HTML.</span><span data-lang="zh">在tally.so创建账户，配置表单后将ID替换到HTML代码中。</span></p>
+            <span class="tally-placeholder-code">TALLY_FORM_ID → seu ID real</span>
           </div>
-          <p class="tally-placeholder-title">
-            <span data-lang="pt" class="on">Formulário em configuração</span>
-            <span data-lang="en">Form setup in progress</span>
-            <span data-lang="zh">表单配置中</span>
-          </p>
-          <p class="tally-placeholder-desc">
-            <span data-lang="pt" class="on">Crie sua conta em tally.so, configure o formulário e substitua o ID no código HTML.</span>
-            <span data-lang="en">Create your account at tally.so, set up the form, and replace the ID in the HTML code.</span>
-            <span data-lang="zh">在tally.so创建账户，配置表单后将ID替换到HTML代码中。</span>
-          </p>
-          <span class="tally-placeholder-code">tally.so → Form ID → TALLY_FORM_ID</span>
         </div>
-
+        <p class="tally-note">
+          <span data-lang="pt" class="on">🔒 Dados protegidos pela GDPR · Empresa belga · Sem spam</span>
+          <span data-lang="en">🔒 GDPR protected · Belgian company · No spam</span>
+          <span data-lang="zh">🔒 符合GDPR · 比利时公司 · 无垃圾邮件</span>
+        </p>
       </div>
+    </div>
 
-      <p class="tally-note">
-        <span data-lang="pt" class="on">🔒 Dados protegidos pela GDPR · Empresa belga · Sem spam</span>
-        <span data-lang="en">🔒 GDPR protected · Belgian company · No spam</span>
-        <span data-lang="zh">🔒 符合GDPR · 比利时公司 · 无垃圾邮件</span>
+    <!-- INFO SIDE -->
+    <div class="reveal d1">
+      <div class="info-eyebrow">Atlas Advisory</div>
+      <h2 class="info-title">
+        <span data-lang="pt" class="on">Atendemos no seu <em>idioma.</em></span>
+        <span data-lang="en">We serve you in <em>your language.</em></span>
+        <span data-lang="zh">我们用您的<em>语言服务您。</em></span>
+      </h2>
+      <p class="info-lead">
+        <span data-lang="pt" class="on">Você não precisa se comunicar em inglês ou usar tradutor. Nossa equipe fala português, inglês e mandarim fluentemente — e entende os três mercados que você está navegando.</span>
+        <span data-lang="en">You don't need to communicate in a foreign language or use a translator. Our team speaks Portuguese, English and Mandarin fluently — and understands the three markets you're navigating.</span>
+        <span data-lang="zh">您无需使用外语沟通或依赖翻译。我们的团队流利掌握葡萄牙语、英语和普通话——并深入了解您所涉及的三个市场。</span>
       </p>
-    </div>
-  </div>
 
-  <!-- INFO SIDE -->
-  <div class="reveal d1">
-
-    <!-- Language promise -->
-    <div class="info-eyebrow" style="margin-bottom:14px">
-      <span data-lang="pt" class="on">Atlas Advisory</span>
-      <span data-lang="en">Atlas Advisory</span>
-      <span data-lang="zh">Atlas Advisory</span>
-    </div>
-    <h2 class="info-title" style="margin-bottom:16px">
-      <span data-lang="pt" class="on">Atendemos no seu <em>idioma.</em></span>
-      <span data-lang="en">We serve you in <em>your language.</em></span>
-      <span data-lang="zh">我们用您的<em>语言服务您。</em></span>
-    </h2>
-    <p class="info-lead">
-      <span data-lang="pt" class="on">Você não precisa se comunicar em inglês ou usar tradutor. Nossa equipe fala português, inglês e mandarim fluentemente — e entende os três mercados que você está navegando.</span>
-      <span data-lang="en">You don't need to communicate in a foreign language or use a translator. Our team speaks Portuguese, English and Mandarin fluently — and understands the three markets you're navigating.</span>
-      <span data-lang="zh">您无需使用外语沟通或依赖翻译。我们的团队流利掌握葡萄牙语、英语和普通话——并深入了解您所涉及的三个市场。</span>
-    </p>
-
-    <div class="lang-promise" style="margin-bottom:32px">
-      <div class="lp-title">
-        <span data-lang="pt" class="on">Atendemos em</span>
-        <span data-lang="en">We serve in</span>
-        <span data-lang="zh">服务语言</span>
+      <!-- Channels: WhatsApp + WeChat only -->
+      <div class="channels-label">
+        <span data-lang="pt" class="on">Outros canais</span>
+        <span data-lang="en">Other channels</span>
+        <span data-lang="zh">其他联系方式</span>
       </div>
-      <div class="lp-langs">
-        <div class="lp-lang">
-          <span class="lp-flag">🇧🇷</span>
-          <span class="lp-name">Português</span>
-          <span class="lp-note">
-            <span data-lang="pt" class="on">Idioma principal</span>
-            <span data-lang="en">Primary language</span>
-            <span data-lang="zh">主要语言</span>
-          </span>
-        </div>
-        <div class="lp-lang">
-          <span class="lp-flag">🇬🇧</span>
-          <span class="lp-name">English</span>
-          <span class="lp-note">
-            <span data-lang="pt" class="on">HK & global</span>
-            <span data-lang="en">HK & global</span>
-            <span data-lang="zh">香港及国际</span>
-          </span>
-        </div>
-        <div class="lp-lang">
-          <span class="lp-flag">🇨🇳</span>
-          <span class="lp-name">普通话 (Mandarim)</span>
-          <span class="lp-note">
-            <span data-lang="pt" class="on">China continental</span>
-            <span data-lang="en">Mainland China</span>
-            <span data-lang="zh">中国大陆</span>
-          </span>
-        </div>
-      </div>
-    </div>
-
-    <!-- Channels -->
-    <div style="font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--g400);margin-bottom:16px">
-      <span data-lang="pt" class="on">Outros canais</span>
-      <span data-lang="en">Other channels</span>
-      <span data-lang="zh">其他联系方式</span>
-    </div>
-
-    <div class="channels">
-      <a href="mailto:contato@atlasadvisory.com.br" class="channel ch-email">
-        <div class="channel-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
-        </div>
-        <div class="channel-text">
-          <div class="channel-label">Email</div>
-          <div class="channel-value">contato@atlasadvisory.com.br</div>
-          <div class="channel-sub">
-            <span data-lang="pt" class="on">Resposta em até 24 horas</span>
-            <span data-lang="en">Response within 24 hours</span>
-            <span data-lang="zh">24小时内回复</span>
+      <div class="channels">
+        <a href="https://wa.me/55119XXXXXXXX" class="channel ch-whatsapp" target="_blank">
+          <div class="channel-icon"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg></div>
+          <div class="channel-text">
+            <div class="channel-label">WhatsApp</div>
+            <div class="channel-value"><span data-lang="pt" class="on">Adicione seu número</span><span data-lang="en">Add your number</span><span data-lang="zh">添加您的号码</span></div>
+            <div class="channel-sub"><span data-lang="pt" class="on">Brasil — resposta rápida em PT</span><span data-lang="en">Brazil — fast response in PT</span><span data-lang="zh">巴西——葡语快速回复</span></div>
           </div>
-        </div>
-      </a>
-
-      <a href="https://wa.me/55119XXXXXXXX" class="channel ch-whatsapp" target="_blank">
-        <div class="channel-icon">
-          <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
-        </div>
-        <div class="channel-text">
-          <div class="channel-label">WhatsApp</div>
-          <div class="channel-value">
-            <span data-lang="pt" class="on">Adicione seu número</span>
-            <span data-lang="en">Add your number</span>
-            <span data-lang="zh">添加您的号码</span>
-          </div>
-          <div class="channel-sub">
-            <span data-lang="pt" class="on">Brasil — resposta rápida em PT</span>
-            <span data-lang="en">Brazil — fast response in PT</span>
-            <span data-lang="zh">巴西——葡语快速回复</span>
-          </div>
-        </div>
-      </a>
-
-      <div class="channel ch-wechat" style="cursor:default">
-        <div class="channel-icon">
-          <svg viewBox="0 0 24 24"><path d="M9.5 9.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5c-.5 0-1-.1-1.4-.2L10.5 15l.5-1.5C9.9 12.5 9.5 11 9.5 9.5z"/><path d="M7 15c0-2.5 2-4.5 4.5-4.5.5 0 .9.1 1.3.2L14 9.2c-.5-.1-1-.2-1.5-.2C8.5 9 5 12 5 15.5c0 1.2.4 2.4 1.2 3.4L5 21l2.5-1c.8.4 1.7.5 2.5.5 1 0 2-.2 2.9-.6L10 18c-.5.2-1 .2-1.5.2-1.5 0-2.8-.8-3.5-2"/></svg>
-        </div>
-        <div class="channel-text">
-          <div class="channel-label">WeChat</div>
-          <div class="channel-value">
-            <span data-lang="pt" class="on">ID: AtlasAdvisory (em breve)</span>
-            <span data-lang="en">ID: AtlasAdvisory (coming soon)</span>
-            <span data-lang="zh">微信号：AtlasAdvisory（即将推出）</span>
-          </div>
-          <div class="channel-sub">
-            <span data-lang="pt" class="on">China & HK — atendimento em mandarim</span>
-            <span data-lang="en">China & HK — service in Mandarin</span>
-            <span data-lang="zh">中国及香港——普通话服务</span>
+        </a>
+        <div class="channel ch-wechat" style="cursor:default">
+          <div class="channel-icon"><svg viewBox="0 0 24 24"><path d="M9.5 9.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5c-.5 0-1-.1-1.4-.2L10.5 15l.5-1.5C9.9 12.5 9.5 11 9.5 9.5z"/><path d="M7 15c0-2.5 2-4.5 4.5-4.5.5 0 .9.1 1.3.2L14 9.2c-.5-.1-1-.2-1.5-.2C8.5 9 5 12 5 15.5c0 1.2.4 2.4 1.2 3.4L5 21l2.5-1c.8.4 1.7.5 2.5.5 1 0 2-.2 2.9-.6L10 18c-.5.2-1 .2-1.5.2-1.5 0-2.8-.8-3.5-2"/></svg></div>
+          <div class="channel-text">
+            <div class="channel-label">WeChat</div>
+            <div class="channel-value"><span data-lang="pt" class="on">ID: AtlasAdvisory (em breve)</span><span data-lang="en">ID: AtlasAdvisory (coming soon)</span><span data-lang="zh">微信号：AtlasAdvisory（即将推出）</span></div>
+            <div class="channel-sub"><span data-lang="pt" class="on">China & HK — atendimento em mandarim</span><span data-lang="en">China & HK — service in Mandarin</span><span data-lang="zh">中国及香港——普通话服务</span></div>
           </div>
         </div>
       </div>
 
-      <a href="https://www.linkedin.com/company/atlas-advisory-br" class="channel ch-linkedin" target="_blank">
-        <div class="channel-icon">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+      <!-- FAQ -->
+      <div class="faq-wrap">
+        <h3 class="faq-title"><span data-lang="pt" class="on">Perguntas frequentes</span><span data-lang="en">Frequently asked questions</span><span data-lang="zh">常见问题</span></h3>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q"><span data-lang="pt" class="on">A consulta é realmente gratuita?</span><span data-lang="en">Is the consultation really free?</span><span data-lang="zh">咨询真的是免费的吗？</span></div>
+          <div class="faq-a"><span data-lang="pt" class="on">Sim. A consulta inicial de 30 minutos é totalmente gratuita e sem compromisso. Nosso objetivo é entender sua situação e explicar se e como podemos ajudar — sem pressão de vendas.</span><span data-lang="en">Yes. The initial 30-minute consultation is completely free and without commitment. Our goal is to understand your situation and explain whether and how we can help — with no sales pressure.</span><span data-lang="zh">是的。初次30分钟咨询完全免费，无需承诺。我们的目标是了解您的情况，并说明我们能否以及如何提供帮助——不施加任何销售压力。</span></div>
         </div>
-        <div class="channel-text">
-          <div class="channel-label">LinkedIn</div>
-          <div class="channel-value">Atlas Advisory</div>
-          <div class="channel-sub">
-            <span data-lang="pt" class="on">Artigos e insights do corredor Brasil–Ásia</span>
-            <span data-lang="en">Articles & insights on the Brazil–Asia corridor</span>
-            <span data-lang="zh">巴西–亚洲走廊文章与洞见</span>
-          </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q"><span data-lang="pt" class="on">Em quanto tempo vocês respondem?</span><span data-lang="en">How quickly do you respond?</span><span data-lang="zh">你们多快会回复？</span></div>
+          <div class="faq-a"><span data-lang="pt" class="on">Respondemos a todos os contatos em até 24 horas úteis. Para contatos via WhatsApp durante o horário comercial em São Paulo (BRT), a resposta costuma ser mais rápida.</span><span data-lang="en">We respond to all inquiries within 24 business hours. For WhatsApp contacts during São Paulo business hours (BRT), response is typically faster.</span><span data-lang="zh">我们在24个工作小时内回复所有咨询。在圣保罗工作时间（巴西利亚时间）通过WhatsApp联系，通常响应更快。</span></div>
         </div>
-      </a>
-    </div>
-
-    <!-- FAQ -->
-    <div style="background:var(--white);border:1px solid var(--g100);border-radius:16px;padding:28px;margin-top:8px">
-      <h3 class="faq-title">
-        <span data-lang="pt" class="on">Perguntas frequentes</span>
-        <span data-lang="en">Frequently asked questions</span>
-        <span data-lang="zh">常见问题</span>
-      </h3>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <span data-lang="pt" class="on">A consulta é realmente gratuita?</span>
-          <span data-lang="en">Is the consultation really free?</span>
-          <span data-lang="zh">咨询真的是免费的吗？</span>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q"><span data-lang="pt" class="on">Vocês atendem clientes em qualquer país?</span><span data-lang="en">Do you serve clients in any country?</span><span data-lang="zh">你们服务哪些国家的客户？</span></div>
+          <div class="faq-a"><span data-lang="pt" class="on">Sim. Atendemos clientes baseados no Brasil, em Hong Kong, na China continental e em outros países. Todas as consultas são feitas por videoconferência — não é necessário estar presencialmente em nenhum dos nossos mercados.</span><span data-lang="en">Yes. We serve clients based in Brazil, Hong Kong, mainland China, and other countries. All consultations are conducted by video call — no need to be physically present in any of our markets.</span><span data-lang="zh">是的。我们服务于巴西、香港、中国大陆及其他国家的客户。所有咨询均通过视频通话进行——无需亲临我们的任何市场。</span></div>
         </div>
-        <div class="faq-a">
-          <span data-lang="pt" class="on">Sim. A consulta inicial de 30 minutos é totalmente gratuita e sem compromisso. Nosso objetivo é entender sua situação e explicar se e como podemos ajudar — sem pressão de vendas.</span>
-          <span data-lang="en">Yes. The initial 30-minute consultation is completely free and without commitment. Our goal is to understand your situation and explain whether and how we can help — with no sales pressure.</span>
-          <span data-lang="zh">是的。初次30分钟咨询完全免费，无需承诺。我们的目标是了解您的情况，并说明我们能否以及如何提供帮助——不施加任何销售压力。</span>
-        </div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <span data-lang="pt" class="on">Em quanto tempo vocês respondem?</span>
-          <span data-lang="en">How quickly do you respond?</span>
-          <span data-lang="zh">你们多快会回复？</span>
-        </div>
-        <div class="faq-a">
-          <span data-lang="pt" class="on">Respondemos a todos os contatos em até 24 horas úteis. Para contatos via WhatsApp durante o horário comercial em São Paulo (BRT), a resposta costuma ser mais rápida.</span>
-          <span data-lang="en">We respond to all inquiries within 24 business hours. For WhatsApp contacts during São Paulo business hours (BRT), response is typically faster.</span>
-          <span data-lang="zh">我们在24个工作小时内回复所有咨询。在圣保罗工作时间（巴西利亚时间）通过WhatsApp联系，通常响应更快。</span>
-        </div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <span data-lang="pt" class="on">Vocês atendem clientes em qualquer país?</span>
-          <span data-lang="en">Do you serve clients in any country?</span>
-          <span data-lang="zh">你们服务哪些国家的客户？</span>
-        </div>
-        <div class="faq-a">
-          <span data-lang="pt" class="on">Sim. Atendemos clientes baseados no Brasil, em Hong Kong, na China continental e em outros países. Todas as consultas são feitas por videoconferência — não é necessário estar presencialmente em nenhum dos nossos mercados.</span>
-          <span data-lang="en">Yes. We serve clients based in Brazil, Hong Kong, mainland China, and other countries. All consultations are conducted by video call — no need to be physically present in any of our markets.</span>
-          <span data-lang="zh">是的。我们服务于巴西、香港、中国大陆及其他国家的客户。所有咨询均通过视频通话进行——无需亲临我们的任何市场。</span>
-        </div>
-      </div>
-
-      <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">
-          <span data-lang="pt" class="on">Quais ferramentas de videoconferência vocês usam?</span>
-          <span data-lang="en">Which video call tools do you use?</span>
-          <span data-lang="zh">你们使用哪些视频通话工具？</span>
-        </div>
-        <div class="faq-a">
-          <span data-lang="pt" class="on">Zoom, Google Meet ou WeChat Video — o que for mais conveniente para você. Para clientes na China, recomendamos WeChat ou Tencent Meeting (腾讯会议), que funcionam sem VPN.</span>
-          <span data-lang="en">Zoom, Google Meet, or WeChat Video — whatever is most convenient for you. For clients in China, we recommend WeChat or Tencent Meeting (腾讯会议), which work without a VPN.</span>
-          <span data-lang="zh">Zoom、Google Meet或微信视频——以最方便您的方式为准。对于中国客户，我们推荐微信或腾讯会议，无需VPN即可使用。</span>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q"><span data-lang="pt" class="on">Quais ferramentas de videoconferência vocês usam?</span><span data-lang="en">Which video call tools do you use?</span><span data-lang="zh">你们使用哪些视频通话工具？</span></div>
+          <div class="faq-a"><span data-lang="pt" class="on">Zoom, Google Meet ou WeChat Video — o que for mais conveniente para você. Para clientes na China, recomendamos WeChat ou Tencent Meeting (腾讯会议), que funcionam sem VPN.</span><span data-lang="en">Zoom, Google Meet, or WeChat Video — whatever is most convenient for you. For clients in China, we recommend WeChat or Tencent Meeting (腾讯会议), which work without a VPN.</span><span data-lang="zh">Zoom、Google Meet或微信视频——以最方便您的方式为准。对于中国客户，我们推荐微信或腾讯会议，无需VPN即可使用。</span></div>
         </div>
       </div>
     </div>
 
   </div>
 </div>
-</div>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-top">
-    <div><div class="f-brand-name">Atlas Advisory</div><p class="f-tagline"><span data-lang="pt" class="on">Seu guia no Brasil, Hong Kong & China — jurídico, tributário e acesso a mercados.</span><span data-lang="en">Your guide across Brazil, Hong Kong & China — legal, tax, and market access.</span><span data-lang="zh">您在巴西、香港和中国的向导——法律、税务和市场准入。</span></p><div class="f-contact"></div></div>
-    <div class="f-col"><div class="f-col-title"><span data-lang="pt" class="on">Brasil</span><span data-lang="en">Brazil</span><span data-lang="zh">巴西</span></div><ul><li><a href="/brazil.html"><span data-lang="pt" class="on">Constituição de empresa</span><span data-lang="en">Company incorporation</span><span data-lang="zh">公司注册</span></a></li><li><a href="/brazil.html"><span data-lang="pt" class="on">Incentivos fiscais</span><span data-lang="en">Tax incentives</span><span data-lang="zh">税收激励</span></a></li><li><a href="/brazil.html"><span data-lang="pt" class="on">Administração</span><span data-lang="en">Administration</span><span data-lang="zh">企业行政</span></a></li><li><a href="/brazil.html"><span data-lang="pt" class="on">Mercado</span><span data-lang="en">Market development</span><span data-lang="zh">市场开发</span></a></li></ul></div>
-    <div class="f-col"><div class="f-col-title">Hong Kong & China</div><ul><li><a href="/hongkong.html"><span data-lang="pt" class="on">Empresa em HK</span><span data-lang="en">HK company setup</span><span data-lang="zh">香港公司注册</span></a></li><li><a href="/hongkong.html"><span data-lang="pt" class="on">Planejamento tributário</span><span data-lang="en">Tax planning</span><span data-lang="zh">税务规划</span></a></li><li><a href="/hongkong.html"><span data-lang="pt" class="on">Acesso bancário</span><span data-lang="en">Banking access</span><span data-lang="zh">银行开户</span></a></li><li><a href="/hongkong.html"><span data-lang="pt" class="on">Mercado chinês</span><span data-lang="en">China market</span><span data-lang="zh">中国市场</span></a></li></ul></div>
-    <div class="f-col"><div class="f-col-title"><span data-lang="pt" class="on">Atlas Advisory</span><span data-lang="en">Atlas Advisory</span><span data-lang="zh">关于我们</span></div><ul><li><a href="/index.html"><span data-lang="pt" class="on">Início</span><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li><li><a href="/contact.html"><span data-lang="pt" class="on">Contato</span><span data-lang="en">Contact</span><span data-lang="zh">联系我们</span></a></li><li><a href="/contact.html"><span data-lang="pt" class="on">Consulta gratuita</span><span data-lang="en">Free consultation</span><span data-lang="zh">免费咨询</span></a></li></ul></div>
+    <div>
+      <div class="f-brand-name">Atlas Advisory</div>
+      <p class="f-tagline"><span data-lang="pt" class="on">Seu guia no Brasil, Hong Kong & China — jurídico, tributário e acesso a mercados.</span><span data-lang="en">Your guide across Brazil, Hong Kong & China — legal, tax, and market access.</span><span data-lang="zh">您在巴西、香港和中国的向导——法律、税务和市场准入。</span></p>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title"><span data-lang="pt" class="on">Brasil</span><span data-lang="en">Brazil</span><span data-lang="zh">巴西</span></div>
+      <ul>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Constituição de empresa</span><span data-lang="en">Company incorporation</span><span data-lang="zh">公司注册</span></a></li>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Incentivos fiscais</span><span data-lang="en">Tax incentives</span><span data-lang="zh">税收激励</span></a></li>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Administração</span><span data-lang="en">Administration</span><span data-lang="zh">企业行政</span></a></li>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Mercado</span><span data-lang="en">Market development</span><span data-lang="zh">市场开发</span></a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Hong Kong & China</div>
+      <ul>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Empresa em HK</span><span data-lang="en">HK company setup</span><span data-lang="zh">香港公司注册</span></a></li>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Planejamento tributário</span><span data-lang="en">Tax planning</span><span data-lang="zh">税务规划</span></a></li>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Acesso bancário</span><span data-lang="en">Banking access</span><span data-lang="zh">银行开户</span></a></li>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Mercado chinês</span><span data-lang="en">China market</span><span data-lang="zh">中国市场</span></a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title"><span data-lang="pt" class="on">Atlas Advisory</span><span data-lang="en">Atlas Advisory</span><span data-lang="zh">关于我们</span></div>
+      <ul>
+        <li><a href="/index.html"><span data-lang="pt" class="on">Início</span><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
+        <li><a href="/contact.html"><span data-lang="pt" class="on">Contato</span><span data-lang="en">Contact</span><span data-lang="zh">联系我们</span></a></li>
+        <li><a href="/contact.html"><span data-lang="pt" class="on">Consulta gratuita</span><span data-lang="en">Free consultation</span><span data-lang="zh">免费咨询</span></a></li>
+      </ul>
+    </div>
   </div>
-  <div class="footer-bottom"><span class="f-copy">© 2026 Atlas Advisory · atlasadvisory.com.br</span><div class="f-langs"><button class="f-lang-btn on" id="flb-pt" onclick="setLang('pt')">PT</button><button class="f-lang-btn" id="flb-en" onclick="setLang('en')">EN</button><button class="f-lang-btn" id="flb-zh" onclick="setLang('zh')">中文</button></div></div>
+  <div class="footer-bottom">
+    <span class="f-copy">© 2026 Atlas Advisory · atlasadvisory.com.br</span>
+    <div class="f-langs">
+      <button class="f-lang-btn on" id="flb-pt" onclick="setLang('pt')">PT</button>
+      <button class="f-lang-btn" id="flb-en" onclick="setLang('en')">EN</button>
+      <button class="f-lang-btn" id="flb-zh" onclick="setLang('zh')">中文</button>
+    </div>
+  </div>
 </footer>
 
 <script>
-// LANG
 let lang='pt';
 function setLang(l){
   lang=l;
@@ -534,25 +373,6 @@ function setLang(l){
   });
   document.documentElement.lang=l==='zh'?'zh-Hans':l;
   try{localStorage.setItem('atlas_lang',l);}catch(e){}
-  // Update placeholders
-  document.querySelectorAll('[placeholder-pt]').forEach(el=>{
-    const ph={'pt':el.getAttribute('placeholder-pt'),'en':el.getAttribute('placeholder-en'),'zh':el.getAttribute('placeholder-zh')};
-    if(ph[l])el.placeholder=ph[l];
-  });
-  // Update select options
-  document.querySelectorAll('#interest option[data-pt]').forEach(opt=>{
-    const key=l==='pt'?'data-pt':l==='en'?'data-en':'data-zh';
-    opt.textContent=opt.getAttribute(key)||opt.getAttribute('data-pt');
-  });
-  const sel=document.getElementById('interest');
-  if(sel&&sel.options[0]){
-    const ph={'pt':'— Selecione —','en':'— Select —','zh':'— 请选择 —'};
-    sel.options[0].textContent=ph[l];
-  }
-  // Language radio pre-select
-  const lrMap={'pt':'lp-pt','en':'lp-en','zh':'lp-zh'};
-  const radio=document.getElementById(lrMap[l]);
-  if(radio&&!radio.checked){radio.checked=true;}
 }
 (function(){
   let s;try{s=localStorage.getItem('atlas_lang');}catch(e){}
@@ -562,33 +382,18 @@ function setLang(l){
   else if(n.startsWith('en'))setLang('en');
   else setLang('pt');
 })();
-
-// NAV
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>10),{passive:true});
-
-// MOBILE
-function toggleMenu(){
-  document.getElementById('ham').classList.toggle('open');
-  document.getElementById('mmenu').classList.toggle('open');
-}
+function toggleMenu(){document.getElementById('ham').classList.toggle('open');document.getElementById('mmenu').classList.toggle('open');}
 document.addEventListener('click',e=>{
   const m=document.getElementById('mmenu'),h=document.getElementById('ham');
-  if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!h.contains(e.target)){
-    m.classList.remove('open');h.classList.remove('open');
-  }
+  if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!h.contains(e.target)){m.classList.remove('open');h.classList.remove('open');}
 });
-
-// REVEAL
 const ro=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}});
 },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
-
-// FAQ
 function toggleFaq(item){item.classList.toggle('open');}
-
-// Tally: hide placeholder once iframe loads
 document.querySelectorAll('iframe[data-tally-src]').forEach(iframe=>{
   iframe.addEventListener('load',()=>{
     const ph=document.getElementById('tally-placeholder');
