@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atlas Advisory — Brasil · Hong Kong · China</title>
+<meta name="description" content="Seu guia no Brasil, Hong Kong e China — jurídico, tributário e acesso a mercados.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#FAFAF8;--g50:#F3F3F1;--g100:#E8E8E5;--g200:#D1D1CC;
+  --g400:#9A9A94;--g600:#6B6B65;--g800:#2E2E2A;--ink:#18181A;
+  --navy:#0F2D52;--navy7:#163A68;--navy5:#1E4D87;--navy2:#BFD4EF;--navy05:#EEF3FA;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+  --nav-h:68px;--ease:cubic-bezier(.4,0,.2,1);--eout:cubic-bezier(0,0,.2,1)
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+
+/* LANG */
+[data-lang]{display:none!important}
+[data-lang].on{display:revert!important}
+span[data-lang].on{display:inline!important}
+li[data-lang].on{display:list-item!important}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:900;display:flex;align-items:center;padding:0 5%;background:rgba(250,250,248,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.nav.scrolled{border-color:var(--g100);box-shadow:0 1px 20px rgba(15,45,82,.06)}
+.nav-wordmark{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--navy);letter-spacing:-.01em;margin-right:auto;white-space:nowrap}
+.nav-wordmark span{color:var(--g400);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none;margin-right:32px}
+.nav-links a{font-size:13px;font-weight:400;color:var(--g600);letter-spacing:.01em;transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--navy)}
+.lang-switch{display:flex;align-items:center;gap:2px;padding:4px;background:var(--g50);border-radius:8px;margin-right:20px}
+.lang-btn{font-family:var(--sans);font-size:11px;font-weight:500;padding:5px 10px;border:none;border-radius:6px;background:transparent;color:var(--g400);cursor:pointer;transition:all .2s;letter-spacing:.04em}
+.lang-btn.on{background:var(--white);color:var(--navy);box-shadow:0 1px 4px rgba(15,45,82,.1)}
+.nav-cta{font-size:13px;font-weight:500;padding:10px 22px;background:var(--navy);color:var(--white);border-radius:8px;letter-spacing:.01em;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-cta:hover{background:var(--navy7);transform:translateY(-1px)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.ham span{width:22px;height:1.5px;background:var(--navy);border-radius:2px;transition:.3s}
+.ham.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--white);border-bottom:1px solid var(--g100);padding:24px 5% 32px;z-index:899;box-shadow:0 8px 32px rgba(15,45,82,.08)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;font-size:15px;color:var(--g800);padding:13px 0;border-bottom:1px solid var(--g50);transition:color .2s}
+.mobile-menu a:hover{color:var(--navy)}
+.mobile-menu .ml{display:flex;gap:8px;margin-top:20px}
+.mobile-menu .lang-btn{font-size:13px;padding:8px 16px;background:var(--g50);border-radius:8px;color:var(--g600)}
+.mobile-menu .lang-btn.on{background:var(--navy05);color:var(--navy)}
+.mobile-menu .nav-cta{display:block;text-align:center;margin-top:16px;padding:14px}
+
+/* ── HERO ── */
+.hero{min-height:100vh;padding-top:var(--nav-h);background:var(--navy);display:flex;align-items:center;position:relative;overflow:hidden}
+
+/* Multi-layer background */
+.hero-bg-1{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 65% 45%,rgba(30,77,135,.7) 0%,transparent 60%)}
+.hero-bg-2{position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 15% 75%,rgba(26,92,90,.25) 0%,transparent 55%)}
+.hero-bg-3{position:absolute;inset:0;background:radial-gradient(ellipse 40% 30% at 90% 10%,rgba(191,212,239,.06) 0%,transparent 50%)}
+
+/* Animated grid */
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:72px 72px;mask-image:radial-gradient(ellipse 100% 100% at 50% 50%,black 0%,transparent 70%);animation:gridDrift 20s linear infinite}
+@keyframes gridDrift{from{background-position:0 0}to{background-position:72px 72px}}
+
+/* Globe watermark */
+.hero-globe{position:absolute;right:-8%;top:50%;transform:translateY(-50%);width:52vw;max-width:780px;opacity:.045;pointer-events:none;animation:globeSpin 60s linear infinite}
+@keyframes globeSpin{from{transform:translateY(-50%) rotate(0deg)}to{transform:translateY(-50%) rotate(360deg)}}
+
+/* Floating orbs */
+.orb{position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;animation:orbFloat 8s ease-in-out infinite}
+.orb-1{width:400px;height:400px;background:rgba(30,77,135,.2);top:-10%;right:10%;animation-delay:0s}
+.orb-2{width:300px;height:300px;background:rgba(26,92,90,.15);bottom:5%;left:5%;animation-delay:-3s}
+.orb-3{width:200px;height:200px;background:rgba(191,212,239,.08);top:30%;right:35%;animation-delay:-6s}
+@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-30px) scale(1.05)}}
+
+.hero-inner{position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:100px 5%;display:grid;grid-template-columns:1fr 440px;gap:80px;align-items:center}
+
+/* Hero left */
+.hero-left{}
+.hero-label{display:flex;align-items:center;gap:10px;margin-bottom:28px;opacity:0;animation:fadeUp .8s var(--eout) .1s forwards}
+.hero-label-line{width:28px;height:1.5px;background:var(--navy2)}
+.hero-label-text{font-size:11px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--navy2)}
+
+.hflag{width:18px;height:13px;border-radius:2px;overflow:hidden;flex-shrink:0}
+
+.hero-h1{font-family:var(--serif);font-size:clamp(40px,5.5vw,74px);font-weight:400;line-height:1.05;letter-spacing:-.025em;color:#fff;margin-bottom:24px;opacity:0;animation:fadeUp .8s var(--eout) .2s forwards}
+.hero-h1 em{font-style:italic;color:var(--navy2);display:block}
+
+.hero-sub{font-size:clamp(15px,1.4vw,18px);font-weight:300;line-height:1.8;color:rgba(255,255,255,.6);max-width:500px;margin-bottom:16px;opacity:0;animation:fadeUp .8s var(--eout) .3s forwards}
+
+.hero-tagline{font-family:var(--serif);font-size:15px;font-style:italic;color:rgba(255,255,255,.3);margin-bottom:44px;opacity:0;animation:fadeUp .8s var(--eout) .35s forwards}
+.hero-tagline strong{color:rgba(255,255,255,.55);font-weight:400}
+
+.hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .8s var(--eout) .4s forwards}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;font-weight:500;padding:15px 30px;background:var(--white);color:var(--navy);border-radius:9px;letter-spacing:.01em;transition:all .2s;white-space:nowrap}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(0,0,0,.18)}
+.btn-primary svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+.btn-primary:hover svg{transform:translateX(3px)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;font-weight:400;padding:15px 30px;border:1.5px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);border-radius:9px;transition:all .2s}
+.btn-secondary:hover{border-color:rgba(255,255,255,.5);color:#fff}
+
+/* Hero stats bar */
+.hero-stats{display:flex;gap:0;margin-top:64px;padding-top:36px;border-top:1px solid rgba(255,255,255,.08);opacity:0;animation:fadeUp .8s var(--eout) .5s forwards}
+.hstat{padding-right:36px;margin-right:36px;border-right:1px solid rgba(255,255,255,.08)}
+.hstat:last-child{border-right:none;padding-right:0;margin-right:0}
+.hstat-num{font-family:var(--serif);font-size:30px;font-weight:400;color:#fff;line-height:1;margin-bottom:5px}
+.hstat-label{font-size:10px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+
+/* Hero right — premium card */
+.hero-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:36px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);opacity:0;animation:fadeScale .8s var(--eout) .35s forwards}
+.hero-card-title{font-family:var(--serif);font-size:13px;font-weight:400;font-style:italic;color:rgba(255,255,255,.4);margin-bottom:24px;letter-spacing:.02em}
+
+/* Corridor viz inside card */
+.corridor-mini{margin-bottom:28px;padding:20px;background:rgba(255,255,255,.03);border-radius:12px;border:1px solid rgba(255,255,255,.06)}
+.corridor-nodes{display:flex;align-items:center;gap:0;margin-bottom:12px}
+.cn{display:flex;flex-direction:column;align-items:center;gap:6px;flex:1}
+.cn-dot{width:10px;height:10px;border-radius:50%;background:var(--navy2);position:relative}
+.cn-dot.pulse::after{content:'';position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--navy2);animation:cnPulse 2.5s ease-in-out infinite}
+.cn-dot.pulse:nth-of-type(1)::after{animation-delay:0s}
+@keyframes cnPulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.6);opacity:0}}
+.cn-label{font-size:10px;font-weight:500;color:rgba(255,255,255,.5);letter-spacing:.08em}
+.cn-line{flex:1;height:1.5px;background:linear-gradient(90deg,var(--navy2),rgba(191,212,239,.3));position:relative;overflow:hidden}
+.cn-line::after{content:'';position:absolute;top:0;left:-60%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);animation:lineShimmer 2.5s ease-in-out infinite}
+.cn-line:nth-child(4)::after{animation-delay:.8s}
+@keyframes lineShimmer{0%{left:-60%}100%{left:160%}}
+.corridor-label{font-size:10px;color:rgba(255,255,255,.25);text-align:center;letter-spacing:.1em;text-transform:uppercase}
+
+/* Stat list in card */
+.card-stats{display:flex;flex-direction:column;gap:0}
+.cstat{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.cstat:last-child{border-bottom:none;padding-bottom:0}
+.cstat-num{font-family:var(--serif);font-size:26px;font-weight:400;color:#fff;min-width:72px;line-height:1}
+.cstat-body{}
+.cstat-title{font-size:13px;font-weight:500;color:#fff;margin-bottom:2px}
+.cstat-sub{font-size:11px;color:rgba(255,255,255,.4)}
+
+/* ── TICKER ── */
+.ticker{background:var(--ink);border-top:1px solid rgba(255,255,255,.05);padding:14px 0;overflow:hidden;white-space:nowrap}
+.ticker-track{display:inline-flex;gap:0;animation:tickerScroll 30s linear infinite}
+.ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 32px;font-size:11px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.ticker-dot{width:4px;height:4px;border-radius:50%;background:var(--navy2);flex-shrink:0}
+@keyframes tickerScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SECTIONS ── */
+section{padding:100px 5%}
+.container{max-width:1200px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--navy5);margin-bottom:14px}
+.eyebrow::before{content:'';width:20px;height:1.5px;background:var(--navy5)}
+.s-title{font-family:var(--serif);font-size:clamp(28px,3.5vw,46px);font-weight:400;line-height:1.12;letter-spacing:-.02em;color:var(--ink);margin-bottom:14px}
+.s-title em{font-style:italic;color:var(--navy)}
+.s-lead{font-size:17px;font-weight:300;line-height:1.8;color:var(--g600)}
+
+/* ── CORRIDOR SECTION ── */
+.s-corridor{background:var(--white);border-top:1px solid var(--g100)}
+.corridor-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.corridor-svg-wrap{position:relative}
+.corridor-svg{width:100%;height:auto}
+/* SVG path animation */
+.svg-path{stroke-dasharray:350;stroke-dashoffset:350;transition:stroke-dashoffset 2s var(--eout)}
+.svg-path.drawn{stroke-dashoffset:0}
+
+/* ── CLIENTS ── */
+.s-clients{background:var(--g50)}
+.clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:56px}
+.client-card{background:var(--white);border:1px solid var(--g100);border-radius:16px;padding:32px;transition:all .3s var(--ease);position:relative;overflow:hidden}
+.client-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--navy),var(--navy2));transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.client-card:hover{transform:translateY(-5px);box-shadow:0 16px 48px rgba(15,45,82,.1);border-color:var(--navy2)}
+.client-card:hover::after{transform:scaleX(1)}
+.cc-icon{width:48px;height:48px;border-radius:12px;background:var(--navy05);display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+.cc-icon svg{width:22px;height:22px;stroke:var(--navy5);fill:none;stroke-width:1.5}
+.cc-title{font-family:var(--serif);font-size:18px;font-weight:500;color:var(--ink);margin-bottom:10px;line-height:1.3}
+.cc-desc{font-size:13px;color:var(--g600);line-height:1.75}
+
+/* ── WHY ── */
+.s-why{background:var(--navy);position:relative;overflow:hidden}
+.s-why::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 50%,rgba(30,77,135,.5) 0%,transparent 60%)}
+.why-header{max-width:640px;margin-bottom:60px;position:relative;z-index:1}
+.why-header .eyebrow{color:var(--navy2)}
+.why-header .eyebrow::before{background:var(--navy2)}
+.why-header .s-title{color:#fff}
+.why-header .s-title em{color:var(--navy2)}
+.why-header .s-lead{color:rgba(255,255,255,.5);max-width:100%}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;position:relative;z-index:1;border-radius:16px;overflow:hidden}
+.why-card{background:rgba(255,255,255,.04);padding:40px;transition:background .3s;border:1px solid rgba(255,255,255,0)}
+.why-card:hover{background:rgba(255,255,255,.07);border-color:rgba(191,212,239,.1)}
+.why-num{font-family:var(--serif);font-size:52px;font-weight:400;color:rgba(255,255,255,.07);line-height:1;margin-bottom:18px}
+.why-title{font-family:var(--serif);font-size:20px;font-weight:400;color:#fff;margin-bottom:12px;line-height:1.3}
+.why-desc{font-size:13px;color:rgba(255,255,255,.45);line-height:1.8}
+
+/* ── SERVICES CARDS ── */
+.s-services{background:var(--white)}
+.services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;flex-wrap:wrap;gap:20px}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.svc-card{border-radius:16px;padding:40px;text-decoration:none;display:block;transition:all .3s var(--ease);position:relative;overflow:hidden}
+.svc-card.brazil{background:var(--navy);color:#fff}
+.svc-card.hk{background:var(--g50);border:1.5px solid var(--g100);color:var(--ink)}
+.svc-card::after{content:'';position:absolute;right:-80px;bottom:-80px;width:240px;height:240px;border-radius:50%;border:1px solid currentColor;opacity:.06;transition:transform .4s var(--ease)}
+.svc-card:hover::after{transform:scale(1.2)}
+.svc-card:hover{transform:translateY(-5px)}
+.svc-card.brazil:hover{box-shadow:0 20px 60px rgba(15,45,82,.25)}
+.svc-card.hk:hover{box-shadow:0 20px 60px rgba(15,45,82,.1);border-color:var(--navy2)}
+.svc-eyebrow{font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin-bottom:14px}
+.svc-card.brazil .svc-eyebrow{color:var(--navy2)}
+.svc-card.hk .svc-eyebrow{color:var(--navy5)}
+.svc-title{font-family:var(--serif);font-size:28px;font-weight:400;line-height:1.2;margin-bottom:14px}
+.svc-card.brazil .svc-title{color:#fff}
+.svc-card.hk .svc-title{color:var(--ink)}
+.svc-desc{font-size:14px;line-height:1.75;margin-bottom:28px}
+.svc-card.brazil .svc-desc{color:rgba(255,255,255,.55)}
+.svc-card.hk .svc-desc{color:var(--g600)}
+.svc-pillars{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:32px}
+.svc-pill{font-size:11px;padding:4px 11px;border-radius:20px;letter-spacing:.02em}
+.svc-card.brazil .svc-pill{background:rgba(255,255,255,.08);color:rgba(255,255,255,.6)}
+.svc-card.hk .svc-pill{background:var(--white);border:1px solid var(--g200);color:var(--g600)}
+.svc-cta{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500}
+.svc-card.brazil .svc-cta{color:var(--navy2)}
+.svc-card.hk .svc-cta{color:var(--navy)}
+.svc-cta svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+.svc-card:hover .svc-cta svg{transform:translateX(4px)}
+
+/* ── INSIGHT QUOTE ── */
+.s-insight{background:var(--g50);border-top:1px solid var(--g100)}
+.insight-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center}
+.insight-left{}
+.insight-quote{font-family:var(--serif);font-size:clamp(20px,2.5vw,30px);font-weight:400;font-style:italic;line-height:1.55;color:var(--navy);padding-left:28px;border-left:3px solid var(--navy2);margin-bottom:22px}
+.insight-attr{font-size:13px;color:var(--g600);padding-left:28px;line-height:1.6}
+.insight-right{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.rate-card{border-radius:14px;padding:28px}
+.rate-card.bad{background:var(--white);border:1.5px solid var(--g100)}
+.rate-card.good{background:var(--navy);color:#fff}
+.rate-card.delta{background:var(--navy05);border:1.5px solid var(--navy2);grid-column:1/-1}
+.rate-label{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.rate-card.bad .rate-label{color:var(--g400)}
+.rate-card.good .rate-label{color:var(--navy2)}
+.rate-card.delta .rate-label{color:var(--navy5)}
+.rate-num{font-family:var(--serif);font-size:40px;font-weight:400;line-height:1;margin-bottom:6px}
+.rate-card.bad .rate-num{color:rgba(200,40,40,.7)}
+.rate-card.good .rate-num{color:#fff}
+.rate-card.delta .rate-num{color:var(--navy)}
+.rate-sub{font-size:12px;line-height:1.5}
+.rate-card.bad .rate-sub{color:var(--g600)}
+.rate-card.good .rate-sub{color:rgba(255,255,255,.45)}
+.rate-card.delta .rate-sub{color:var(--navy5)}
+
+/* ── CTA BAND ── */
+.s-cta{background:var(--navy);padding:100px 5%;position:relative;overflow:hidden}
+.s-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 70% 50%,rgba(30,77,135,.6) 0%,transparent 60%)}
+.cta-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center;position:relative;z-index:1}
+.cta-title{font-family:var(--serif);font-size:clamp(24px,3.5vw,44px);font-weight:400;line-height:1.2;color:#fff}
+.cta-title em{font-style:italic;color:var(--navy2)}
+.cta-sub{font-size:15px;color:rgba(255,255,255,.5);margin-top:12px;max-width:480px;line-height:1.7}
+.cta-actions{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+.btn-cta-primary{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:14px;font-weight:500;padding:15px 30px;background:var(--white);color:var(--navy);border-radius:9px;white-space:nowrap;transition:all .2s}
+.btn-cta-primary:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(0,0,0,.2)}
+.btn-cta-primary svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+.btn-cta-primary:hover svg{transform:translateX(3px)}
+.btn-cta-secondary{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.04em;text-align:right}
+
+/* ── FOOTER ── */
+footer{background:#1C2B3A;padding:72px 5% 36px}
+.footer-top{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:36px}
+.f-brand-name{font-family:var(--serif);font-size:22px;font-weight:400;color:#fff;margin-bottom:14px}
+.f-tagline{font-size:13px;color:rgba(255,255,255,.35);line-height:1.75;max-width:240px;margin-bottom:24px}
+.f-contact a{display:block;font-size:13px;color:rgba(255,255,255,.4);margin-bottom:6px;transition:color .2s}
+.f-contact a:hover{color:rgba(255,255,255,.85)}
+.f-col-title{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.22);margin-bottom:18px}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.f-col ul a{font-size:13px;color:rgba(255,255,255,.4);transition:color .2s}
+.f-col ul a:hover{color:rgba(255,255,255,.85)}
+.footer-bottom{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.f-copy{font-size:12px;color:rgba(255,255,255,.18)}
+.f-langs{display:flex;gap:4px}
+.f-lang-btn{font-size:11px;font-weight:500;padding:4px 10px;border:none;background:transparent;border-radius:6px;color:rgba(255,255,255,.28);cursor:pointer;transition:all .2s}
+.f-lang-btn.on{background:rgba(255,255,255,.07);color:rgba(255,255,255,.8)}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes fadeScale{from{opacity:0;transform:scale(.97) translateY(16px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--eout),transform .7s var(--eout)}
+.reveal.vis{opacity:1;transform:none}
+.d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}.d3{transition-delay:.3s!important}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){
+  .hero-inner{grid-template-columns:1fr;gap:48px}
+  .corridor-grid{grid-template-columns:1fr}
+  .insight-inner{grid-template-columns:1fr}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+  :root{--nav-h:60px}
+  .nav-links,.lang-switch,.nav-cta{display:none!important}
+  .ham{display:flex}
+  section{padding:72px 5%}
+  .hero-inner{padding:60px 5%}
+  .hero-stats{flex-wrap:wrap;gap:20px}
+  .hstat{border-right:none;padding-right:0;margin-right:0}
+  .clients-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .insight-right{grid-template-columns:1fr}
+  .rate-card.delta{grid-column:unset}
+  .cta-inner{grid-template-columns:1fr;gap:28px}
+  .cta-actions{align-items:flex-start}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:16px;text-align:center}
+}
+@media(max-width:480px){
+  .hero-actions{flex-direction:column;align-items:flex-start}
+  .btn-primary,.btn-secondary{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="/index.html" class="nav-wordmark">Atlas <span>Advisory</span></a>
+  <ul class="nav-links">
+    <li><a href="/index.html"><span data-lang="pt" class="on">Início</span><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
+    <li><a href="/brazil.html"><span data-lang="pt" class="on">Serviços Brasil</span><span data-lang="en">Brazil Services</span><span data-lang="zh">巴西服务</span></a></li>
+    <li><a href="/hongkong.html"><span data-lang="pt" class="on">HK & China</span><span data-lang="en">HK & China</span><span data-lang="zh">香港及中国</span></a></li>
+    <li><a href="/contact.html"><span data-lang="pt" class="on">Contato</span><span data-lang="en">Contact</span><span data-lang="zh">联系我们</span></a></li>
+  </ul>
+  <div class="lang-switch">
+    <button class="lang-btn on" id="lb-pt" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" id="lb-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="lb-zh" onclick="setLang('zh')">中文</button>
+  </div>
+  <a href="/contact.html" class="nav-cta">
+    <span data-lang="pt" class="on">Consulta Gratuita</span>
+    <span data-lang="en">Free Consultation</span>
+    <span data-lang="zh">免费咨询</span>
+  </a>
+  <div class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mmenu">
+  <a href="/index.html"><span data-lang="pt" class="on">Início</span><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+  <a href="/brazil.html"><span data-lang="pt" class="on">Serviços Brasil</span><span data-lang="en">Brazil Services</span><span data-lang="zh">巴西服务</span></a>
+  <a href="/hongkong.html"><span data-lang="pt" class="on">HK & China</span><span data-lang="en">HK & China</span><span data-lang="zh">香港及中国</span></a>
+  <a href="/contact.html"><span data-lang="pt" class="on">Contato</span><span data-lang="en">Contact</span><span data-lang="zh">联系我们</span></a>
+  <div class="ml">
+    <button class="lang-btn on" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('zh')">中文</button>
+  </div>
+  <a href="/contact.html" class="nav-cta"><span data-lang="pt" class="on">Consulta Gratuita</span><span data-lang="en">Free Consultation</span><span data-lang="zh">免费咨询</span></a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-bg-1"></div>
+  <div class="hero-bg-2"></div>
+  <div class="hero-bg-3"></div>
+  <div class="hero-grid"></div>
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- Globe SVG watermark -->
+  <svg class="hero-globe" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="200" cy="200" r="180" fill="none" stroke="white" stroke-width=".8"/>
+    <ellipse cx="200" cy="200" rx="60" ry="180" fill="none" stroke="white" stroke-width=".6"/>
+    <ellipse cx="200" cy="200" rx="120" ry="180" fill="none" stroke="white" stroke-width=".5"/>
+    <ellipse cx="200" cy="200" rx="180" ry="60" fill="none" stroke="white" stroke-width=".5"/>
+    <line x1="20" y1="200" x2="380" y2="200" stroke="white" stroke-width=".6"/>
+    <line x1="20" y1="140" x2="380" y2="140" stroke="white" stroke-width=".4"/>
+    <line x1="20" y1="260" x2="380" y2="260" stroke="white" stroke-width=".4"/>
+    <line x1="200" y1="20" x2="200" y2="380" stroke="white" stroke-width=".5"/>
+    <line x1="140" y1="20" x2="140" y2="380" stroke="white" stroke-width=".3"/>
+    <line x1="260" y1="20" x2="260" y2="380" stroke="white" stroke-width=".3"/>
+  </svg>
+
+  <div class="hero-inner">
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-label">
+        <span class="hero-label-line"></span>
+        <span class="hero-label-text">Atlas Advisory</span>
+        </div>
+
+      <h1 class="hero-h1">
+        <span data-lang="pt" class="on">A ponte entre o Brasil,<br><em>Hong Kong e a China.</em></span>
+        <span data-lang="en">The bridge between Brazil,<br><em>Hong Kong and China.</em></span>
+        <span data-lang="zh">连接巴西、<br><em>香港与中国。</em></span>
+      </h1>
+
+      <p class="hero-sub">
+        <span data-lang="pt" class="on">Ajudamos investidores asiáticos a entrar no Brasil — e empresas brasileiras a crescer na Ásia. Jurídico, tributário e acesso a mercados. Em três idiomas.</span>
+        <span data-lang="en">We help Asian investors enter Brazil — and Brazilian companies grow in Asia. Legal, tax, and market access. In three languages.</span>
+        <span data-lang="zh">我们帮助亚洲投资者进入巴西，也帮助巴西企业拓展亚洲市场。法律、税务和市场准入，三种语言全程服务。</span>
+      </p>
+
+      <p class="hero-tagline">
+        <span data-lang="pt" class="on">"<strong>Seu guia</strong> no Brasil, Hong Kong & China."</span>
+        <span data-lang="en">"<strong>Your guide</strong> across Brazil, Hong Kong & China."</span>
+        <span data-lang="zh">"您在巴西、香港和中国的<strong>向导</strong>。"</span>
+      </p>
+
+      <div class="hero-actions">
+        <a href="/contact.html" class="btn-primary">
+          <span data-lang="pt" class="on">Agendar Consulta Gratuita</span>
+          <span data-lang="en">Book a Free Consultation</span>
+          <span data-lang="zh">预约免费咨询</span>
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+        <a href="/brazil.html" class="btn-secondary">
+          <span data-lang="pt" class="on">Explorar Serviços</span>
+          <span data-lang="en">Explore Services</span>
+          <span data-lang="zh">了解服务</span>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hstat">
+          <div class="hstat-num count-up" data-target="20" data-suffix="+">20+</div>
+          <div class="hstat-label"><span data-lang="pt" class="on">Anos de experiência</span><span data-lang="en">Years experience</span><span data-lang="zh">年经验</span></div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num count-up" data-target="41" data-suffix="">41</div>
+          <div class="hstat-label"><span data-lang="pt" class="on">Serviços disponíveis</span><span data-lang="en">Services available</span><span data-lang="zh">可用服务</span></div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">3</div>
+          <div class="hstat-label"><span data-lang="pt" class="on">Mercados atendidos</span><span data-lang="en">Markets served</span><span data-lang="zh">服务市场</span></div>
+        </div>
+        <div class="hstat">
+          <div class="hstat-num">PT·EN·ZH</div>
+          <div class="hstat-label"><span data-lang="pt" class="on">Idiomas</span><span data-lang="en">Languages</span><span data-lang="zh">服务语言</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT — premium card -->
+    <div class="hero-card">
+      <p class="hero-card-title">
+        <span data-lang="pt" class="on">O corredor Brasil–Ásia</span>
+        <span data-lang="en">The Brazil–Asia corridor</span>
+        <span data-lang="zh">巴西–亚洲走廊</span>
+      </p>
+
+      <!-- Animated corridor -->
+      <div class="corridor-mini">
+        <div class="corridor-nodes">
+          <div class="cn">
+            <div class="cn-dot pulse"></div>
+            <div class="cn-label">BR</div>
+          </div>
+          <div class="cn-line"></div>
+          <div class="cn">
+            <div class="cn-dot" style="background:rgba(191,212,239,.7);"></div>
+            <div class="cn-label">HK</div>
+          </div>
+          <div class="cn-line" style="background:linear-gradient(90deg,rgba(191,212,239,.4),rgba(191,212,239,.15));"></div>
+          <div class="cn">
+            <div class="cn-dot" style="background:rgba(191,212,239,.4);"></div>
+            <div class="cn-label">CN</div>
+          </div>
+        </div>
+        <div class="corridor-label">
+          <span data-lang="pt" class="on">Uma empresa · Dois mercados · Três idiomas</span>
+          <span data-lang="en">One firm · Two markets · Three languages</span>
+          <span data-lang="zh">一家公司 · 两个市场 · 三种语言</span>
+        </div>
+      </div>
+
+      <!-- Key numbers -->
+      <div class="card-stats">
+        <div class="cstat">
+          <div class="cstat-num count-up" data-target="200" data-suffix="M">200M</div>
+          <div class="cstat-body">
+            <div class="cstat-title"><span data-lang="pt" class="on">Consumidores no Brasil</span><span data-lang="en">Brazil consumers</span><span data-lang="zh">巴西消费者</span></div>
+            <div class="cstat-sub"><span data-lang="pt" class="on">Maior mercado da América Latina</span><span data-lang="en">Latin America's largest market</span><span data-lang="zh">拉丁美洲最大市场</span></div>
+          </div>
+        </div>
+        <div class="cstat">
+          <div class="cstat-num">8.25%</div>
+          <div class="cstat-body">
+            <div class="cstat-title"><span data-lang="pt" class="on">Imposto corporativo em HK</span><span data-lang="en">HK corporate tax</span><span data-lang="zh">香港企业税率</span></div>
+            <div class="cstat-sub"><span data-lang="pt" class="on">vs 34% no Brasil — economia real</span><span data-lang="en">vs Brazil's 34% — real savings</span><span data-lang="zh">对比巴西34%——实质节税</span></div>
+          </div>
+        </div>
+        <div class="cstat">
+          <div class="cstat-num">7 <span style="font-size:14px;font-weight:300;font-style:italic;color:rgba(255,255,255,.4)"><span data-lang="pt" class="on">dias</span><span data-lang="en">days</span><span data-lang="zh">天</span></span></div>
+          <div class="cstat-body">
+            <div class="cstat-title"><span data-lang="pt" class="on">Constituição em Hong Kong</span><span data-lang="en">HK company incorporation</span><span data-lang="zh">香港公司注册</span></div>
+            <div class="cstat-sub"><span data-lang="pt" class="on">vs 4–8 semanas no Brasil</span><span data-lang="en">vs 4–8 weeks in Brazil</span><span data-lang="zh">对比巴西4–8周</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TICKER ══ -->
+<div class="ticker">
+  <div class="ticker-track" id="ticker-track">
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Constituição em Hong Kong — 7 dias</span><span data-lang="en">HK incorporation — 7 days</span><span data-lang="zh">香港注册 — 7天</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Incentivos fiscais no Brasil — até 75% de redução no IRPJ</span><span data-lang="en">Brazil tax incentives — up to 75% IRPJ reduction</span><span data-lang="zh">巴西税收激励 — IRPJ最高减免75%</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Trade finance em HK — 3–6% a.a. vs 12–20% no Brasil</span><span data-lang="en">HK trade finance — 3–6% p.a. vs Brazil 12–20%</span><span data-lang="zh">香港贸易融资 — 年利率3–6% vs 巴西12–20%</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Atendimento em português, inglês e mandarim</span><span data-lang="en">Service in Portuguese, English and Mandarin</span><span data-lang="zh">葡语、英语和普通话服务</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Preços de transferência OCDE 2024 — novas oportunidades</span><span data-lang="en">OECD 2024 transfer pricing — new opportunities</span><span data-lang="zh">2024年OECD转让定价 — 新机遇</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Visto de investidor VITEM V — R$500K → residência permanente</span><span data-lang="en">VITEM V investor visa — R$500K → permanent residency</span><span data-lang="zh">VITEM V投资签证 — 50万雷亚尔→永久居留</span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Constituição em Hong Kong — 7 dias</span><span data-lang="en">HK incorporation — 7 days</span><span data-lang="zh">香港注册 — 7天</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Incentivos fiscais no Brasil — até 75% de redução no IRPJ</span><span data-lang="en">Brazil tax incentives — up to 75% IRPJ reduction</span><span data-lang="zh">巴西税收激励 — IRPJ最高减免75%</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Trade finance em HK — 3–6% a.a. vs 12–20% no Brasil</span><span data-lang="en">HK trade finance — 3–6% p.a. vs Brazil 12–20%</span><span data-lang="zh">香港贸易融资 — 年利率3–6% vs 巴西12–20%</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Atendimento em português, inglês e mandarim</span><span data-lang="en">Service in Portuguese, English and Mandarin</span><span data-lang="zh">葡语、英语和普通话服务</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Preços de transferência OCDE 2024 — novas oportunidades</span><span data-lang="en">OECD 2024 transfer pricing — new opportunities</span><span data-lang="zh">2024年OECD转让定价 — 新机遇</span></span>
+    <span class="ticker-item"><span class="ticker-dot"></span><span data-lang="pt" class="on">Visto de investidor VITEM V — R$500K → residência permanente</span><span data-lang="en">VITEM V investor visa — R$500K → permanent residency</span><span data-lang="zh">VITEM V投资签证 — 50万雷亚尔→永久居留</span></span>
+  </div>
+</div>
+<!-- ══ CORRIDOR ══ -->
+<section class="s-corridor">
+  <div class="container">
+    <div class="corridor-grid">
+      <!-- SVG map -->
+      <div class="corridor-svg-wrap reveal">
+        <svg class="corridor-svg" viewBox="0 0 520 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="gBR" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#0F2D52" stop-opacity=".15"/>
+              <stop offset="100%" stop-color="#0F2D52" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="gHK" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#1E4D87" stop-opacity=".12"/>
+              <stop offset="100%" stop-color="#1E4D87" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <!-- grid -->
+          <line x1="0" y1="90" x2="520" y2="90" stroke="#E8E8E5" stroke-width=".8"/>
+          <line x1="0" y1="180" x2="520" y2="180" stroke="#E8E8E5" stroke-width=".8"/>
+          <line x1="0" y1="270" x2="520" y2="270" stroke="#E8E8E5" stroke-width=".8"/>
+          <line x1="130" y1="0" x2="130" y2="360" stroke="#E8E8E5" stroke-width=".8"/>
+          <line x1="260" y1="0" x2="260" y2="360" stroke="#E8E8E5" stroke-width=".8"/>
+          <line x1="390" y1="0" x2="390" y2="360" stroke="#E8E8E5" stroke-width=".8"/>
+          <!-- halos -->
+          <circle cx="100" cy="240" r="44" fill="url(#gBR)"/>
+          <circle cx="406" cy="165" r="36" fill="url(#gHK)"/>
+          <!-- path -->
+          <path class="svg-path" id="cp" d="M 100 240 C 175 170 310 128 406 165"
+            fill="none" stroke="#0F2D52" stroke-width="1.5" stroke-dasharray="5 4" opacity=".4"/>
+          <!-- Atlas hub -->
+          <circle cx="255" cy="200" r="22" fill="none" stroke="#BFD4EF" stroke-width="1" opacity=".4"/>
+          <circle cx="255" cy="200" r="5.5" fill="#0F2D52" opacity=".6" filter="url(#glow)"/>
+          <text x="255" y="232" text-anchor="middle" font-family="'Playfair Display',serif" font-size="11" font-style="italic" fill="#0F2D52" opacity=".55">Atlas</text>
+          <!-- BR -->
+          <circle cx="100" cy="240" r="8" fill="none" stroke="#0F2D52" stroke-width="1.5" opacity=".6"/>
+          <circle cx="100" cy="240" r="4" fill="#0F2D52" filter="url(#glow)"/>
+          <text x="100" y="278" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="500" fill="#2E2E2A" letter-spacing=".08em">BRASIL</text>
+          <text x="100" y="291" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#9A9A94">São Paulo</text>
+          <!-- HK -->
+          <circle cx="406" cy="165" r="7" fill="none" stroke="#1E4D87" stroke-width="1.5" opacity=".6"/>
+          <circle cx="406" cy="165" r="3.5" fill="#1E4D87" filter="url(#glow)"/>
+          <text x="406" y="200" text-anchor="middle" font-family="'Inter',sans-serif" font-size="10" font-weight="500" fill="#2E2E2A" letter-spacing=".08em">HONG KONG</text>
+          <!-- CN -->
+          <circle cx="468" cy="148" r="3" fill="#1E4D87" opacity=".45"/>
+          <text x="468" y="136" text-anchor="middle" font-family="'Inter',sans-serif" font-size="9" fill="#9A9A94">CHINA</text>
+          <line x1="406" y1="165" x2="460" y2="150" stroke="#BFD4EF" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+        </svg>
+      </div>
+      <!-- text -->
+      <div class="reveal d2">
+        <div class="eyebrow"><span data-lang="pt" class="on">O Corredor</span><span data-lang="en">The Corridor</span><span data-lang="zh">走廊</span></div>
+        <h2 class="s-title"><span data-lang="pt" class="on">Navegar entre fronteiras exige <em>expertise.</em></span><span data-lang="en">Navigating borders requires <em>true expertise.</em></span><span data-lang="zh">跨越边界需要<em>真正的专业知识。</em></span></h2>
+        <p class="s-lead" style="margin-bottom:32px"><span data-lang="pt" class="on">Três sistemas jurídicos, três moedas e três culturas de negócios distintas separam o Brasil da Ásia. Com mais de 20 anos de experiência vivida nos três mercados, a Atlas Advisory é o guia que conecta os dois lados — do início ao fim.</span><span data-lang="en">Three legal systems, three currencies, and three distinct business cultures separate Brazil from Asia. With 20+ years of lived experience across all three markets, Atlas Advisory is the guide that connects both sides — end to end.</span><span data-lang="zh">三种法律体系、三种货币和三种截然不同的商业文化将巴西与亚洲分隔开来。凭借在三个市场超过20年的亲身经验，Atlas Advisory是连接双方的向导——全程服务。</span></p>
+        <a href="/contact.html" class="btn-primary" style="background:var(--navy);color:#fff;display:inline-flex">
+          <span data-lang="pt" class="on">Falar com um Especialista</span>
+          <span data-lang="en">Talk to an Expert</span>
+          <span data-lang="zh">联系专家</span>
+          <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CLIENTS ══ -->
+<section class="s-clients">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow"><span data-lang="pt" class="on">Nossos Clientes</span><span data-lang="en">Who We Serve</span><span data-lang="zh">我们的客户</span></div>
+      <h2 class="s-title"><span data-lang="pt" class="on">Para quem <em>trabalhamos</em></span><span data-lang="en">Who we <em>work with</em></span><span data-lang="zh">我们的<em>服务对象</em></span></h2>
+    </div>
+    <div class="clients-grid">
+      <div class="client-card reveal d1">
+        <div class="cc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg></div>
+        <h3 class="cc-title"><span data-lang="pt" class="on">Investidores chineses e de Hong Kong</span><span data-lang="en">Chinese & HK Investors</span><span data-lang="zh">中国及香港投资者</span></h3>
+        <p class="cc-desc"><span data-lang="pt" class="on">Querendo entrar no Brasil de forma estruturada — via empresa em Hong Kong ou diretamente. Jurídico, tributário e operação completa gerenciados por nós.</span><span data-lang="en">Entering Brazil with a structured, compliant entity — via HK holding or direct investment. Legal, tax, and full operations managed by us.</span><span data-lang="zh">希望以结构化方式进入巴西——通过香港控股公司或直接投资。法律、税务和全部运营事项由我们管理。</span></p>
+      </div>
+      <div class="client-card reveal d2">
+        <div class="cc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg></div>
+        <h3 class="cc-title"><span data-lang="pt" class="on">Empresas brasileiras</span><span data-lang="en">Brazilian Companies</span><span data-lang="zh">巴西企业</span></h3>
+        <p class="cc-desc"><span data-lang="pt" class="on">Buscando acesso ao mercado asiático via Hong Kong — holding, comércio exterior, financiamento a 3–6% a.a. ou expansão regional para a China.</span><span data-lang="en">Accessing Asian markets via Hong Kong — holding structures, trade, financing at 3–6% p.a., or China regional expansion.</span><span data-lang="zh">通过香港拓展亚洲市场——控股架构、贸易、3–6%年利率融资或中国区域扩张。</span></p>
+      </div>
+      <div class="client-card reveal d3">
+        <div class="cc-icon"><svg viewBox="0 0 24 24"><path d="M3 6l9-4 9 4v12l-9 4-9-4V6z"/><path d="M12 2v20M3 6l9 4 9-4"/></svg></div>
+        <h3 class="cc-title"><span data-lang="pt" class="on">Exportadores e importadores</span><span data-lang="en">Exporters & Importers</span><span data-lang="zh">进出口商</span></h3>
+        <p class="cc-desc"><span data-lang="pt" class="on">Gerenciando fluxos comerciais entre Brasil e China — agronegócio, manufatura, atacado. Trade finance, cartas de crédito e logística coordenadas em HK.</span><span data-lang="en">Managing trade flows between Brazil and China — agribusiness, manufacturing, wholesale. Trade finance, L/C, and logistics coordinated through HK.</span><span data-lang="zh">管理巴西与中国之间的贸易流通——农业、制造业、批发贸易。贸易融资、信用证和物流通过香港统筹协调。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHY ══ -->
+<section class="s-why">
+  <div class="container">
+    <div class="why-header reveal">
+      <div class="eyebrow"><span data-lang="pt" class="on">Por que a Atlas Advisory</span><span data-lang="en">Why Atlas Advisory</span><span data-lang="zh">为何选择Atlas Advisory</span></div>
+      <h2 class="s-title"><span data-lang="pt" class="on">O que nos <em>diferencia</em></span><span data-lang="en">What sets us <em>apart</em></span><span data-lang="zh">我们的<em>差异化优势</em></span></h2>
+      <p class="s-lead"><span data-lang="pt" class="on">Uma combinação única de experiência, idiomas e presença nos três mercados que nenhuma outra firma oferece.</span><span data-lang="en">A unique combination of experience, languages, and presence across three markets that no other firm offers.</span><span data-lang="zh">在三个市场中独一无二的经验、语言和存在组合，任何其他公司都无法提供。</span></p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal d1">
+        <div class="why-num">01</div>
+        <h3 class="why-title"><span data-lang="pt" class="on">20+ anos de experiência real nos três mercados</span><span data-lang="en">20+ years of real experience across all three markets</span><span data-lang="zh">三个市场20余年真实经验</span></h3>
+        <p class="why-desc"><span data-lang="pt" class="on">Não é teoria. Vivemos e trabalhamos no Brasil, em Hong Kong e na China. É conhecimento prático do corredor que seus negócios precisam navegar — construído ao longo de décadas.</span><span data-lang="en">Not theory. We have lived and worked in Brazil, Hong Kong, and China. It is practical knowledge of the corridor your business needs to navigate — built over decades.</span><span data-lang="zh">这不是理论，而是我们曾居住并工作于巴西、香港和中国所积累的实践知识。是数十年来在您的业务所需走廊中构建的能力。</span></p>
+      </div>
+      <div class="why-card reveal d2">
+        <div class="why-num">02</div>
+        <h3 class="why-title"><span data-lang="pt" class="on">Três idiomas. Um único ponto de contato.</span><span data-lang="en">Three languages. One contact point.</span><span data-lang="zh">三种语言，一个联系人。</span></h3>
+        <p class="why-desc"><span data-lang="pt" class="on">Português, inglês e mandarim simplificado. Você fala com a gente no seu idioma. Nós cuidamos de todo o resto — das autoridades brasileiras aos bancos de HK e compradores chineses.</span><span data-lang="en">Portuguese, English and Simplified Mandarin. You speak to us in your language. We handle everything else — from Brazilian authorities to HK banks and Chinese buyers.</span><span data-lang="zh">葡萄牙语、英语和简体普通话。您用自己的语言与我们沟通，其余的一切由我们处理——从巴西当局到香港银行再到中国买家。</span></p>
+      </div>
+      <div class="why-card reveal d1">
+        <div class="why-num">03</div>
+        <h3 class="why-title"><span data-lang="pt" class="on">Plataforma completa — 41 serviços em dois mercados</span><span data-lang="en">Full platform — 41 services across two markets</span><span data-lang="zh">全方位平台——两个市场41项服务</span></h3>
+        <p class="why-desc"><span data-lang="pt" class="on">Jurídico, fiscal, administração e desenvolvimento de mercado. Brasil e HK. Tudo coordenado por uma única firma — sem você precisar gerenciar múltiplos fornecedores em países diferentes.</span><span data-lang="en">Legal, tax, administration, and market development. Brazil and HK. All coordinated by one firm — without you managing multiple vendors across countries.</span><span data-lang="zh">法律、税务、行政和市场拓展。巴西和香港，全部由一家公司统筹协调——您无需在不同国家管理多个供应商。</span></p>
+      </div>
+      <div class="why-card reveal d2">
+        <div class="why-num">04</div>
+        <h3 class="why-title"><span data-lang="pt" class="on">O único guia bilíngue (PT+ZH) do corredor</span><span data-lang="en">The only bilingual (PT+ZH) guide in the corridor</span><span data-lang="zh">走廊中唯一的双语（葡+中）向导</span></h3>
+        <p class="why-desc"><span data-lang="pt" class="on">Quase nenhuma firma atende o corredor Brasil–Ásia com fluência em português e mandarim. A Atlas Advisory ocupa uma posição praticamente inexplorada — e irreplicável sem décadas de presença nos dois lados.</span><span data-lang="en">Almost no firm serves the Brazil–Asia corridor with fluency in Portuguese and Mandarin. Atlas Advisory occupies a virtually untapped position — irreplicable without decades of presence on both sides.</span><span data-lang="zh">几乎没有任何公司能以葡萄牙语和普通话流利地服务巴西–亚洲走廊。Atlas Advisory占据着一个几乎空白的位置——没有数十年在双边的经验，这种位置无法复制。</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICES ══ -->
+<section class="s-services">
+  <div class="container">
+    <div class="services-header">
+      <div class="reveal">
+        <div class="eyebrow"><span data-lang="pt" class="on">Serviços</span><span data-lang="en">Services</span><span data-lang="zh">服务</span></div>
+        <h2 class="s-title"><span data-lang="pt" class="on">Dois mercados,<br><em>uma plataforma completa</em></span><span data-lang="en">Two markets,<br><em>one complete platform</em></span><span data-lang="zh">两个市场，<br><em>一个完整平台</em></span></h2>
+      </div>
+    </div>
+    <div class="services-grid">
+      <a href="/brazil.html" class="svc-card brazil reveal d1">
+        <div class="svc-eyebrow"><span data-lang="pt" class="on">Serviços no Brasil · 18 serviços</span><span data-lang="en">Brazil Services · 18 services</span><span data-lang="zh">巴西服务 · 18项</span></div>
+        <h3 class="svc-title"><span data-lang="pt" class="on">Invista no Brasil.<br>Nós cuidamos de tudo.</span><span data-lang="en">Invest in Brazil.<br>We handle everything.</span><span data-lang="zh">投资巴西，<br>一切交给我们。</span></h3>
+        <p class="svc-desc"><span data-lang="pt" class="on">Da constituição da empresa à estratégia de crescimento — gerenciamos toda a sua operação no Brasil, com relatórios em inglês e mandarim para sócios em HK ou China.</span><span data-lang="en">From company formation to growth strategy — we manage your entire Brazil operation, with reporting in English and Mandarin for HK or China-based owners.</span><span data-lang="zh">从公司注册到增长战略，我们管理您在巴西的全部业务，以英语和普通话向香港或中国的业主提供报告。</span></p>
+        <div class="svc-pillars">
+          <span class="svc-pill"><span data-lang="pt" class="on">Jurídico & Societário</span><span data-lang="en">Legal & Corporate</span><span data-lang="zh">法律与公司</span></span>
+          <span class="svc-pill"><span data-lang="pt" class="on">Tributário & Fiscal</span><span data-lang="en">Tax & Finance</span><span data-lang="zh">税务与财务</span></span>
+          <span class="svc-pill"><span data-lang="pt" class="on">Administração</span><span data-lang="en">Administration</span><span data-lang="zh">企业行政</span></span>
+          <span class="svc-pill"><span data-lang="pt" class="on">Crescimento de Mercado</span><span data-lang="en">Market Growth</span><span data-lang="zh">市场增长</span></span>
+        </div>
+        <span class="svc-cta"><span data-lang="pt" class="on">Ver todos os serviços</span><span data-lang="en">See all services</span><span data-lang="zh">查看全部服务</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
+      <a href="/hongkong.html" class="svc-card hk reveal d2">
+        <div class="svc-eyebrow"><span data-lang="pt" class="on">Hong Kong & China · 23 serviços</span><span data-lang="en">HK & China Services · 23 services</span><span data-lang="zh">香港及中国服务 · 23项</span></div>
+        <h3 class="svc-title"><span data-lang="pt" class="on">Sua empresa em HK.<br>Sua porta para o mundo.</span><span data-lang="en">Your HK entity.<br>Your gateway to the world.</span><span data-lang="zh">您的香港公司。<br>您通往世界的门户。</span></h3>
+        <p class="svc-desc"><span data-lang="pt" class="on">Abrimos sua empresa em HK em 7 dias, estruturamos o planejamento tributário, abrimos conta bancária e gerenciamos sua entrada no Brasil — com relatórios em português para clientes brasileiros.</span><span data-lang="en">We set up your HK company in 7 days, structure tax planning, open your bank account, and manage your Brazil entry — with Portuguese-language reporting for Brazilian clients.</span><span data-lang="zh">我们在7天内为您注册香港公司、设计税务规划、开设银行账户，并管理您进入巴西市场——以葡萄牙语向巴西客户提供报告。</span></p>
+        <div class="svc-pillars">
+          <span class="svc-pill"><span data-lang="pt" class="on">Jurídico & Societário</span><span data-lang="en">Legal & Corporate</span><span data-lang="zh">法律与公司</span></span>
+          <span class="svc-pill"><span data-lang="pt" class="on">Planejamento Tributário</span><span data-lang="en">Tax Planning</span><span data-lang="zh">税务规划</span></span>
+          <span class="svc-pill"><span data-lang="pt" class="on">Bancário & Financeiro</span><span data-lang="en">Banking & Finance</span><span data-lang="zh">银行与金融</span></span>
+          <span class="svc-pill"><span data-lang="pt" class="on">Mercado Chinês</span><span data-lang="en">China Market</span><span data-lang="zh">中国市场</span></span>
+        </div>
+        <span class="svc-cta"><span data-lang="pt" class="on">Ver todos os serviços</span><span data-lang="en">See all services</span><span data-lang="zh">查看全部服务</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+<!-- ══ INSIGHT QUOTE ══ -->
+<section class="s-insight">
+  <div class="insight-inner">
+    <div class="reveal">
+      <div class="eyebrow"><span data-lang="pt" class="on">A vantagem que poucos conhecem</span><span data-lang="en">The advantage few know</span><span data-lang="zh">鲜为人知的优势</span></div>
+      <blockquote class="insight-quote">
+        <span data-lang="pt" class="on">"A maioria das empresas brasileiras chega na China financiando suas operações a 18% ao ano. As que vencem chegam financiadas a 4%. A diferença é Hong Kong."</span>
+        <span data-lang="en">"Most Brazilian companies enter China financing operations at 18% per year. The ones that win do it at 4%. The difference is Hong Kong."</span>
+        <span data-lang="zh">"大多数巴西企业进入中国时，运营融资成本高达年利率18%。而成功者的成本仅为4%。差距就在于——香港。"</span>
+      </blockquote>
+      <p class="insight-attr">
+        <span data-lang="pt" class="on">Atlas Advisory — 20 anos no corredor Brasil–Ásia</span>
+        <span data-lang="en">Atlas Advisory — 20 years in the Brazil–Asia corridor</span>
+        <span data-lang="zh">Atlas Advisory — 20年深耕巴西–亚洲走廊</span>
+      </p>
+    </div>
+    <div class="reveal d2">
+      <div class="insight-right">
+        <div class="rate-card bad">
+          <div class="rate-label"><span data-lang="pt" class="on">Crédito corporativo no Brasil</span><span data-lang="en">Brazilian corporate credit</span><span data-lang="zh">巴西企业信贷</span></div>
+          <div class="rate-num">12–20%</div>
+          <div class="rate-sub"><span data-lang="pt" class="on">Taxa anual típica — estruturalmente caro</span><span data-lang="en">Typical annual rate — structurally expensive</span><span data-lang="zh">典型年利率——结构性高成本</span></div>
+        </div>
+        <div class="rate-card good">
+          <div class="rate-label"><span data-lang="pt" class="on">Trade finance em Hong Kong</span><span data-lang="en">HK trade finance</span><span data-lang="zh">香港贸易融资</span></div>
+          <div class="rate-num">3–6%</div>
+          <div class="rate-sub"><span data-lang="pt" class="on">Taxa anual — vantagem competitiva estrutural</span><span data-lang="en">Annual rate — structural competitive advantage</span><span data-lang="zh">年利率——结构性竞争优势</span></div>
+        </div>
+        <div class="rate-card delta">
+          <div class="rate-label"><span data-lang="pt" class="on">Economia anual em linha de US$5M</span><span data-lang="en">Annual saving on US$5M facility</span><span data-lang="zh">500万美元融资额度的年度节省</span></div>
+          <div class="rate-num">~R$920K</div>
+          <div class="rate-sub"><span data-lang="pt" class="on">Por ano — cobre os honorários da Atlas Advisory muitas vezes. Esta é a vantagem que transforma empresas brasileiras na Ásia.</span><span data-lang="en">Per year — covers Atlas Advisory fees many times over. This is the advantage that transforms Brazilian companies in Asia.</span><span data-lang="zh">每年——可抵消Atlas Advisory服务费的数倍。这正是使巴西企业在亚洲脱颖而出的关键优势。</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<section class="s-cta">
+  <div class="cta-inner">
+    <div class="reveal">
+      <h2 class="cta-title">
+        <span data-lang="pt" class="on">Pronto para começar?<br><em>Vamos conversar.</em></span>
+        <span data-lang="en">Ready to get started?<br><em>Let's talk.</em></span>
+        <span data-lang="zh">准备好了吗？<br><em>让我们谈谈。</em></span>
+      </h2>
+      <p class="cta-sub">
+        <span data-lang="pt" class="on">30 minutos. Sem compromisso. Em português, inglês ou mandarim — você escolhe. Respondemos em até 24 horas.</span>
+        <span data-lang="en">30 minutes. No commitment. In Portuguese, English or Mandarin — your choice. We respond within 24 hours.</span>
+        <span data-lang="zh">30分钟。无需承诺。葡萄牙语、英语或普通话——由您选择。24小时内回复。</span>
+      </p>
+    </div>
+    <div class="cta-actions reveal d2">
+      <a href="/contact.html" class="btn-cta-primary">
+        <span data-lang="pt" class="on">Agendar Consulta Gratuita</span>
+        <span data-lang="en">Book Free Consultation</span>
+        <span data-lang="zh">预约免费咨询</span>
+        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="f-brand-name">Atlas Advisory</div>
+      <p class="f-tagline"><span data-lang="pt" class="on">Seu guia no Brasil, Hong Kong & China — jurídico, tributário e acesso a mercados.</span><span data-lang="en">Your guide across Brazil, Hong Kong & China — legal, tax, and market access.</span><span data-lang="zh">您在巴西、香港和中国的向导——法律、税务和市场准入。</span></p>
+      <div class="f-contact"></div>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title"><span data-lang="pt" class="on">Brasil</span><span data-lang="en">Brazil</span><span data-lang="zh">巴西</span></div>
+      <ul>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Constituição de empresa</span><span data-lang="en">Company incorporation</span><span data-lang="zh">公司注册</span></a></li>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Incentivos fiscais</span><span data-lang="en">Tax incentives</span><span data-lang="zh">税收激励</span></a></li>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Administração</span><span data-lang="en">Administration</span><span data-lang="zh">企业行政</span></a></li>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Desenvolvimento de mercado</span><span data-lang="en">Market development</span><span data-lang="zh">市场开发</span></a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Hong Kong & China</div>
+      <ul>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Empresa em HK</span><span data-lang="en">HK company setup</span><span data-lang="zh">香港公司注册</span></a></li>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Planejamento tributário</span><span data-lang="en">Tax planning</span><span data-lang="zh">税务规划</span></a></li>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Acesso bancário</span><span data-lang="en">Banking access</span><span data-lang="zh">银行开户</span></a></li>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Mercado chinês</span><span data-lang="en">China market</span><span data-lang="zh">中国市场</span></a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title"><span data-lang="pt" class="on">Atlas Advisory</span><span data-lang="en">Atlas Advisory</span><span data-lang="zh">关于我们</span></div>
+      <ul>
+        <li><a href="/contact.html"><span data-lang="pt" class="on">Sobre nós</span><span data-lang="en">About us</span><span data-lang="zh">关于我们</span></a></li>
+        <li><a href="/contact.html"><span data-lang="pt" class="on">Contato</span><span data-lang="en">Contact</span><span data-lang="zh">联系我们</span></a></li>
+        <li><a href="/contact.html"><span data-lang="pt" class="on">Consulta gratuita</span><span data-lang="en">Free consultation</span><span data-lang="zh">免费咨询</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="f-copy">© 2026 Atlas Advisory · atlasadvisory.com.br</span>
+    <div class="f-langs">
+      <button class="f-lang-btn on" id="flb-pt" onclick="setLang('pt')">PT</button>
+      <button class="f-lang-btn" id="flb-en" onclick="setLang('en')">EN</button>
+      <button class="f-lang-btn" id="flb-zh" onclick="setLang('zh')">中文</button>
+    </div>
+  </div>
+</footer>
+
+<script>
+// LANG
+let lang='pt';
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('[data-lang]').forEach(el=>el.classList.toggle('on',el.dataset.lang===l));
+  ['pt','en','zh'].forEach(x=>{
+    const b=document.getElementById('lb-'+x),fb=document.getElementById('flb-'+x);
+    if(b)b.classList.toggle('on',x===l);
+    if(fb)fb.classList.toggle('on',x===l);
+  });
+  document.querySelectorAll('.mobile-menu .lang-btn').forEach(b=>{
+    const t=b.textContent.trim();
+    b.classList.toggle('on',(t==='PT'&&l==='pt')||(t==='EN'&&l==='en')||(t==='中文'&&l==='zh'));
+  });
+  document.documentElement.lang=l==='zh'?'zh-Hans':l;
+  try{localStorage.setItem('atlas_lang',l);}catch(e){}
+}
+(function(){
+  let s;try{s=localStorage.getItem('atlas_lang');}catch(e){}
+  if(s&&['pt','en','zh'].includes(s)){setLang(s);return;}
+  const n=(navigator.language||'').toLowerCase();
+  if(n.startsWith('zh'))setLang('zh');
+  else if(n.startsWith('en'))setLang('en');
+  else setLang('pt');
+})();
+
+// NAV scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>10),{passive:true});
+
+// MOBILE
+function toggleMenu(){document.getElementById('ham').classList.toggle('open');document.getElementById('mmenu').classList.toggle('open');}
+document.addEventListener('click',e=>{
+  const m=document.getElementById('mmenu'),h=document.getElementById('ham');
+  if(m&&m.classList.contains('open')&&!m.contains(e.target)&&!h.contains(e.target)){m.classList.remove('open');h.classList.remove('open');}
+});
+
+// REVEAL
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}});
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// CORRIDOR PATH DRAW
+const po=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.svg-path').forEach(p=>p.classList.add('drawn'));
+      po.unobserve(e.target);
+    }
+  });
+},{threshold:.3});
+document.querySelectorAll('.corridor-svg-wrap').forEach(s=>po.observe(s));
+
+// COUNT UP
+function animateCount(el){
+  const target=parseInt(el.dataset.target),suffix=el.dataset.suffix||'';
+  const dur=1600,start=performance.now();
+  function step(now){
+    const p=Math.min((now-start)/dur,1);
+    const ease=1-Math.pow(1-p,3);
+    el.textContent=Math.floor(ease*target)+suffix;
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target+suffix;
+  }
+  requestAnimationFrame(step);
+}
+const co=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.count-up').forEach(animateCount);
+      co.unobserve(e.target);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('.hero-inner,.card-stats').forEach(el=>co.observe(el));
+</script>
+</body>
+</html>

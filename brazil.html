@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serviços no Brasil — Atlas Advisory</title>
+<meta name="description" content="Constituição de empresa, planejamento tributário, administração e desenvolvimento de mercado no Brasil para investidores de Hong Kong e China.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════
+   ROOT & RESET
+══════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --white:    #FAFAF8;
+  --g50:      #F3F3F1;
+  --g100:     #E8E8E5;
+  --g200:     #D1D1CC;
+  --g400:     #9A9A94;
+  --g600:     #6B6B65;
+  --g800:     #2E2E2A;
+  --ink:      #18181A;
+  --navy:     #0F2D52;
+  --navy7:    #163A68;
+  --navy5:    #1E4D87;
+  --navy2:    #BFD4EF;
+  --navy05:   #EEF3FA;
+  --serif:    'Playfair Display', Georgia, serif;
+  --sans:     'Inter', system-ui, sans-serif;
+  --nav-h:    68px;
+  --ease:     cubic-bezier(.4,0,.2,1);
+  --eout:     cubic-bezier(0,0,.2,1);
+}
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: var(--sans); background: var(--white); color: var(--ink); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+a { text-decoration: none; color: inherit; }
+
+/* ══════════════════════════════════════
+   LANG
+══════════════════════════════════════ */
+[data-lang] { display: none !important; }
+[data-lang].on { display: revert !important; }
+span[data-lang].on, td[data-lang].on { display: inline !important; }
+li[data-lang].on { display: list-item !important; }
+
+/* ══════════════════════════════════════
+   NAV — identical to index
+══════════════════════════════════════ */
+.nav {
+  position: fixed; top:0; left:0; right:0;
+  height: var(--nav-h); z-index: 900;
+  display: flex; align-items: center; padding: 0 5%;
+  background: rgba(250,250,248,0.92);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+  transition: border-color .3s, box-shadow .3s;
+}
+.nav.scrolled { border-color: var(--g100); box-shadow: 0 1px 20px rgba(15,45,82,.06); }
+.nav-wordmark { font-family: var(--serif); font-size: 22px; font-weight: 500; color: var(--navy); letter-spacing: -.01em; margin-right: auto; white-space: nowrap; }
+.nav-wordmark span { color: var(--g400); font-weight: 400; }
+.nav-links { display: flex; align-items: center; gap: 36px; list-style: none; margin-right: 32px; }
+.nav-links a { font-size: 13px; font-weight: 400; color: var(--g600); letter-spacing: .01em; transition: color .2s; white-space: nowrap; }
+.nav-links a:hover, .nav-links a.active { color: var(--navy); }
+.nav-links a.active { font-weight: 500; }
+.lang-switch { display: flex; align-items: center; gap: 2px; padding: 4px; background: var(--g50); border-radius: 8px; margin-right: 20px; }
+.lang-btn { font-family: var(--sans); font-size: 11px; font-weight: 500; padding: 5px 10px; border: none; border-radius: 6px; background: transparent; color: var(--g400); cursor: pointer; transition: all .2s; letter-spacing: .04em; }
+.lang-btn.on { background: var(--white); color: var(--navy); box-shadow: 0 1px 4px rgba(15,45,82,.1); }
+.nav-cta { font-size: 13px; font-weight: 500; padding: 10px 22px; background: var(--navy); color: var(--white); border-radius: 8px; letter-spacing: .01em; transition: background .2s, transform .15s; white-space: nowrap; }
+.nav-cta:hover { background: var(--navy7); transform: translateY(-1px); }
+.ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 6px; }
+.ham span { width: 22px; height: 1.5px; background: var(--navy); border-radius: 2px; transition: .3s; }
+.ham.open span:nth-child(1) { transform: rotate(45deg) translate(4px,4px); }
+.ham.open span:nth-child(2) { opacity: 0; }
+.ham.open span:nth-child(3) { transform: rotate(-45deg) translate(4px,-4px); }
+.mobile-menu { display: none; position: fixed; top: var(--nav-h); left:0; right:0; background: var(--white); border-bottom: 1px solid var(--g100); padding: 24px 5% 32px; z-index: 899; box-shadow: 0 8px 32px rgba(15,45,82,.08); }
+.mobile-menu.open { display: block; }
+.mobile-menu a { display: block; font-size: 15px; color: var(--g800); padding: 13px 0; border-bottom: 1px solid var(--g50); transition: color .2s; }
+.mobile-menu a:hover { color: var(--navy); }
+.mobile-menu .ml { display: flex; gap: 8px; margin-top: 20px; }
+.mobile-menu .lang-btn { font-size: 13px; padding: 8px 16px; background: var(--g50); border-radius: 8px; color: var(--g600); }
+.mobile-menu .lang-btn.on { background: var(--navy05); color: var(--navy); }
+.mobile-menu .nav-cta { display: block; text-align: center; margin-top: 16px; padding: 14px; }
+
+/* ══════════════════════════════════════
+   PAGE HERO
+══════════════════════════════════════ */
+.page-hero {
+  padding-top: var(--nav-h);
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  min-height: 480px;
+  display: flex; align-items: center;
+}
+.page-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 80% at 80% 50%, rgba(255,255,255,.04) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(255,255,255,.03) 0%, transparent 50%);
+}
+.ph-grid {
+  position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 75%);
+}
+.ph-inner {
+  position: relative; z-index: 2;
+  max-width: 1160px; margin: 0 auto;
+  padding: 80px 5%;
+  width: 100%;
+}
+.ph-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: var(--navy2); margin-bottom: 22px;
+  opacity: 0; animation: fadeUp .7s var(--eout) .1s forwards;
+}
+.ph-tag::before { content: ''; width: 20px; height: 1.5px; background: var(--navy2); }
+.ph-h1 {
+  font-family: var(--serif);
+  font-size: clamp(32px, 5vw, 60px);
+  font-weight: 400; line-height: 1.1;
+  letter-spacing: -.02em; color: #fff;
+  margin-bottom: 20px;
+  opacity: 0; animation: fadeUp .7s var(--eout) .2s forwards;
+}
+.ph-h1 em { font-style: italic; color: var(--navy2); }
+.ph-sub {
+  font-size: 17px; font-weight: 300; line-height: 1.75;
+  color: rgba(255,255,255,.6); max-width: 540px;
+  margin-bottom: 36px;
+  opacity: 0; animation: fadeUp .7s var(--eout) .3s forwards;
+}
+.ph-actions {
+  display: flex; align-items: center; gap: 14px; flex-wrap: wrap;
+  opacity: 0; animation: fadeUp .7s var(--eout) .4s forwards;
+}
+.btn-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 500; padding: 13px 26px;
+  background: #fff; color: var(--navy);
+  border-radius: 8px; letter-spacing: .01em;
+  transition: transform .15s, box-shadow .2s;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.15); }
+.btn-white svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; transition: transform .2s; }
+.btn-white:hover svg { transform: translateX(3px); }
+.btn-outline-white {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 14px; font-weight: 400; padding: 13px 26px;
+  border: 1.5px solid rgba(255,255,255,.25);
+  color: rgba(255,255,255,.75); border-radius: 8px;
+  transition: border-color .2s, color .2s;
+}
+.btn-outline-white:hover { border-color: rgba(255,255,255,.5); color: #fff; }
+
+/* Stats row inside hero */
+.ph-stats {
+  display: flex; gap: 0;
+  margin-top: 56px; padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,.1);
+  opacity: 0; animation: fadeUp .7s var(--eout) .5s forwards;
+}
+.ph-stat { padding-right: 40px; margin-right: 40px; border-right: 1px solid rgba(255,255,255,.1); }
+.ph-stat:last-child { border-right: none; padding-right: 0; margin-right: 0; }
+.ph-stat-num { font-family: var(--serif); font-size: 28px; font-weight: 400; color: #fff; line-height: 1; margin-bottom: 4px; }
+.ph-stat-label { font-size: 11px; font-weight: 400; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.35); }
+
+/* ══════════════════════════════════════
+   SECTION BASE
+══════════════════════════════════════ */
+section { padding: 96px 5%; }
+.container { max-width: 1160px; margin: 0 auto; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--navy5); margin-bottom: 14px;
+}
+.eyebrow::before { content: ''; width: 20px; height: 1.5px; background: var(--navy5); }
+.s-title { font-family: var(--serif); font-size: clamp(26px,3.5vw,42px); font-weight: 400; line-height: 1.15; letter-spacing: -.02em; color: var(--ink); margin-bottom: 14px; }
+.s-title em { font-style: italic; color: var(--navy); }
+.s-lead { font-size: 17px; font-weight: 300; line-height: 1.75; color: var(--g600); max-width: 560px; }
+
+/* ══════════════════════════════════════
+   WHY BRAZIL
+══════════════════════════════════════ */
+.s-why { background: var(--g50); }
+.why-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 16px;
+  margin-top: 48px;
+}
+.why-card {
+  background: var(--white); border: 1px solid var(--g100);
+  border-radius: 14px; padding: 28px;
+  transition: transform .3s var(--ease), box-shadow .3s, border-color .3s;
+}
+.why-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(15,45,82,.08); border-color: var(--navy2); }
+.why-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--navy05); display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+.why-icon svg { width: 20px; height: 20px; stroke: var(--navy5); fill: none; stroke-width: 1.5; }
+.why-label { font-size: 11px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--navy5); margin-bottom: 6px; }
+.why-title { font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
+.why-desc { font-size: 13px; color: var(--g600); line-height: 1.7; }
+
+/* ══════════════════════════════════════
+   JOURNEY
+══════════════════════════════════════ */
+.s-journey { background: var(--white); }
+.journey-steps {
+  display: grid; grid-template-columns: repeat(6,1fr);
+  gap: 0; margin-top: 56px; position: relative;
+}
+.journey-steps::before {
+  content: ''; position: absolute;
+  top: 20px; left: 20px; right: 20px; height: 1.5px;
+  background: linear-gradient(90deg, var(--navy2), var(--navy));
+}
+.j-step { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 8px; }
+.j-dot {
+  width: 40px; height: 40px; border-radius: 50%;
+  background: var(--white); border: 2px solid var(--navy2);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif); font-size: 14px; font-weight: 500;
+  color: var(--navy); margin-bottom: 16px; position: relative; z-index: 1;
+  transition: all .3s;
+}
+.j-step:hover .j-dot { background: var(--navy); border-color: var(--navy); color: #fff; }
+.j-phase { font-size: 9px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--navy5); margin-bottom: 5px; }
+.j-title { font-family: var(--serif); font-size: 13px; font-weight: 500; color: var(--ink); margin-bottom: 6px; line-height: 1.3; }
+.j-services { font-size: 11px; color: var(--g600); line-height: 1.5; }
+
+/* ══════════════════════════════════════
+   PILLARS
+══════════════════════════════════════ */
+.s-pillars { background: var(--g50); }
+.pillar-tabs {
+  display: flex; gap: 8px; flex-wrap: wrap;
+  margin-bottom: 40px; margin-top: 48px;
+}
+.ptab {
+  font-size: 13px; font-weight: 500; padding: 10px 20px;
+  border-radius: 8px; border: 1.5px solid var(--g200);
+  background: var(--white); color: var(--g600);
+  cursor: pointer; transition: all .2s;
+  letter-spacing: .01em;
+}
+.ptab:hover { border-color: var(--navy2); color: var(--navy); }
+.ptab.on { background: var(--navy); border-color: var(--navy); color: #fff; }
+
+.pillar-panel { display: none; }
+.pillar-panel.on { display: block; }
+
+.pillar-header {
+  display: flex; align-items: center; gap: 16px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--navy);
+  margin-bottom: 32px;
+}
+.p-num { font-family: var(--serif); font-size: 48px; font-weight: 400; color: var(--navy2); line-height: 1; }
+.p-info {}
+.p-tag { font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--navy5); margin-bottom: 4px; }
+.p-title { font-family: var(--serif); font-size: 26px; font-weight: 400; color: var(--ink); line-height: 1.2; }
+.p-lead { font-size: 15px; color: var(--g600); line-height: 1.75; margin-bottom: 32px; max-width: 640px; }
+
+.services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 16px; }
+
+.svc-card {
+  background: var(--white); border: 1px solid var(--g100);
+  border-radius: 14px; padding: 28px;
+  position: relative; overflow: hidden;
+  transition: transform .3s var(--ease), box-shadow .3s, border-color .3s;
+}
+.svc-card::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; width: 100%; height: 3px;
+  background: var(--navy);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform .3s var(--ease);
+}
+.svc-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(15,45,82,.1); border-color: var(--navy2); }
+.svc-card:hover::before { transform: scaleX(1); }
+
+.svc-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; margin-bottom: 12px; }
+.svc-name { font-family: var(--serif); font-size: 16px; font-weight: 500; color: var(--ink); line-height: 1.3; }
+.svc-badge {
+  font-size: 10px; font-weight: 500; padding: 3px 9px;
+  border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+  letter-spacing: .03em;
+}
+.badge-once  { background: #E8F0FE; color: #1A4A8C; }
+.badge-recur { background: #FFF3E0; color: #8C5A00; }
+.badge-high  { background: #E8F5EE; color: #1A6B4A; }
+.badge-key   { background: #FCE4EC; color: #8C1A3A; }
+
+.svc-desc { font-size: 13px; color: var(--g600); line-height: 1.7; margin-bottom: 16px; }
+.svc-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.svc-tag { font-size: 11px; padding: 3px 9px; border-radius: 20px; border: 1px solid var(--g200); color: var(--g600); background: var(--g50); }
+
+/* ══════════════════════════════════════
+   PACKAGES
+══════════════════════════════════════ */
+.s-packages { background: var(--white); }
+.packages-grid {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 16px; margin-top: 48px;
+}
+.pkg {
+  border: 1.5px solid var(--g100); border-radius: 16px;
+  padding: 32px 24px; position: relative;
+  transition: transform .3s, box-shadow .3s;
+}
+.pkg:hover { transform: translateY(-5px); box-shadow: 0 16px 48px rgba(15,45,82,.1); }
+.pkg.featured {
+  background: var(--navy); border-color: var(--navy);
+  color: #fff;
+}
+.pkg-badge {
+  position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+  font-size: 10px; font-weight: 600; padding: 4px 14px;
+  background: var(--navy5); color: #fff;
+  border-radius: 20px; letter-spacing: .06em;
+  white-space: nowrap;
+}
+.pkg-name { font-family: var(--serif); font-size: 22px; font-weight: 500; margin-bottom: 6px; }
+.pkg.featured .pkg-name { color: #fff; }
+.pkg-best { font-size: 12px; color: var(--g400); margin-bottom: 20px; }
+.pkg.featured .pkg-best { color: rgba(255,255,255,.5); }
+.pkg-divider { height: 1px; background: var(--g100); margin-bottom: 20px; }
+.pkg.featured .pkg-divider { background: rgba(255,255,255,.12); }
+.pkg-list { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+.pkg-list li { font-size: 13px; color: var(--g600); display: flex; gap: 8px; align-items: flex-start; line-height: 1.4; }
+.pkg.featured .pkg-list li { color: rgba(255,255,255,.7); }
+.pkg-list li::before { content: '✓'; color: var(--navy5); font-weight: 600; flex-shrink: 0; font-size: 12px; margin-top: 1px; }
+.pkg.featured .pkg-list li::before { color: var(--navy2); }
+.pkg-cta { display: block; text-align: center; margin-top: 28px; padding: 12px; border-radius: 8px; font-size: 13px; font-weight: 500; letter-spacing: .01em; transition: all .2s; }
+.pkg .pkg-cta { background: var(--g50); color: var(--navy); border: 1.5px solid var(--g100); }
+.pkg .pkg-cta:hover { background: var(--navy05); border-color: var(--navy2); }
+.pkg.featured .pkg-cta { background: #fff; color: var(--navy); }
+.pkg.featured .pkg-cta:hover { background: var(--navy05); }
+
+/* ══════════════════════════════════════
+   CTA BAND
+══════════════════════════════════════ */
+.s-cta { background: var(--navy05); border-top: 1px solid var(--navy2); border-bottom: 1px solid var(--navy2); padding: 80px 5%; }
+.cta-inner { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; }
+.cta-title { font-family: var(--serif); font-size: clamp(22px,3vw,36px); font-weight: 400; line-height: 1.25; color: var(--navy); }
+.cta-title em { font-style: italic; }
+.cta-sub { font-size: 15px; color: var(--g600); margin-top: 10px; line-height: 1.65; }
+.btn-navy { display: inline-flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 500; padding: 14px 28px; background: var(--navy); color: #fff; border-radius: 8px; letter-spacing: .01em; transition: background .2s, transform .15s, box-shadow .2s; }
+.btn-navy:hover { background: var(--navy7); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(15,45,82,.2); }
+.btn-navy svg { width: 15px; height: 15px; stroke: currentColor; fill: none; stroke-width: 2; transition: transform .2s; }
+.btn-navy:hover svg { transform: translateX(3px); }
+
+/* ══════════════════════════════════════
+   FOOTER
+══════════════════════════════════════ */
+footer { background: #1C2B3A; padding: 72px 5% 36px; }
+.footer-top { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 48px; padding-bottom: 56px; border-bottom: 1px solid rgba(255,255,255,.08); margin-bottom: 36px; }
+.f-brand-name { font-family: var(--serif); font-size: 22px; font-weight: 400; color: #fff; margin-bottom: 14px; }
+.f-tagline { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.7; max-width: 240px; margin-bottom: 22px; }
+.f-contact a { display: block; font-size: 13px; color: rgba(255,255,255,.45); margin-bottom: 6px; transition: color .2s; }
+.f-contact a:hover { color: rgba(255,255,255,.85); }
+.f-col-title { font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 18px; }
+.f-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.f-col ul a { font-size: 13px; color: rgba(255,255,255,.45); transition: color .2s; }
+.f-col ul a:hover { color: rgba(255,255,255,.85); }
+.footer-bottom { max-width: 1160px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
+.f-copy { font-size: 12px; color: rgba(255,255,255,.2); }
+.f-langs { display: flex; gap: 4px; }
+.f-lang-btn { font-size: 11px; font-weight: 500; padding: 4px 10px; border: none; background: transparent; border-radius: 6px; color: rgba(255,255,255,.3); cursor: pointer; transition: all .2s; }
+.f-lang-btn.on { background: rgba(255,255,255,.08); color: rgba(255,255,255,.8); }
+
+/* ══════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════ */
+@keyframes fadeUp { from { opacity:0; transform: translateY(28px); } to { opacity:1; transform: none; } }
+.reveal { opacity:0; transform: translateY(28px); transition: opacity .7s var(--eout), transform .7s var(--eout); }
+.reveal.vis { opacity:1; transform: none; }
+.d1 { transition-delay: .1s !important; }
+.d2 { transition-delay: .2s !important; }
+.d3 { transition-delay: .3s !important; }
+
+/* ══════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .packages-grid { grid-template-columns: repeat(2,1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+@media (max-width: 768px) {
+  :root { --nav-h: 60px; }
+  .nav-links, .lang-switch, .nav-cta { display: none !important; }
+  .ham { display: flex; }
+  section { padding: 64px 5%; }
+  .ph-inner { padding: 60px 5%; }
+  .ph-stats { flex-wrap: wrap; gap: 20px; }
+  .ph-stat { border-right: none; padding-right: 0; margin-right: 0; }
+  .why-grid { grid-template-columns: 1fr; }
+  .journey-steps { grid-template-columns: 1fr 1fr; gap: 24px; }
+  .journey-steps::before { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .packages-grid { grid-template-columns: 1fr; }
+  .cta-inner { grid-template-columns: 1fr; gap: 28px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+  .pillar-tabs { gap: 6px; }
+  .ptab { font-size: 12px; padding: 8px 14px; }
+}
+@media (max-width: 480px) {
+  .ph-actions { flex-direction: column; align-items: flex-start; }
+  .btn-white, .btn-outline-white { width: 100%; justify-content: center; }
+  .journey-steps { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="/index.html" class="nav-wordmark">Atlas <span>Advisory</span></a>
+  <ul class="nav-links">
+    <li><a href="/index.html"><span data-lang="pt" class="on">Início</span><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
+    <li><a href="/brazil.html" class="active"><span data-lang="pt" class="on">Serviços Brasil</span><span data-lang="en">Brazil Services</span><span data-lang="zh">巴西服务</span></a></li>
+    <li><a href="/hongkong.html"><span data-lang="pt" class="on">HK & China</span><span data-lang="en">HK & China</span><span data-lang="zh">香港及中国</span></a></li>
+    <li><a href="/contact.html"><span data-lang="pt" class="on">Contato</span><span data-lang="en">Contact</span><span data-lang="zh">联系我们</span></a></li>
+  </ul>
+  <div class="lang-switch">
+    <button class="lang-btn on" id="lb-pt" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" id="lb-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="lb-zh" onclick="setLang('zh')">中文</button>
+  </div>
+  <a href="/contact.html" class="nav-cta">
+    <span data-lang="pt" class="on">Consulta Gratuita</span>
+    <span data-lang="en">Free Consultation</span>
+    <span data-lang="zh">免费咨询</span>
+  </a>
+  <div class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="mobile-menu" id="mmenu">
+  <a href="/index.html"><span data-lang="pt" class="on">Início</span><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+  <a href="/brazil.html"><span data-lang="pt" class="on">Serviços Brasil</span><span data-lang="en">Brazil Services</span><span data-lang="zh">巴西服务</span></a>
+  <a href="/hongkong.html"><span data-lang="pt" class="on">HK & China</span><span data-lang="en">HK & China</span><span data-lang="zh">香港及中国</span></a>
+  <a href="/contact.html"><span data-lang="pt" class="on">Contato</span><span data-lang="en">Contact</span><span data-lang="zh">联系我们</span></a>
+  <div class="ml">
+    <button class="lang-btn on" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('zh')">中文</button>
+  </div>
+  <a href="/contact.html" class="nav-cta">
+    <span data-lang="pt" class="on">Consulta Gratuita</span>
+    <span data-lang="en">Free Consultation</span>
+    <span data-lang="zh">免费咨询</span>
+  </a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="ph-grid"></div>
+  <div class="ph-inner">
+    <div class="ph-tag">
+      <span data-lang="pt" class="on">Serviços no Brasil</span>
+      <span data-lang="en">Brazil Services</span>
+      <span data-lang="zh">巴西服务</span>
+    </div>
+    <h1 class="ph-h1">
+      <span data-lang="pt" class="on">Invista no Brasil.<br><em>Nós cuidamos de tudo.</em></span>
+      <span data-lang="en">Invest in Brazil.<br><em>We handle everything.</em></span>
+      <span data-lang="zh">投资巴西，<br><em>一切交给我们。</em></span>
+    </h1>
+    <p class="ph-sub">
+      <span data-lang="pt" class="on">Da sua empresa em Hong Kong à sua empresa brasileira — gerenciamos a estrutura legal, tributária, bancária e toda a conformidade regulatória. Uma única empresa. Do início ao fim.</span>
+      <span data-lang="en">From your Hong Kong entity to your Brazilian company — we manage the legal setup, tax structure, banking, and ongoing compliance. One firm. End to end.</span>
+      <span data-lang="zh">从您的香港公司到巴西实体——我们负责处理法律架构、税务规划、银行开户及持续合规管理。一家公司，全程服务。</span>
+    </p>
+    <div class="ph-actions">
+      <a href="/contact.html" class="btn-white">
+        <span data-lang="pt" class="on">Agendar Consulta Gratuita</span>
+        <span data-lang="en">Book a Free Consultation</span>
+        <span data-lang="zh">预约免费咨询</span>
+        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="#pilares" class="btn-outline-white">
+        <span data-lang="pt" class="on">Ver todos os serviços</span>
+        <span data-lang="en">See all services</span>
+        <span data-lang="zh">查看所有服务</span>
+      </a>
+    </div>
+    <div class="ph-stats">
+      <div class="ph-stat">
+        <div class="ph-stat-num">18</div>
+        <div class="ph-stat-label"><span data-lang="pt" class="on">Serviços disponíveis</span><span data-lang="en">Services available</span><span data-lang="zh">可用服务</span></div>
+      </div>
+      <div class="ph-stat">
+        <div class="ph-stat-num">4</div>
+        <div class="ph-stat-label"><span data-lang="pt" class="on">Pilares de serviço</span><span data-lang="en">Service pillars</span><span data-lang="zh">服务支柱</span></div>
+      </div>
+      <div class="ph-stat">
+        <div class="ph-stat-num">200M</div>
+        <div class="ph-stat-label"><span data-lang="pt" class="on">Consumidores no Brasil</span><span data-lang="en">Consumers in Brazil</span><span data-lang="zh">巴西消费者</span></div>
+      </div>
+      <div class="ph-stat">
+        <div class="ph-stat-num">PT·EN·ZH</div>
+        <div class="ph-stat-label"><span data-lang="pt" class="on">Idiomas de atendimento</span><span data-lang="en">Languages spoken</span><span data-lang="zh">服务语言</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- WHY BRAZIL -->
+<section class="s-why">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow"><span data-lang="pt" class="on">Por que o Brasil?</span><span data-lang="en">Why Brazil?</span><span data-lang="zh">为何选择巴西？</span></div>
+      <h2 class="s-title"><span data-lang="pt" class="on">O maior mercado da<br><em>América Latina — agora acessível.</em></span><span data-lang="en">Latin America's largest market —<br><em>now accessible.</em></span><span data-lang="zh">拉丁美洲最大的市场——<br><em>现在触手可及。</em></span></h2>
+    </div>
+    <div class="why-grid">
+      <!-- 1 -->
+      <div class="why-card reveal d1">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3c0 0 4 4 4 9s-4 9-4 9"/><path d="M3 12h18"/></svg></div>
+        <div class="why-label"><span data-lang="pt" class="on">Mercado</span><span data-lang="en">Market</span><span data-lang="zh">市场</span></div>
+        <div class="why-title"><span data-lang="pt" class="on">200 milhões de consumidores</span><span data-lang="en">200 million consumers</span><span data-lang="zh">2亿消费者</span></div>
+        <div class="why-desc"><span data-lang="pt" class="on">O maior mercado da América Latina — ainda pouco explorado por empresas asiáticas. Uma oportunidade rara de entrada com baixa concorrência.</span><span data-lang="en">Latin America's largest consumer market — largely untapped by Asian companies. A rare entry opportunity with low competition.</span><span data-lang="zh">拉丁美洲最大的消费市场，亚洲企业涉足甚少。罕见的低竞争市场准入机会。</span></div>
+      </div>
+      <!-- 2 -->
+      <div class="why-card reveal d2">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M3 6l9-4 9 4v12l-9 4-9-4V6z"/><path d="M12 2v20M3 6l9 4 9-4"/></svg></div>
+        <div class="why-label"><span data-lang="pt" class="on">Comércio</span><span data-lang="en">Trade</span><span data-lang="zh">贸易</span></div>
+        <div class="why-title"><span data-lang="pt" class="on">Maior fornecedor agrícola da China</span><span data-lang="en">China's #1 agricultural supplier</span><span data-lang="zh">中国最大农业供应国</span></div>
+        <div class="why-desc"><span data-lang="pt" class="on">O Brasil é o maior exportador de soja, carne, café e açúcar para a China. Uma parceria estratégica construída ao longo de décadas, com enorme potencial inexplorado.</span><span data-lang="en">Brazil is China's largest exporter of soy, meat, coffee and sugar. A decades-long strategic partnership with enormous untapped potential.</span><span data-lang="zh">巴西是中国最大的大豆、肉类、咖啡和糖出口国。数十年的战略伙伴关系，蕴藏着巨大的未开发潜力。</span></div>
+      </div>
+      <!-- 3 -->
+      <div class="why-card reveal d3">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+        <div class="why-label"><span data-lang="pt" class="on">Incentivos</span><span data-lang="en">Incentives</span><span data-lang="zh">激励政策</span></div>
+        <div class="why-title"><span data-lang="pt" class="on">Incentivos fiscais regionais generosos</span><span data-lang="en">Generous regional tax incentives</span><span data-lang="zh">丰厚的区域税收激励</span></div>
+        <div class="why-desc"><span data-lang="pt" class="on">ZFM, Sudam, Sudene — reduções de até 75% no IRPJ para investimentos qualificados. Entre os regimes de incentivo mais vantajosos do mundo.</span><span data-lang="en">ZFM, Sudam, Sudene — up to 75% IRPJ reduction for qualifying investments. Among the world's most generous incentive regimes.</span><span data-lang="zh">ZFM、Sudam、Sudene——符合条件的投资可享受高达75%的IRPJ减免，是全球最优惠的税收激励政策之一。</span></div>
+      </div>
+      <!-- 4 -->
+      <div class="why-card reveal d1">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M2 20h20M6 20V10l6-6 6 6v10"/><path d="M10 20v-6h4v6"/></svg></div>
+        <div class="why-label"><span data-lang="pt" class="on">Regulatório</span><span data-lang="en">Regulatory</span><span data-lang="zh">监管</span></div>
+        <div class="why-title"><span data-lang="pt" class="on">Transfer pricing OCDE 2024</span><span data-lang="en">OECD Transfer Pricing 2024</span><span data-lang="zh">2024年OECD转让定价规则</span></div>
+        <div class="why-desc"><span data-lang="pt" class="on">O Brasil adotou as regras OCDE em 2024 — uma mudança significativa que cria novas oportunidades de planejamento tributário para empresas matrizes em HK e China.</span><span data-lang="en">Brazil adopted OECD transfer pricing rules in 2024 — a major shift creating new tax planning opportunities for HK and Chinese parent companies.</span><span data-lang="zh">巴西于2024年采纳OECD转让定价规则——这一重大变革为香港和中国母公司创造了新的税务规划机遇。</span></div>
+      </div>
+      <!-- 5 -->
+      <div class="why-card reveal d2">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M20 12V22H4V12"/><path d="M22 7H2v5h20V7z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg></div>
+        <div class="why-label"><span data-lang="pt" class="on">Residência</span><span data-lang="en">Residency</span><span data-lang="zh">居留权</span></div>
+        <div class="why-title"><span data-lang="pt" class="on">Visto de investidor VITEM V</span><span data-lang="en">VITEM V Investor Visa</span><span data-lang="zh">VITEM V 投资者签证</span></div>
+        <div class="why-desc"><span data-lang="pt" class="on">Investimento de R$500.000 abre o caminho para residência permanente no Brasil. Extensivo ao cônjuge e dependentes. Um dos processos de visto de investidor mais diretos da América Latina.</span><span data-lang="en">R$500,000 investment unlocks Brazilian permanent residency. Includes spouse and dependents. One of Latin America's most straightforward investor visa pathways.</span><span data-lang="zh">投资50万雷亚尔即可申请巴西永久居留权，配偶和受抚养人可随同申请。是拉丁美洲最直接的投资者签证途径之一。</span></div>
+      </div>
+      <!-- 6 -->
+      <div class="why-card reveal d3">
+        <div class="why-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div class="why-label"><span data-lang="pt" class="on">Exclusividade</span><span data-lang="en">Exclusivity</span><span data-lang="zh">稀缺性</span></div>
+        <div class="why-title"><span data-lang="pt" class="on">Pouquíssimos concorrentes bilíngues</span><span data-lang="en">Very few bilingual advisors</span><span data-lang="zh">极少数双语顾问</span></div>
+        <div class="why-desc"><span data-lang="pt" class="on">Quase nenhuma firma atende o corredor Brasil–Ásia com fluência em inglês, português e mandarim. A Atlas Advisory ocupa um espaço praticamente inexplorado neste mercado.</span><span data-lang="en">Almost no firm serves the Brazil–Asia corridor with fluency in English, Portuguese and Mandarin. Atlas Advisory occupies a virtually untapped position in this market.</span><span data-lang="zh">几乎没有任何公司能以英语、葡萄牙语和普通话流利地服务巴西–亚洲走廊。Atlas Advisory占据着这一市场中几乎空白的位置。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- JOURNEY -->
+<section class="s-journey">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow"><span data-lang="pt" class="on">A jornada do investidor</span><span data-lang="en">The investor journey</span><span data-lang="zh">投资者历程</span></div>
+      <h2 class="s-title"><span data-lang="pt" class="on">Do exterior ao<br><em>Brasil — passo a passo</em></span><span data-lang="en">From overseas to Brazil —<br><em>step by step</em></span><span data-lang="zh">从海外到巴西——<br><em>步步为营</em></span></h2>
+    </div>
+    <div class="journey-steps reveal">
+      <div class="j-step">
+        <div class="j-dot">1</div>
+        <div class="j-phase"><span data-lang="pt" class="on">Decisão</span><span data-lang="en">Decision</span><span data-lang="zh">决策</span></div>
+        <div class="j-title"><span data-lang="pt" class="on">Estruturação</span><span data-lang="en">Structuring</span><span data-lang="zh">架构规划</span></div>
+        <div class="j-services"><span data-lang="pt" class="on">Incentivos fiscais · Estrutura de investimento</span><span data-lang="en">Tax incentives · Investment structure</span><span data-lang="zh">税收激励 · 投资架构</span></div>
+      </div>
+      <div class="j-step">
+        <div class="j-dot">2</div>
+        <div class="j-phase"><span data-lang="pt" class="on">Formação</span><span data-lang="en">Formation</span><span data-lang="zh">设立</span></div>
+        <div class="j-title"><span data-lang="pt" class="on">Constituição</span><span data-lang="en">Incorporation</span><span data-lang="zh">公司注册</span></div>
+        <div class="j-services"><span data-lang="pt" class="on">LTDA / S.A. · CNPJ · Bacen RDE-IED</span><span data-lang="en">LTDA / S.A. · CNPJ · Bacen RDE-IED</span><span data-lang="zh">LTDA/S.A. · CNPJ · Bacen RDE-IED</span></div>
+      </div>
+      <div class="j-step">
+        <div class="j-dot">3</div>
+        <div class="j-phase"><span data-lang="pt" class="on">Operação</span><span data-lang="en">Operations</span><span data-lang="zh">运营</span></div>
+        <div class="j-title"><span data-lang="pt" class="on">Abertura bancária</span><span data-lang="en">Banking & setup</span><span data-lang="zh">银行开户</span></div>
+        <div class="j-services"><span data-lang="pt" class="on">Conta · Câmbio · RH · Escritório</span><span data-lang="en">Account · FX · HR · Office</span><span data-lang="zh">账户 · 外汇 · 人力资源 · 办公室</span></div>
+      </div>
+      <div class="j-step">
+        <div class="j-dot">4</div>
+        <div class="j-phase"><span data-lang="pt" class="on">Opcional</span><span data-lang="en">Optional</span><span data-lang="zh">可选</span></div>
+        <div class="j-title"><span data-lang="pt" class="on">Residência</span><span data-lang="en">Residency</span><span data-lang="zh">居留权</span></div>
+        <div class="j-services"><span data-lang="pt" class="on">Visto VITEM V · CRNM</span><span data-lang="en">VITEM V visa · CRNM</span><span data-lang="zh">VITEM V签证 · CRNM</span></div>
+      </div>
+      <div class="j-step">
+        <div class="j-dot">5</div>
+        <div class="j-phase"><span data-lang="pt" class="on">Compliance</span><span data-lang="en">Compliance</span><span data-lang="zh">合规</span></div>
+        <div class="j-title"><span data-lang="pt" class="on">Gestão contínua</span><span data-lang="en">Ongoing management</span><span data-lang="zh">持续管理</span></div>
+        <div class="j-services"><span data-lang="pt" class="on">Contabilidade · Dashboards bilíngues</span><span data-lang="en">Accounting · Bilingual dashboards</span><span data-lang="zh">会计 · 双语报告</span></div>
+      </div>
+      <div class="j-step">
+        <div class="j-dot">6</div>
+        <div class="j-phase"><span data-lang="pt" class="on">Crescimento</span><span data-lang="en">Growth</span><span data-lang="zh">增长</span></div>
+        <div class="j-title"><span data-lang="pt" class="on">Expansão de mercado</span><span data-lang="en">Market expansion</span><span data-lang="zh">市场扩张</span></div>
+        <div class="j-services"><span data-lang="pt" class="on">Parceiros · Canais · Aprovações</span><span data-lang="en">Partners · Channels · Approvals</span><span data-lang="zh">合作伙伴 · 渠道 · 审批</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PILLARS & SERVICES -->
+<section class="s-pillars" id="pilares">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow"><span data-lang="pt" class="on">Serviços completos</span><span data-lang="en">Complete services</span><span data-lang="zh">全套服务</span></div>
+      <h2 class="s-title"><span data-lang="pt" class="on">18 serviços em <em>4 pilares</em></span><span data-lang="en">18 services across <em>4 pillars</em></span><span data-lang="zh">4大支柱，<em>18项服务</em></span></h2>
+    </div>
+
+    <!-- Tabs -->
+    <div class="pillar-tabs">
+      <button class="ptab on" onclick="showPillar(1)">
+        <span data-lang="pt" class="on">01 — Jurídico & Societário</span>
+        <span data-lang="en">01 — Legal & Corporate</span>
+        <span data-lang="zh">01 — 法律与公司</span>
+      </button>
+      <button class="ptab" onclick="showPillar(2)">
+        <span data-lang="pt" class="on">02 — Tributário & Financeiro</span>
+        <span data-lang="en">02 — Tax & Finance</span>
+        <span data-lang="zh">02 — 税务与财务</span>
+      </button>
+      <button class="ptab" onclick="showPillar(3)">
+        <span data-lang="pt" class="on">03 — Administração Empresarial</span>
+        <span data-lang="en">03 — Business Administration</span>
+        <span data-lang="zh">03 — 企业行政</span>
+      </button>
+      <button class="ptab" onclick="showPillar(4)">
+        <span data-lang="pt" class="on">04 — Crescimento de Mercado</span>
+        <span data-lang="en">04 — Market Growth</span>
+        <span data-lang="zh">04 — 市场拓展</span>
+      </button>
+    </div>
+
+    <!-- ─── PILLAR 1 ─── -->
+    <div class="pillar-panel on" id="pillar-1">
+      <div class="pillar-header">
+        <div class="p-num">01</div>
+        <div class="p-info">
+          <div class="p-tag"><span data-lang="pt" class="on">Fundação — todo investidor começa aqui</span><span data-lang="en">Foundation — every investor starts here</span><span data-lang="zh">基础——每位投资者的起点</span></div>
+          <div class="p-title"><span data-lang="pt" class="on">Jurídico & Societário</span><span data-lang="en">Legal & Corporate</span><span data-lang="zh">法律与公司架构</span></div>
+        </div>
+      </div>
+      <p class="p-lead">
+        <span data-lang="pt" class="on">Toda operação no Brasil começa com uma estrutura jurídica sólida. Cuidamos de todo o processo de constituição e compliance legal para que o investidor nunca precise interagir diretamente com as autoridades brasileiras.</span>
+        <span data-lang="en">Every Brazil operation starts with a solid legal structure. We handle the entire incorporation and legal compliance process so the investor never needs to interact directly with Brazilian authorities.</span>
+        <span data-lang="zh">每一项巴西业务都始于坚实的法律架构。我们处理全部注册和合规流程，投资者无需直接与巴西当局打交道。</span>
+      </p>
+      <div class="services-grid">
+        <!-- 1.1 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Constituição de empresa</span><span data-lang="en">Company incorporation</span><span data-lang="zh">公司注册</span></div>
+            <span class="svc-badge badge-once"><span data-lang="pt" class="on">Pontual</span><span data-lang="en">One-time</span><span data-lang="zh">一次性</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Constituição de LTDA ou S.A. para investidores estrangeiros. Cobre registro do CNPJ na Receita Federal, registro na Junta Comercial, alvarás estaduais e municipais, e registro do capital estrangeiro no Banco Central (Bacen RDE-IED). Totalmente guiado em inglês e mandarim — o cliente nunca interage diretamente com as autoridades brasileiras. Prazo: 4 a 8 semanas.</span>
+            <span data-lang="en">Formation of LTDA or S.A. entities for foreign investors. Covers CNPJ registration with Receita Federal, Junta Comercial filing, state and municipal licensing (alvará), and foreign capital registration with the Central Bank (Bacen RDE-IED). Fully guided in English and Mandarin — the client never interacts with Brazilian authorities directly. Timeline: 4–8 weeks.</span>
+            <span data-lang="zh">为外国投资者设立LTDA或S.A.实体。涵盖在联邦税务局注册CNPJ、在商业登记处备案、州和市级营业执照（alvará），以及在中央银行登记外国资本（Bacen RDE-IED）。全程以英语和普通话提供指导——客户无需直接与巴西当局联系。时间：4至8周。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">LTDA / S.A.</span><span class="svc-tag">CNPJ</span><span class="svc-tag">Bacen RDE-IED</span><span class="svc-tag"><span data-lang="pt" class="on">Ponto de entrada</span><span data-lang="en">Entry point</span><span data-lang="zh">入口服务</span></span></div>
+        </div>
+        <!-- 1.2 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Representante legal</span><span data-lang="en">Legal representative</span><span data-lang="zh">法定代表人</span></div>
+            <span class="svc-badge badge-recur"><span data-lang="pt" class="on">Anual</span><span data-lang="en">Annual retainer</span><span data-lang="zh">年度服务</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Atuação como procurador brasileiro obrigatório para entidades estrangeiras com ativos, participações societárias ou operações no Brasil. Gerencia correspondências governamentais, obrigações regulatórias e conformidade legal em nome da matriz estrangeira. Exigido por lei brasileira — sem este serviço, a entidade não pode operar legalmente.</span>
+            <span data-lang="en">Appointment and ongoing service as the mandatory Brazilian procurador for overseas entities holding assets, equity, or operations in Brazil. Handles government correspondence, regulatory filings, and legal compliance on behalf of the foreign parent. Required by Brazilian law — without this service, the entity cannot legally operate.</span>
+            <span data-lang="zh">担任持有巴西资产、股权或业务的境外实体的法定巴西代理人（procurador）并提供持续服务。代表外国母公司处理政府往来、监管申报和法律合规事务。巴西法律强制要求——若无此服务，实体将无法合法运营。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">Procurador</span><span class="svc-tag"><span data-lang="pt" class="on">Obrigatório</span><span data-lang="en">Mandatory</span><span data-lang="zh">强制要求</span></span></div>
+        </div>
+        <!-- 1.3 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Visto e residência (VITEM V)</span><span data-lang="en">Investor visa & residency (VITEM V)</span><span data-lang="zh">投资者签证与居留权（VITEM V）</span></div>
+            <span class="svc-badge badge-once"><span data-lang="pt" class="on">Pontual</span><span data-lang="en">One-time</span><span data-lang="zh">一次性</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Suporte completo para o visto de investidor VITEM V e residência permanente para cidadãos de HK e China que comprometam R$500.000 ou mais no Brasil (R$150.000 em regiões menos desenvolvidas). Inclui preparação de documentos, registro na Polícia Federal (SINCRE) e processamento do CRNM. Cônjuge e dependentes incluídos.</span>
+            <span data-lang="en">End-to-end support for the Brazilian investor visa (VITEM V) and permanent residency for HK and Chinese nationals committing R$500,000+ in Brazil (R$150,000 in less-developed regions). Includes full document preparation, federal police registration (SINCRE), and CRNM processing. Spouse and dependents included.</span>
+            <span data-lang="zh">为在巴西承诺投资50万雷亚尔以上（欠发达地区为15万雷亚尔）的香港和中国公民提供VITEM V投资者签证及永久居留权的全程支持。包括完整的文件准备、联邦警察登记（SINCRE）和CRNM处理。配偶和受抚养人可随同申请。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">VITEM V</span><span class="svc-tag">CRNM</span><span class="svc-tag"><span data-lang="pt" class="on">Residência permanente</span><span data-lang="en">Permanent residency</span><span data-lang="zh">永久居留</span></span></div>
+        </div>
+        <!-- 1.4 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Assessoria em investimentos imobiliários</span><span data-lang="en">Real estate investment advisory</span><span data-lang="zh">房地产投资咨询</span></div>
+            <span class="svc-badge badge-high"><span data-lang="pt" class="on">Alto valor</span><span data-lang="en">High value</span><span data-lang="zh">高价值</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Due diligence jurídica e tributária para compradores estrangeiros de terras agrícolas, imóveis comerciais e ativos logísticos no Brasil. Inclui conformidade Incra para propriedades rurais, estruturação para compradores estrangeiros e revisão de contratos de aquisição. Alta demanda de investidores de HK e China interessados em terras agrícolas, hubs logísticos e ativos de infraestrutura.</span>
+            <span data-lang="en">Legal and tax due diligence for foreign buyers of Brazilian agricultural land, commercial real estate, and logistics assets. Covers Incra rural property compliance for foreign buyers, foreign buyer entity structuring, and acquisition contract review. Strong demand from HK/Chinese investors in farmland, logistics hubs, and infrastructure assets.</span>
+            <span data-lang="zh">为外国买家购置巴西农业用地、商业地产和物流资产提供法律和税务尽职调查。涵盖外国买家的Incra农村产权合规、实体架构设计和收购合同审核。香港和中国投资者对农业用地、物流枢纽和基础设施资产的需求旺盛。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">Due diligence</span><span class="svc-tag">Incra</span><span class="svc-tag"><span data-lang="pt" class="on">Terras agrícolas</span><span data-lang="en">Farmland</span><span data-lang="zh">农业用地</span></span><span class="svc-tag">M&A</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PILLAR 2 ─── -->
+    <div class="pillar-panel" id="pillar-2">
+      <div class="pillar-header">
+        <div class="p-num">02</div>
+        <div class="p-info">
+          <div class="p-tag"><span data-lang="pt" class="on">Otimização — o pilar de maior margem</span><span data-lang="en">Optimization — the highest-margin pillar</span><span data-lang="zh">优化——利润最高的服务支柱</span></div>
+          <div class="p-title"><span data-lang="pt" class="on">Tributário & Financeiro</span><span data-lang="en">Tax & Finance</span><span data-lang="zh">税务与财务</span></div>
+        </div>
+      </div>
+      <p class="p-lead">
+        <span data-lang="pt" class="on">O Brasil oferece alguns dos incentivos fiscais regionais mais generosos do mundo — mas a maioria dos investidores estrangeiros não sabe que eles existem ou como se qualificar. Mapeamos, estruturamos e quantificamos cada real economizado.</span>
+        <span data-lang="en">Brazil offers some of the world's most generous regional tax incentives — but most foreign investors don't know they exist or how to qualify. We map, structure, and quantify every dollar saved.</span>
+        <span data-lang="zh">巴西提供一些全球最慷慨的区域税收激励政策——但大多数外国投资者不知道这些政策的存在，也不知道如何申请。我们绘制资格图谱、设计架构，并量化每一分节省。</span>
+      </p>
+      <div class="services-grid">
+        <!-- 2.1 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Serviços contábeis</span><span data-lang="en">Accounting services</span><span data-lang="zh">会计服务</span></div>
+            <span class="svc-badge badge-recur"><span data-lang="pt" class="on">Mensal</span><span data-lang="en">Monthly retainer</span><span data-lang="zh">月度服务</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Escrituração contábil completa, obrigações fiscais mensais (SPED, ECF, EFD-Contribuições) e demonstrações financeiras conformes com CPC/IFRS. Entregue com relatórios bilíngues em inglês e mandarim — o único serviço deste tipo no mercado. Os sócios em HK ou na China recebem resumos mensais claros, sem barreiras de idioma.</span>
+            <span data-lang="en">Full-service bookkeeping, monthly tax filings (SPED, ECF, EFD-Contribuições), and CPC/IFRS-compliant financial statements. Delivered with bilingual reporting in English and Mandarin — the only service of its kind in the market. HK and China-based owners receive clean monthly summaries without language barriers.</span>
+            <span data-lang="zh">全面的账簿记录、月度税务申报（SPED、ECF、EFD-Contribuições）以及符合CPC/IFRS标准的财务报表。以英语和普通话提供双语报告——市场上独一无二的服务。香港和中国的业主无需语言障碍即可收到清晰的月度摘要。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">SPED / ECF</span><span class="svc-tag">IFRS</span><span class="svc-tag"><span data-lang="pt" class="on">Relatórios bilíngues</span><span data-lang="en">Bilingual reports</span><span data-lang="zh">双语报告</span></span></div>
+        </div>
+        <!-- 2.2 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Mapeamento de incentivos fiscais</span><span data-lang="en">Tax incentive mapping</span><span data-lang="zh">税收激励政策图谱</span></div>
+            <span class="svc-badge badge-high"><span data-lang="pt" class="on">Alta margem</span><span data-lang="en">High margin</span><span data-lang="zh">高利润</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">ZFM (Zona Franca de Manaus): isenção de IPI/ICMS + redução de IRPJ — ideal para manufatura, eletrônicos e tech. Sudam: redução de 75% no IRPJ por 10 anos para a região amazônica. Sudene: redução de 75% no IRPJ por 10 anos para o Nordeste do Brasil. Mapeamos a elegibilidade, estruturamos o investimento para se qualificar e quantificamos a economia anual disponível para cada investidor.</span>
+            <span data-lang="en">ZFM (Zona Franca de Manaus): IPI/ICMS exemption + reduced IRPJ — ideal for manufacturing, electronics, and tech. Sudam: 75% IRPJ reduction for 10 years for the Amazon region. Sudene: 75% IRPJ reduction for 10 years for Northeast Brazil. We map eligibility, structure the investment to qualify, and quantify the annual tax savings available to each investor.</span>
+            <span data-lang="zh">ZFM（马瑙斯自由贸易区）：IPI/ICMS豁免+IRPJ减免——适合制造业、电子和科技行业。Sudam：亚马逊地区投资可享受10年75% IRPJ减免。Sudene：巴西东北部投资可享受10年75% IRPJ减免。我们绘制资格图谱、设计符合条件的投资架构，并量化每位投资者可获得的年度税收节省。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">ZFM</span><span class="svc-tag">Sudam</span><span class="svc-tag">Sudene</span><span class="svc-tag"><span data-lang="pt" class="on">Até 75% redução</span><span data-lang="en">Up to 75% reduction</span><span data-lang="zh">最高75%减免</span></span></div>
+        </div>
+        <!-- 2.3 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Preços de transferência — OCDE 2024</span><span data-lang="en">Transfer pricing — OECD 2024</span><span data-lang="zh">转让定价——OECD 2024</span></div>
+            <span class="svc-badge badge-recur"><span data-lang="pt" class="on">Recorrente</span><span data-lang="en">Recurring</span><span data-lang="zh">持续服务</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">O Brasil adotou as regras de preços de transferência alinhadas à OCDE em 2024 — uma mudança significativa que afeta todas as empresas matrizes chinesas e de HK que transacionam com subsidiárias brasileiras. Cuidamos da documentação de TP, análise de preços entre partes relacionadas e planejamento para minimizar as alíquotas efetivas do grupo em todo o mundo.</span>
+            <span data-lang="en">Brazil adopted OECD-aligned transfer pricing rules in 2024 — a major shift affecting all Chinese and HK parent companies transacting with Brazilian subsidiaries. We handle TP documentation, intercompany pricing analysis, and planning to minimize effective tax rates across the group worldwide.</span>
+            <span data-lang="zh">巴西于2024年采纳OECD转让定价规则——这一重大变革影响所有与巴西子公司有交易往来的中国和香港母公司。我们处理转让定价文档、关联方定价分析，并制定规划以最大限度地降低集团的实际税率。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">OECD 2024</span><span class="svc-tag"><span data-lang="pt" class="on">Partes relacionadas</span><span data-lang="en">Intercompany</span><span data-lang="zh">关联方</span></span><span class="svc-tag">Premium</span></div>
+        </div>
+        <!-- 2.4 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Monitoramento regulatório</span><span data-lang="en">Regulatory compliance monitoring</span><span data-lang="zh">监管合规监控</span></div>
+            <span class="svc-badge badge-recur"><span data-lang="pt" class="on">Anual</span><span data-lang="en">Annual retainer</span><span data-lang="zh">年度服务</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Monitoramento proativo e alertas sobre mudanças regulatórias brasileiras — Reforma Tributária, circulares do Bacen, regras da Anvisa, atualizações da LGPD — que afetam negócios de propriedade estrangeira. Briefing mensal em inglês e mandarim antes que as mudanças se tornem problemas. Não existe serviço equivalente para entidades brasileiras de propriedade de HK/CN.</span>
+            <span data-lang="en">Proactive monitoring and alerts on Brazilian regulatory developments — Reforma Tributária, Bacen circulars, Anvisa rules, LGPD updates — affecting foreign-owned businesses. Monthly briefing in English and Mandarin before changes become problems. No equivalent service exists for HK/CN-owned Brazilian entities.</span>
+            <span data-lang="zh">主动监控并预警影响外资企业的巴西监管动态——税制改革、巴西央行通函、Anvisa规定、LGPD更新。在变化成为问题之前，以英语和普通话提供月度简报。目前市场上没有针对港资/中资巴西实体的同类服务。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">Reforma Tributária</span><span class="svc-tag">LGPD</span><span class="svc-tag"><span data-lang="pt" class="on">Proativo</span><span data-lang="en">Proactive</span><span data-lang="zh">主动预警</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PILLAR 3 ─── -->
+    <div class="pillar-panel" id="pillar-3">
+      <div class="pillar-header">
+        <div class="p-num">03</div>
+        <div class="p-info">
+          <div class="p-tag"><span data-lang="pt" class="on">Administração remota — o equivalente ao Osome para o Brasil</span><span data-lang="en">Remote administration — the Osome equivalent for Brazil</span><span data-lang="zh">远程管理——巴西版Osome</span></div>
+          <div class="p-title"><span data-lang="pt" class="on">Administração Empresarial</span><span data-lang="en">Business Administration</span><span data-lang="zh">企业行政管理</span></div>
+        </div>
+      </div>
+      <p class="p-lead">
+        <span data-lang="pt" class="on">Nenhuma firma tech-enabled e bilíngue (EN/ZH/PT) existe para empresas de propriedade estrangeira no Brasil. Esta é a posição de maior diferencial da Atlas Advisory no mercado brasileiro — gestão completa da empresa a partir de HK ou China, com relatórios em português, inglês e mandarim.</span>
+        <span data-lang="en">No tech-enabled, bilingual (EN/ZH/PT) back-office firm exists for foreign-owned companies in Brazil. This is Atlas Advisory's clearest blue ocean — complete company management from HK or China, with reporting in Portuguese, English, and Mandarin.</span>
+        <span data-lang="zh">目前市场上没有专为巴西外资企业提供双语（EN/ZH/PT）技术驱动后台服务的公司。这是Atlas Advisory最鲜明的蓝海定位——在香港或中国远程管理巴西公司，以葡萄牙语、英语和普通话提供报告。</span>
+      </p>
+      <div class="services-grid">
+        <!-- 3.1 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Escritório virtual e endereço registrado</span><span data-lang="en">Virtual office & registered address</span><span data-lang="zh">虚拟办公室与注册地址</span></div>
+            <span class="svc-badge badge-recur"><span data-lang="pt" class="on">Mensal</span><span data-lang="en">Monthly</span><span data-lang="zh">月度</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Endereço fiscal brasileiro (sede fiscal), recebimento e digitalização de correspondências, gestão de documentos, coordenação de reconhecimento de firma, suporte a apostilas e gerenciamento de procurações. Essencial para qualquer entidade estrangeira gerenciada remotamente a partir de HK ou China.</span>
+            <span data-lang="en">Brazilian registered business address (sede fiscal), mail handling and digitisation, document reception, notarization coordination, apostille support, and power of attorney management. Essential for any foreign-owned entity managed remotely from HK or China.</span>
+            <span data-lang="zh">巴西商业注册地址（sede fiscal）、邮件处理和数字化、文件接收、公证协调、公证书（apostille）支持及授权委托书管理。对于任何在香港或中国远程管理的外资实体而言不可或缺。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">Sede fiscal</span><span class="svc-tag"><span data-lang="pt" class="on">Operação remota</span><span data-lang="en">Remote ops</span><span data-lang="zh">远程运营</span></span></div>
+        </div>
+        <!-- 3.2 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Secretariado societário</span><span data-lang="en">Corporate secretarial services</span><span data-lang="zh">公司秘书服务</span></div>
+            <span class="svc-badge badge-recur"><span data-lang="pt" class="on">Anual</span><span data-lang="en">Annual</span><span data-lang="zh">年度</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Alterações anuais na Junta Comercial, atas de assembleias de sócios (AGO/AGE), resoluções do conselho, documentação de transferência de quotas e registros de reestruturação societária. O equivalente brasileiro do serviço de secretariado do Osome em HK — mantendo a empresa organizada e em conformidade sem sobrecarregar o proprietário estrangeiro.</span>
+            <span data-lang="en">Annual alterations at the Junta Comercial, shareholder meeting minutes (AGO/AGE), board resolutions, quota transfer documentation, and corporate restructuring filings. The Brazilian equivalent of Osome's secretary product in HK — keeping the entity clean and compliant with zero burden on the foreign owner.</span>
+            <span data-lang="zh">在商业登记处（Junta Comercial）进行年度变更、股东大会纪要（AGO/AGE）、董事会决议、股权转让文件及公司重组申报。相当于香港Osome秘书服务的巴西版——保持实体合规整洁，外国业主零负担。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">Junta Comercial</span><span class="svc-tag"><span data-lang="pt" class="on">Governança</span><span data-lang="en">Governance</span><span data-lang="zh">公司治理</span></span></div>
+        </div>
+        <!-- 3.3 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">RH, folha de pagamento e gestão trabalhista</span><span data-lang="en">HR, payroll & employment management</span><span data-lang="zh">人力资源、薪资与劳动管理</span></div>
+            <span class="svc-badge badge-recur"><span data-lang="pt" class="on">Mensal</span><span data-lang="en">Monthly</span><span data-lang="zh">月度</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Processamento de folha de pagamento conforme CLT, obrigações mensais do eSocial, FGTS, INSS e IRRF — gerenciado integralmente em nome da matriz estrangeira. Inclui folha de expatriados, administração de benefícios e documentação de desligamento. A legislação trabalhista brasileira é notoriamente complexa — proprietários estrangeiros gerenciando isso a partir de HK sem suporte enfrentam riscos jurídicos e financeiros sérios.</span>
+            <span data-lang="en">CLT-compliant payroll processing, eSocial monthly filings, FGTS, INSS, and IRRF management — handled entirely on behalf of the foreign parent. Includes expat payroll, benefits administration, and termination documentation. Brazilian employment law is notoriously complex — foreign owners managing this from HK without support face serious legal and financial risk.</span>
+            <span data-lang="zh">符合CLT规定的薪资处理、eSocial月度申报、FGTS、INSS和IRRF管理——完全代表外国母公司处理。包括外派人员薪资、福利管理和离职文件。巴西劳动法以复杂著称——在香港远程管理而没有专业支持的外国业主面临严重的法律和财务风险。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">CLT / eSocial</span><span class="svc-tag">FGTS / INSS</span><span class="svc-tag"><span data-lang="pt" class="on">Expatriados</span><span data-lang="en">Expat payroll</span><span data-lang="zh">外派薪资</span></span></div>
+        </div>
+        <!-- 3.4 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Acesso bancário e suporte de tesouraria</span><span data-lang="en">Banking access & treasury support</span><span data-lang="zh">银行开户与资金管理支持</span></div>
+            <span class="svc-badge badge-key"><span data-lang="pt" class="on">Diferencial-chave</span><span data-lang="en">Key differentiator</span><span data-lang="zh">核心差异化优势</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Abrir uma conta bancária corporativa no Brasil como entidade estrangeira é notoriamente difícil. Facilitamos a abertura com bancos e fintechs brasileiras (Itaú, Bradesco, Inter Empresas, Wise Business), gerenciamos operações de câmbio, coordenamos a documentação de repatriação de lucros (ROF com o Bacen) e lidamos com a conformidade de pagamentos transfronteiriços — em chinês e inglês durante todo o processo.</span>
+            <span data-lang="en">Opening a corporate bank account in Brazil as a foreign-owned entity is notoriously difficult. We facilitate account opening with Brazilian banks and fintechs (Itaú, Bradesco, Inter Empresas, Wise Business), manage FX operations, coordinate profit repatriation documentation (ROF with Bacen), and handle cross-border payment compliance — in Chinese and English throughout.</span>
+            <span data-lang="zh">作为外资实体在巴西开设企业银行账户出了名地困难。我们协助在巴西银行和金融科技机构（Itaú、Bradesco、Inter Empresas、Wise Business）开户，管理外汇业务，协调利润汇回文件（与巴西央行的ROF），并处理跨境支付合规——全程以中文和英文提供服务。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">Itaú / Bradesco</span><span class="svc-tag">ROF</span><span class="svc-tag"><span data-lang="pt" class="on">Câmbio</span><span data-lang="en">FX</span><span data-lang="zh">外汇</span></span><span class="svc-tag"><span data-lang="pt" class="on">Repatriação</span><span data-lang="en">Repatriation</span><span data-lang="zh">资金汇回</span></span></div>
+        </div>
+        <!-- 3.5 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Relatórios bilíngues e dashboards</span><span data-lang="en">Bilingual reporting & investor dashboards</span><span data-lang="zh">双语报告与投资者仪表盘</span></div>
+            <span class="svc-badge badge-key"><span data-lang="pt" class="on">Único no mercado</span><span data-lang="en">Unique in market</span><span data-lang="zh">市场独有</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Relatórios gerenciais mensais em inglês e mandarim — financeiros, status de compliance, alertas regulatórios e KPIs operacionais — para que proprietários em HK e China tenham visibilidade completa de suas operações no Brasil sem barreiras de idioma ou fuso horário. Não existe equivalente no mercado atual.</span>
+            <span data-lang="en">Monthly management reports in English and Mandarin — financials, compliance status, regulatory alerts, and operational KPIs — so HK and China-based owners have complete visibility of their Brazil operations without language or timezone barriers. No equivalent exists in the current market.</span>
+            <span data-lang="zh">以英语和普通话提供月度管理报告——财务数据、合规状态、监管预警和运营KPI——使香港和中国的业主无需克服语言或时区障碍即可全面掌握其巴西业务。目前市场上没有同类服务。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">EN / ZH / PT</span><span class="svc-tag">KPIs</span><span class="svc-tag"><span data-lang="pt" class="on">Visibilidade remota</span><span data-lang="en">Remote visibility</span><span data-lang="zh">远程可视化</span></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ─── PILLAR 4 ─── -->
+    <div class="pillar-panel" id="pillar-4">
+      <div class="pillar-header">
+        <div class="p-num">04</div>
+        <div class="p-info">
+          <div class="p-tag"><span data-lang="pt" class="on">Crescimento — desbloqueando o mercado de 200M para empresas asiáticas</span><span data-lang="en">Growth — unlocking the 200M market for Asian companies</span><span data-lang="zh">增长——为亚洲企业开启2亿消费者市场</span></div>
+          <div class="p-title"><span data-lang="pt" class="on">Crescimento de Mercado & Desenvolvimento de Negócios</span><span data-lang="en">Market Growth & Business Development</span><span data-lang="zh">市场增长与业务拓展</span></div>
+        </div>
+      </div>
+      <p class="p-lead">
+        <span data-lang="pt" class="on">O Brasil tem 200 milhões de consumidores — o maior mercado da América Latina. Para empresas de HK e China que querem entrar neste mercado, a Atlas Advisory oferece desde estratégia de entrada até o desenvolvimento ativo de canais de vendas e relacionamentos com o governo.</span>
+        <span data-lang="en">Brazil has 200 million consumers — Latin America's largest market. For HK and Chinese companies looking to enter, Atlas Advisory offers everything from market entry strategy to active sales channel development and government relationship building.</span>
+        <span data-lang="zh">巴西拥有2亿消费者，是拉丁美洲最大的市场。对于希望进入该市场的香港和中国企业，Atlas Advisory提供从市场进入战略到主动销售渠道开发及政府关系建立的全套服务。</span>
+      </p>
+      <div class="services-grid">
+        <!-- 4.1 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Estratégia de entrada no Brasil</span><span data-lang="en">Brazil market entry strategy</span><span data-lang="zh">巴西市场进入战略</span></div>
+            <span class="svc-badge badge-once"><span data-lang="pt" class="on">Projeto</span><span data-lang="en">Project</span><span data-lang="zh">项目制</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Dimensionamento de mercado (TAM/SAM), mapeamento do cenário competitivo, análise de canais de distribuição, verificação regulatória prévia (Anvisa, Inmetro) e roadmap go-to-market. Entregue em inglês e mandarim com insights setoriais específicos em agronegócio, bens de consumo, tecnologia, energia e infraestrutura.</span>
+            <span data-lang="en">Market sizing (TAM/SAM), competitive landscape mapping, distribution channel analysis, regulatory pre-check (Anvisa, Inmetro), and go-to-market roadmap. Delivered in English and Mandarin with sector-specific insight across agribusiness, consumer goods, tech, energy, and infrastructure.</span>
+            <span data-lang="zh">市场规模分析（TAM/SAM）、竞争格局绘制、分销渠道分析、监管预审（Anvisa、Inmetro）及市场进入路线图。以英语和普通话提供，涵盖农业、消费品、科技、能源和基础设施等行业的专项洞察。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">TAM/SAM</span><span class="svc-tag">GTM</span><span class="svc-tag">Anvisa</span><span class="svc-tag">Inmetro</span></div>
+        </div>
+        <!-- 4.2 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Prospecção de parceiros e distribuidores</span><span data-lang="en">Local partner & distributor sourcing</span><span data-lang="zh">本地合作伙伴与经销商寻访</span></div>
+            <span class="svc-badge badge-high"><span data-lang="pt" class="on">Alto valor</span><span data-lang="en">High value</span><span data-lang="zh">高价值</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Identificação, triagem e apresentação qualificada de distribuidores brasileiros, agentes comerciais, parceiros de JV e representantes locais — curados especificamente para empresas de HK e China que precisam de presença local de confiança. A maioria das empresas de HK/CN que fracassa no Brasil fracassa por ter escolhido o parceiro local errado.</span>
+            <span data-lang="en">Identification, vetting, and warm introduction of Brazilian distributors, commercial agents, JV partners, and local representatives — curated specifically for HK and Chinese companies that need trusted boots on the ground. Most HK/CN companies that fail in Brazil fail because they chose the wrong local partner.</span>
+            <span data-lang="zh">寻访、审核并进行有针对性的引荐，对象为巴西经销商、商务代理、合资合作伙伴和本地代表——专为需要可靠本地资源的香港和中国企业定制筛选。大多数在巴西失败的港资/中资企业，原因都是选错了本地合作伙伴。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag"><span data-lang="pt" class="on">Parceiros</span><span data-lang="en">Partners</span><span data-lang="zh">合作伙伴</span></span><span class="svc-tag"><span data-lang="pt" class="on">Distribuidores</span><span data-lang="en">Distributors</span><span data-lang="zh">经销商</span></span><span class="svc-tag">JV</span></div>
+        </div>
+        <!-- 4.3 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Desenvolvimento de canais de vendas</span><span data-lang="en">Sales channel development</span><span data-lang="zh">销售渠道开发</span></div>
+            <span class="svc-badge badge-high"><span data-lang="pt" class="on">Performance</span><span data-lang="en">Performance</span><span data-lang="zh">绩效制</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Construção de pipelines de vendas no varejo brasileiro, e-commerce (Mercado Livre ~50% do e-commerce BR, Shopee BR, Amazon BR), redes de atacado e compras governamentais. Pode ser estruturado como projeto ou contrato de performance vinculado a marcos de receita. Mercado Livre: líderes em bens de consumo e eletrônicos. Shopee BR: crescimento acelerado, categorias sensíveis a preço. Amazon BR: posicionamento premium.</span>
+            <span data-lang="en">Building active sales pipelines into Brazilian retail, ecommerce (Mercado Livre ~50% of BR ecommerce, Shopee BR, Amazon BR), wholesale networks, and government procurement (B2G). Can be structured as a project or performance-based engagement tied to revenue milestones.</span>
+            <span data-lang="zh">在巴西零售、电商（Mercado Livre约占巴西电商50%份额、Shopee BR、Amazon BR）、批发网络及政府采购（B2G）中建立活跃的销售管道。可按项目制或与收入里程碑挂钩的绩效制模式设计。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">Mercado Livre</span><span class="svc-tag">Shopee BR</span><span class="svc-tag">Amazon BR</span><span class="svc-tag">B2G</span></div>
+        </div>
+        <!-- 4.4 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Aprovações regulatórias e localização de produto</span><span data-lang="en">Regulatory approval & product localization</span><span data-lang="zh">监管审批与产品本地化</span></div>
+            <span class="svc-badge badge-once"><span data-lang="pt" class="on">Por produto</span><span data-lang="en">Per product</span><span data-lang="zh">按产品计费</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Registro Anvisa (alimentos, cosméticos, medicamentos, dispositivos médicos), certificação Inmetro (eletrônicos, eletrodomésticos), revisão de rotulagem em português e adaptação de produto. Gerenciado de ponta a ponta para que o fabricante estrangeiro nunca precise interagir diretamente com os órgãos reguladores brasileiros. Cosméticos (notificação): 2 a 4 semanas. Suplementos: 3 a 6 meses. Eletrônicos (Inmetro): 2 a 5 meses. Dispositivos médicos: 6 a 18 meses.</span>
+            <span data-lang="en">Anvisa product registration (food, cosmetics, pharmaceuticals, medical devices), Inmetro certification (electronics, appliances), Portuguese labeling review, and product adaptation. Managed end-to-end so the foreign manufacturer never interacts directly with Brazilian regulators. Cosmetics (notificação): 2–4 weeks. Supplements: 3–6 months. Electronics (Inmetro): 2–5 months. Medical devices: 6–18 months.</span>
+            <span data-lang="zh">Anvisa产品注册（食品、化妆品、药品、医疗器械）、Inmetro认证（电子产品、家用电器）、葡萄牙语标签审核及产品适配。全程端到端管理，外国制造商无需直接与巴西监管机构打交道。化妆品（notificação）：2至4周。补充剂：3至6个月。电子产品（Inmetro）：2至5个月。医疗器械：6至18个月。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">Anvisa</span><span class="svc-tag">Inmetro</span><span class="svc-tag"><span data-lang="pt" class="on">Rotulagem PT</span><span data-lang="en">PT labeling</span><span data-lang="zh">葡语标签</span></span></div>
+        </div>
+        <!-- 4.5 -->
+        <div class="svc-card">
+          <div class="svc-top">
+            <div class="svc-name"><span data-lang="pt" class="on">Relações governamentais e B2B</span><span data-lang="en">Government & B2B relationship building</span><span data-lang="zh">政府与B2B关系建立</span></div>
+            <span class="svc-badge badge-high"><span data-lang="pt" class="on">Estratégico</span><span data-lang="en">Strategic</span><span data-lang="zh">战略性</span></span>
+          </div>
+          <p class="svc-desc">
+            <span data-lang="pt" class="on">Apresentações e desenvolvimento de relacionamentos com Apex-Brasil, Sebrae, agências estaduais de investimento (InvestSP, InvestMinas) e compradores do governo federal — especialmente valioso para empresas chinesas em infraestrutura, energia e tecnologia que participam de licitações públicas brasileiras ou buscam suporte de promoção de investimentos.</span>
+            <span data-lang="en">Introductions and relationship development with Apex-Brasil, Sebrae, state investment agencies (InvestSP, InvestMinas), and federal government buyers — particularly valuable for Chinese companies in infrastructure, energy, and technology bidding for Brazilian public contracts or seeking investment promotion support.</span>
+            <span data-lang="zh">与Apex-Brasil、Sebrae、州投资促进机构（InvestSP、InvestMinas）及联邦政府采购方建立联系和关系——对参与巴西政府合同招标或寻求投资促进支持的中国基础设施、能源和科技企业尤为宝贵。</span>
+          </p>
+          <div class="svc-tags"><span class="svc-tag">Apex-Brasil</span><span class="svc-tag">Sebrae</span><span class="svc-tag"><span data-lang="pt" class="on">Setor público</span><span data-lang="en">Public sector</span><span data-lang="zh">公共部门</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PACKAGES -->
+<section class="s-packages">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow"><span data-lang="pt" class="on">Pacotes de serviço</span><span data-lang="en">Service packages</span><span data-lang="zh">服务套餐</span></div>
+      <h2 class="s-title"><span data-lang="pt" class="on">Escolha o pacote<br><em>certo para você</em></span><span data-lang="en">Choose the right<br><em>package for you</em></span><span data-lang="zh">选择适合<br><em>您的套餐</em></span></h2>
+    </div>
+    <div class="packages-grid">
+      <!-- Establish -->
+      <div class="pkg reveal d1">
+        <div class="pkg-name"><span data-lang="pt" class="on">Estabelecer</span><span data-lang="en">Establish</span><span data-lang="zh">建立</span></div>
+        <div class="pkg-best"><span data-lang="pt" class="on">Ideal para primeiros investimentos</span><span data-lang="en">Best for first-time investors</span><span data-lang="zh">首次投资者首选</span></div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li><span data-lang="pt" class="on">Abertura de empresa (LTDA / S.A.)</span><span data-lang="en">Company incorporation</span><span data-lang="zh">公司注册</span></li>
+          <li><span data-lang="pt" class="on">Registro Bacen RDE-IED</span><span data-lang="en">Bacen RDE-IED registration</span><span data-lang="zh">Bacen RDE-IED登记</span></li>
+          <li><span data-lang="pt" class="on">Representante legal</span><span data-lang="en">Legal representative</span><span data-lang="zh">法定代表人</span></li>
+          <li><span data-lang="pt" class="on">Abertura de conta bancária</span><span data-lang="en">Bank account opening</span><span data-lang="zh">银行开户</span></li>
+        </ul>
+        <a href="/contact.html" class="pkg-cta"><span data-lang="pt" class="on">Solicitar proposta</span><span data-lang="en">Request proposal</span><span data-lang="zh">申请方案</span></a>
+      </div>
+      <!-- Operate -->
+      <div class="pkg reveal d2">
+        <div class="pkg-name"><span data-lang="pt" class="on">Operar</span><span data-lang="en">Operate</span><span data-lang="zh">运营</span></div>
+        <div class="pkg-best"><span data-lang="pt" class="on">Ideal para proprietários remotos</span><span data-lang="en">Best for remote owners</span><span data-lang="zh">远程业主首选</span></div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li><span data-lang="pt" class="on">Tudo do pacote Estabelecer</span><span data-lang="en">Everything in Establish</span><span data-lang="zh">包含建立套餐全部内容</span></li>
+          <li><span data-lang="pt" class="on">Contabilidade mensal</span><span data-lang="en">Monthly accounting</span><span data-lang="zh">月度会计</span></li>
+          <li><span data-lang="pt" class="on">Secretariado societário</span><span data-lang="en">Corporate secretarial</span><span data-lang="zh">公司秘书</span></li>
+          <li><span data-lang="pt" class="on">Relatórios bilíngues mensais</span><span data-lang="en">Monthly bilingual reports</span><span data-lang="zh">月度双语报告</span></li>
+        </ul>
+        <a href="/contact.html" class="pkg-cta"><span data-lang="pt" class="on">Solicitar proposta</span><span data-lang="en">Request proposal</span><span data-lang="zh">申请方案</span></a>
+      </div>
+      <!-- Optimize — featured -->
+      <div class="pkg featured reveal d3">
+        <div class="pkg-badge"><span data-lang="pt" class="on">Mais popular</span><span data-lang="en">Most popular</span><span data-lang="zh">最受欢迎</span></div>
+        <div class="pkg-name"><span data-lang="pt" class="on">Otimizar</span><span data-lang="en">Optimize</span><span data-lang="zh">优化</span></div>
+        <div class="pkg-best"><span data-lang="pt" class="on">Ideal para eficiência tributária</span><span data-lang="en">Best for tax-conscious investors</span><span data-lang="zh">注重税效的投资者首选</span></div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li><span data-lang="pt" class="on">Tudo do pacote Operar</span><span data-lang="en">Everything in Operate</span><span data-lang="zh">包含运营套餐全部内容</span></li>
+          <li><span data-lang="pt" class="on">Mapeamento de incentivos fiscais</span><span data-lang="en">Tax incentive mapping</span><span data-lang="zh">税收激励政策图谱</span></li>
+          <li><span data-lang="pt" class="on">Preços de transferência OCDE</span><span data-lang="en">OECD transfer pricing</span><span data-lang="zh">OECD转让定价</span></li>
+          <li><span data-lang="pt" class="on">Monitoramento regulatório</span><span data-lang="en">Regulatory monitoring</span><span data-lang="zh">监管合规监控</span></li>
+        </ul>
+        <a href="/contact.html" class="pkg-cta"><span data-lang="pt" class="on">Solicitar proposta</span><span data-lang="en">Request proposal</span><span data-lang="zh">申请方案</span></a>
+      </div>
+      <!-- Grow -->
+      <div class="pkg reveal d3" style="transition-delay:.4s!important;">
+        <div class="pkg-name"><span data-lang="pt" class="on">Crescer</span><span data-lang="en">Grow</span><span data-lang="zh">增长</span></div>
+        <div class="pkg-best"><span data-lang="pt" class="on">Desenvolvimento completo no Brasil</span><span data-lang="en">Full Brazil market development</span><span data-lang="zh">全面巴西市场开发</span></div>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li><span data-lang="pt" class="on">Todos os 4 pilares</span><span data-lang="en">All 4 pillars</span><span data-lang="zh">全部4大支柱</span></li>
+          <li><span data-lang="pt" class="on">Estratégia de entrada no mercado</span><span data-lang="en">Market entry strategy</span><span data-lang="zh">市场进入战略</span></li>
+          <li><span data-lang="pt" class="on">Desenvolvimento de canais e parceiros</span><span data-lang="en">Channel & partner development</span><span data-lang="zh">渠道与合作伙伴开发</span></li>
+          <li><span data-lang="pt" class="on">Precificação personalizada</span><span data-lang="en">Bespoke pricing</span><span data-lang="zh">定制化报价</span></li>
+        </ul>
+        <a href="/contact.html" class="pkg-cta"><span data-lang="pt" class="on">Solicitar proposta</span><span data-lang="en">Request proposal</span><span data-lang="zh">申请方案</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<div class="s-cta">
+  <div class="cta-inner">
+    <div class="reveal">
+      <h2 class="cta-title">
+        <span data-lang="pt" class="on">Pronto para investir no Brasil?<br><em>Vamos conversar.</em></span>
+        <span data-lang="en">Ready to invest in Brazil?<br><em>Let's talk.</em></span>
+        <span data-lang="zh">准备好投资巴西了吗？<br><em>让我们谈谈。</em></span>
+      </h2>
+      <p class="cta-sub">
+        <span data-lang="pt" class="on">30 minutos. Sem compromisso. Em português, inglês ou mandarim — você escolhe. Explicaremos a estrutura ideal para o seu investimento e exatamente o que fazemos por você.</span>
+        <span data-lang="en">30 minutes. No commitment. In Portuguese, English or Mandarin — your choice. We'll explain the right structure for your investment and exactly what we do on your behalf.</span>
+        <span data-lang="zh">30分钟。无需承诺。葡萄牙语、英语或普通话——由您选择。我们将为您说明最适合您投资的架构以及我们代您处理的具体事项。</span>
+      </p>
+    </div>
+    <div class="reveal d2">
+      <a href="/contact.html" class="btn-navy">
+        <span data-lang="pt" class="on">Agendar Consulta Gratuita</span>
+        <span data-lang="en">Book Free Consultation</span>
+        <span data-lang="zh">预约免费咨询</span>
+        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="f-brand-name">Atlas Advisory</div>
+      <p class="f-tagline"><span data-lang="pt" class="on">Seu guia no Brasil, Hong Kong & China — jurídico, tributário e acesso a mercados.</span><span data-lang="en">Your guide across Brazil, Hong Kong & China — legal, tax, and market access.</span><span data-lang="zh">您在巴西、香港和中国的向导——法律、税务和市场准入。</span></p>
+      <div class="f-contact"></div>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title"><span data-lang="pt" class="on">Brasil</span><span data-lang="en">Brazil</span><span data-lang="zh">巴西</span></div>
+      <ul>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Constituição de empresa</span><span data-lang="en">Company incorporation</span><span data-lang="zh">公司注册</span></a></li>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Incentivos fiscais</span><span data-lang="en">Tax incentives</span><span data-lang="zh">税收激励</span></a></li>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Administração</span><span data-lang="en">Administration</span><span data-lang="zh">企业行政</span></a></li>
+        <li><a href="/brazil.html"><span data-lang="pt" class="on">Desenvolvimento de mercado</span><span data-lang="en">Market development</span><span data-lang="zh">市场开发</span></a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title">Hong Kong & China</div>
+      <ul>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Empresa em HK</span><span data-lang="en">HK company setup</span><span data-lang="zh">香港公司注册</span></a></li>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Planejamento tributário</span><span data-lang="en">Tax planning</span><span data-lang="zh">税务规划</span></a></li>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Acesso bancário</span><span data-lang="en">Banking access</span><span data-lang="zh">银行开户</span></a></li>
+        <li><a href="/hongkong.html"><span data-lang="pt" class="on">Mercado chinês</span><span data-lang="en">China market</span><span data-lang="zh">中国市场</span></a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <div class="f-col-title"><span data-lang="pt" class="on">Atlas Advisory</span><span data-lang="en">Atlas Advisory</span><span data-lang="zh">关于我们</span></div>
+      <ul>
+        <li><a href="/contact.html"><span data-lang="pt" class="on">Sobre nós</span><span data-lang="en">About us</span><span data-lang="zh">关于我们</span></a></li>
+        <li><a href="/contact.html"><span data-lang="pt" class="on">Contato</span><span data-lang="en">Contact</span><span data-lang="zh">联系我们</span></a></li>
+        <li><a href="/contact.html"><span data-lang="pt" class="on">Consulta gratuita</span><span data-lang="en">Free consultation</span><span data-lang="zh">免费咨询</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="f-copy">© 2026 Atlas Advisory · atlasadvisory.com.br</span>
+    <div class="f-langs">
+      <button class="f-lang-btn on" id="flb-pt" onclick="setLang('pt')">PT</button>
+      <button class="f-lang-btn" id="flb-en" onclick="setLang('en')">EN</button>
+      <button class="f-lang-btn" id="flb-zh" onclick="setLang('zh')">中文</button>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+// ─── LANG ───
+let lang='pt';
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('[data-lang]').forEach(el=>el.classList.toggle('on',el.dataset.lang===l));
+  ['pt','en','zh'].forEach(x=>{
+    const b=document.getElementById('lb-'+x), fb=document.getElementById('flb-'+x);
+    if(b) b.classList.toggle('on',x===l);
+    if(fb) fb.classList.toggle('on',x===l);
+  });
+  document.querySelectorAll('.mobile-menu .lang-btn').forEach(b=>{
+    const t=b.textContent.trim();
+    b.classList.toggle('on',(t==='PT'&&l==='pt')||(t==='EN'&&l==='en')||(t==='中文'&&l==='zh'));
+  });
+  document.documentElement.lang=l==='zh'?'zh-Hans':l;
+  try{localStorage.setItem('atlas_lang',l);}catch(e){}
+}
+(function(){
+  let s; try{s=localStorage.getItem('atlas_lang');}catch(e){}
+  if(s&&['pt','en','zh'].includes(s)){setLang(s);return;}
+  const n=(navigator.language||'').toLowerCase();
+  if(n.startsWith('zh'))setLang('zh');
+  else if(n.startsWith('en'))setLang('en');
+  else setLang('pt');
+})();
+
+// ─── NAV ───
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>10),{passive:true});
+
+// ─── MOBILE ───
+function toggleMenu(){
+  document.getElementById('ham').classList.toggle('open');
+  document.getElementById('mmenu').classList.toggle('open');
+}
+document.addEventListener('click',e=>{
+  const m=document.getElementById('mmenu'),h=document.getElementById('ham');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!h.contains(e.target)){
+    m.classList.remove('open');h.classList.remove('open');
+  }
+});
+
+// ─── REVEAL ───
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}});
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+// ─── PILLAR TABS ───
+function showPillar(n){
+  document.querySelectorAll('.ptab').forEach((t,i)=>t.classList.toggle('on',i===n-1));
+  document.querySelectorAll('.pillar-panel').forEach((p,i)=>p.classList.toggle('on',i===n-1));
+  // re-trigger reveal for newly visible cards
+  document.querySelectorAll('#pillar-'+n+' .reveal').forEach(el=>{
+    if(!el.classList.contains('vis')){ro.observe(el);}
+  });
+}
+</script>
+</body>
+</html>

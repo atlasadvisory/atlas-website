@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Serviços em Hong Kong & China — Atlas Advisory</title>
+<meta name="description" content="Constituição em Hong Kong, planejamento tributário, acesso bancário e mercado chinês para investidores brasileiros e empresas chinesas investindo no Brasil.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --white:#FAFAF8;--g50:#F3F3F1;--g100:#E8E8E5;--g200:#D1D1CC;
+  --g400:#9A9A94;--g600:#6B6B65;--g800:#2E2E2A;--ink:#18181A;
+  --navy:#0F2D52;--navy7:#163A68;--navy5:#1E4D87;--navy2:#BFD4EF;--navy05:#EEF3FA;
+  --teal:#1A5C5A;--teal7:#0F3B39;--teal2:#A8D5D3;--teal05:#EAF4F4;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;
+  --nav-h:68px;--ease:cubic-bezier(.4,0,.2,1);--eout:cubic-bezier(0,0,.2,1)
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--sans);background:var(--white);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+[data-lang]{display:none!important}
+[data-lang].on{display:revert!important}
+span[data-lang].on{display:inline!important}
+li[data-lang].on{display:list-item!important}
+.nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:900;display:flex;align-items:center;padding:0 5%;background:rgba(250,250,248,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .3s,box-shadow .3s}
+.nav.scrolled{border-color:var(--g100);box-shadow:0 1px 20px rgba(15,45,82,.06)}
+.nav-wordmark{font-family:var(--serif);font-size:22px;font-weight:500;color:var(--navy);letter-spacing:-.01em;margin-right:auto;white-space:nowrap}
+.nav-wordmark span{color:var(--g400);font-weight:400}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none;margin-right:32px}
+.nav-links a{font-size:13px;font-weight:400;color:var(--g600);letter-spacing:.01em;transition:color .2s;white-space:nowrap}
+.nav-links a:hover,.nav-links a.active{color:var(--navy)}
+.nav-links a.active{font-weight:500}
+.lang-switch{display:flex;align-items:center;gap:2px;padding:4px;background:var(--g50);border-radius:8px;margin-right:20px}
+.lang-btn{font-family:var(--sans);font-size:11px;font-weight:500;padding:5px 10px;border:none;border-radius:6px;background:transparent;color:var(--g400);cursor:pointer;transition:all .2s;letter-spacing:.04em}
+.lang-btn.on{background:var(--white);color:var(--navy);box-shadow:0 1px 4px rgba(15,45,82,.1)}
+.nav-cta{font-size:13px;font-weight:500;padding:10px 22px;background:var(--navy);color:var(--white);border-radius:8px;letter-spacing:.01em;transition:background .2s,transform .15s;white-space:nowrap}
+.nav-cta:hover{background:var(--navy7);transform:translateY(-1px)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px}
+.ham span{width:22px;height:1.5px;background:var(--navy);border-radius:2px;transition:.3s}
+.ham.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px)}
+.mobile-menu{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:var(--white);border-bottom:1px solid var(--g100);padding:24px 5% 32px;z-index:899;box-shadow:0 8px 32px rgba(15,45,82,.08)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;font-size:15px;color:var(--g800);padding:13px 0;border-bottom:1px solid var(--g50);transition:color .2s}
+.mobile-menu a:hover{color:var(--navy)}
+.mobile-menu .ml{display:flex;gap:8px;margin-top:20px}
+.mobile-menu .lang-btn{font-size:13px;padding:8px 16px;background:var(--g50);border-radius:8px;color:var(--g600)}
+.mobile-menu .lang-btn.on{background:var(--navy05);color:var(--navy)}
+.mobile-menu .nav-cta{display:block;text-align:center;margin-top:16px;padding:14px}
+.page-hero{padding-top:var(--nav-h);background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);position:relative;overflow:hidden;min-height:520px;display:flex;align-items:center}
+.page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 85% 40%,rgba(255,255,255,.05) 0%,transparent 60%)}
+.ph-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 90% 90% at 50% 50%,black 20%,transparent 75%)}
+.ph-rings{position:absolute;right:-100px;top:50%;transform:translateY(-50%);width:500px;height:500px;pointer-events:none}
+.ph-ring{position:absolute;top:50%;left:50%;border-radius:50%;border:1px solid rgba(255,255,255,.08);transform:translate(-50%,-50%)}
+.ph-ring:nth-child(1){width:200px;height:200px;animation:ringExpand 4s ease-in-out infinite}
+.ph-ring:nth-child(2){width:320px;height:320px;animation:ringExpand 4s ease-in-out .8s infinite}
+.ph-ring:nth-child(3){width:460px;height:460px;animation:ringExpand 4s ease-in-out 1.6s infinite}
+@keyframes ringExpand{0%,100%{opacity:.5;transform:translate(-50%,-50%) scale(1)}50%{opacity:.15;transform:translate(-50%,-50%) scale(1.05)}}
+.ph-inner{position:relative;z-index:2;width:100%;max-width:1160px;margin:0 auto;padding:80px 5%}
+.ph-tag{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--teal2);margin-bottom:22px;opacity:0;animation:fadeUp .7s var(--eout) .1s forwards}
+.ph-tag::before{content:'';width:20px;height:1.5px;background:var(--teal2)}
+.ph-h1{font-family:var(--serif);font-size:clamp(30px,5vw,60px);font-weight:400;line-height:1.1;letter-spacing:-.02em;color:#fff;margin-bottom:20px;opacity:0;animation:fadeUp .7s var(--eout) .2s forwards}
+.ph-h1 em{font-style:italic;color:var(--teal2)}
+.ph-sub{font-size:17px;font-weight:300;line-height:1.75;color:rgba(255,255,255,.65);max-width:560px;margin-bottom:40px;opacity:0;animation:fadeUp .7s var(--eout) .3s forwards}
+.ph-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;opacity:0;animation:fadeUp .7s var(--eout) .4s forwards}
+.btn-white{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;padding:13px 26px;background:#fff;color:var(--navy);border-radius:8px;letter-spacing:.01em;transition:transform .15s,box-shadow .2s}
+.btn-white:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+.btn-white svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+.btn-white:hover svg{transform:translateX(3px)}
+.btn-outline-white{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:400;padding:13px 26px;border:1.5px solid rgba(255,255,255,.3);color:rgba(255,255,255,.8);border-radius:8px;transition:border-color .2s,color .2s}
+.btn-outline-white:hover{border-color:rgba(255,255,255,.6);color:#fff}
+.ph-stats{display:flex;gap:0;margin-top:56px;padding-top:40px;border-top:1px solid rgba(255,255,255,.12);opacity:0;animation:fadeUp .7s var(--eout) .5s forwards;flex-wrap:wrap}
+.ph-stat{padding-right:40px;margin-right:40px;border-right:1px solid rgba(255,255,255,.1)}
+.ph-stat:last-child{border-right:none;padding-right:0;margin-right:0}
+.ph-stat-num{font-family:var(--serif);font-size:28px;font-weight:400;color:#fff;line-height:1;margin-bottom:4px}
+.ph-stat-label{font-size:11px;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+section{padding:96px 5%}
+.container{max-width:1160px;margin:0 auto}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--navy5);margin-bottom:14px}
+.eyebrow::before{content:'';width:20px;height:1.5px;background:var(--navy5)}
+.s-title{font-family:var(--serif);font-size:clamp(26px,3.5vw,42px);font-weight:400;line-height:1.15;letter-spacing:-.02em;color:var(--ink);margin-bottom:14px}
+.s-title em{font-style:italic;color:var(--navy)}
+.s-lead{font-size:17px;font-weight:300;line-height:1.75;color:var(--g600);max-width:560px}
+.s-adv{background:var(--g50)}
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:48px}
+.adv-card{background:var(--white);border:1px solid var(--g100);border-radius:14px;padding:28px;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.adv-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(15,45,82,.08);border-color:var(--navy2)}
+.adv-num{font-family:var(--serif);font-size:36px;font-weight:500;color:var(--navy);line-height:1;margin-bottom:10px}
+.adv-label{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--g400);margin-bottom:6px}
+.adv-title{font-size:15px;font-weight:500;color:var(--ink);margin-bottom:8px;line-height:1.3}
+.adv-desc{font-size:13px;color:var(--g600);line-height:1.7}
+.s-insight{background:var(--navy);padding:96px 5%}
+.insight-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.insight-quote{font-family:var(--serif);font-size:clamp(18px,2.2vw,26px);font-weight:400;font-style:italic;line-height:1.6;color:#fff;padding-left:28px;border-left:3px solid var(--teal2);margin-bottom:24px}
+.insight-sub{font-size:15px;color:rgba(255,255,255,.55);line-height:1.75}
+.insight-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ins-card{border-radius:12px;padding:22px}
+.ins-card.bad{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.ins-card.good{background:rgba(26,92,90,.3);border:1px solid rgba(168,213,211,.2)}
+.ins-card.delta{background:rgba(15,45,82,.5);border:1px solid rgba(191,212,239,.2)}
+.ins-card-label{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+.ins-card.bad .ins-card-label{color:rgba(255,255,255,.35)}
+.ins-card.good .ins-card-label{color:var(--teal2)}
+.ins-card.delta .ins-card-label{color:var(--navy2)}
+.ins-card-num{font-family:var(--serif);font-size:36px;font-weight:400;color:#fff;line-height:1;margin-bottom:4px}
+.ins-card.bad .ins-card-num{color:rgba(255,120,120,.8)}
+.ins-card.good .ins-card-num{color:var(--teal2)}
+.ins-card.delta .ins-card-num{color:var(--navy2)}
+.ins-card-sub{font-size:12px;color:rgba(255,255,255,.4);line-height:1.4}
+.s-hksg{background:var(--white)}
+.hksg-table{width:100%;border-collapse:collapse;margin-top:48px;font-size:14px}
+.hksg-table th{padding:12px 16px;text-align:left;font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--g400);background:var(--g50)}
+.hksg-table th:nth-child(2){color:var(--navy)}
+.hksg-table td{padding:13px 16px;border-bottom:1px solid var(--g50);vertical-align:top;line-height:1.5}
+.hksg-table tr:last-child td{border-bottom:none}
+.hksg-table td:first-child{font-weight:500;color:var(--ink)}
+.hksg-table .win td:nth-child(2){color:var(--navy);font-weight:500}
+.hk-badge{display:inline-block;font-size:10px;font-weight:600;padding:2px 8px;background:var(--navy05);color:var(--navy5);border-radius:4px;letter-spacing:.04em}
+.s-journey{background:var(--white)}
+.j-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;position:relative}
+.j-steps::before{content:'';position:absolute;top:20px;left:20px;right:20px;height:1.5px;background:linear-gradient(90deg,var(--navy2),var(--teal2))}
+.j-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px}
+.j-dot{width:40px;height:40px;border-radius:50%;background:var(--white);border:2px solid var(--navy2);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:14px;font-weight:500;color:var(--navy);margin-bottom:16px;position:relative;z-index:1;transition:all .3s}
+.j-step:hover .j-dot{background:var(--navy);border-color:var(--navy);color:#fff}
+.j-phase{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--navy5);margin-bottom:5px}
+.j-title{font-family:var(--serif);font-size:13px;font-weight:500;color:var(--ink);margin-bottom:6px;line-height:1.3}
+.j-services{font-size:11px;color:var(--g600);line-height:1.5}
+.s-pillars{background:var(--g50)}
+.pillar-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:48px;margin-bottom:40px}
+.ptab{font-size:13px;font-weight:500;padding:10px 20px;border-radius:8px;border:1.5px solid var(--g200);background:var(--white);color:var(--g600);cursor:pointer;transition:all .2s;letter-spacing:.01em}
+.ptab:hover{border-color:var(--navy2);color:var(--navy)}
+.ptab.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.pillar-panel{display:none}
+.pillar-panel.on{display:block}
+.pillar-header{display:flex;align-items:center;gap:16px;padding-bottom:24px;border-bottom:2px solid var(--navy);margin-bottom:32px}
+.p-num{font-family:var(--serif);font-size:48px;font-weight:400;color:var(--navy2);line-height:1}
+.p-tag{font-size:10px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--navy5);margin-bottom:4px}
+.p-title{font-family:var(--serif);font-size:26px;font-weight:400;color:var(--ink);line-height:1.2}
+.p-lead{font-size:15px;color:var(--g600);line-height:1.75;margin-bottom:32px;max-width:640px}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
+.svc-card{background:var(--white);border:1px solid var(--g100);border-radius:14px;padding:28px;position:relative;overflow:hidden;transition:transform .3s var(--ease),box-shadow .3s,border-color .3s}
+.svc-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:3px;background:var(--navy);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.svc-card:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(15,45,82,.1);border-color:var(--navy2)}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:12px}
+.svc-name{font-family:var(--serif);font-size:16px;font-weight:500;color:var(--ink);line-height:1.3}
+.svc-badge{font-size:10px;font-weight:500;padding:3px 9px;border-radius:20px;white-space:nowrap;flex-shrink:0;letter-spacing:.03em}
+.badge-once{background:#E8F0FE;color:#1A4A8C}
+.badge-recur{background:#FFF3E0;color:#8C5A00}
+.badge-high{background:#E8F5EE;color:#1A6B4A}
+.badge-key{background:#FCE4EC;color:#8C1A3A}
+.svc-desc{font-size:13px;color:var(--g600);line-height:1.7;margin-bottom:16px}
+.svc-tags{display:flex;flex-wrap:wrap;gap:5px}
+.svc-tag{font-size:11px;padding:3px 9px;border-radius:20px;border:1px solid var(--g200);color:var(--g600);background:var(--g50)}
+.s-cta{background:var(--teal05);border-top:1px solid var(--teal2);border-bottom:1px solid var(--teal2);padding:80px 5%}
+.cta-inner{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.cta-title{font-family:var(--serif);font-size:clamp(22px,3vw,36px);font-weight:400;line-height:1.25;color:var(--teal7)}
+.cta-title em{font-style:italic}
+.cta-sub{font-size:15px;color:var(--g600);margin-top:10px;line-height:1.65}
+.btn-navy{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;padding:14px 28px;background:var(--navy);color:#fff;border-radius:8px;letter-spacing:.01em;transition:background .2s,transform .15s,box-shadow .2s}
+.btn-navy:hover{background:var(--navy7);transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,45,82,.2)}
+.btn-navy svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:2;transition:transform .2s}
+.btn-navy:hover svg{transform:translateX(3px)}
+footer{background:#1C2B3A;padding:72px 5% 36px}
+.footer-top{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:36px}
+.f-brand-name{font-family:var(--serif);font-size:22px;font-weight:400;color:#fff;margin-bottom:14px}
+.f-tagline{font-size:13px;color:rgba(255,255,255,.4);line-height:1.7;max-width:240px;margin-bottom:22px}
+.f-contact a{display:block;font-size:13px;color:rgba(255,255,255,.45);margin-bottom:6px;transition:color .2s}
+.f-contact a:hover{color:rgba(255,255,255,.85)}
+.f-col-title{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:18px}
+.f-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.f-col ul a{font-size:13px;color:rgba(255,255,255,.45);transition:color .2s}
+.f-col ul a:hover{color:rgba(255,255,255,.85)}
+.footer-bottom{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;align-items:center}
+.f-copy{font-size:12px;color:rgba(255,255,255,.35)}
+.f-langs{display:flex;gap:4px}
+.f-lang-btn{font-size:11px;font-weight:500;padding:4px 10px;border:none;background:transparent;border-radius:6px;color:rgba(255,255,255,.3);cursor:pointer;transition:all .2s}
+.f-lang-btn.on{background:rgba(255,255,255,.08);color:rgba(255,255,255,.8)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s var(--eout),transform .7s var(--eout)}
+.reveal.vis{opacity:1;transform:none}
+.d1{transition-delay:.1s!important}.d2{transition-delay:.2s!important}.d3{transition-delay:.3s!important}
+@media(max-width:1024px){
+  .insight-inner{grid-template-columns:1fr}
+  .adv-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-top{grid-template-columns:1fr 1fr;gap:32px}
+}
+@media(max-width:768px){
+  :root{--nav-h:60px}
+  .nav-links,.lang-switch,.nav-cta{display:none!important}
+  .ham{display:flex}
+  section{padding:64px 5%}
+  .ph-inner{padding:60px 5%}
+  .ph-stats{flex-wrap:wrap;gap:20px}
+  .ph-stat{border-right:none;padding-right:0;margin-right:0}
+  .adv-grid{grid-template-columns:1fr}
+  .insight-cards{grid-template-columns:1fr}
+  .j-steps{grid-template-columns:1fr 1fr;gap:24px}
+  .j-steps::before{display:none}
+  .services-grid{grid-template-columns:1fr}
+  .cta-inner{grid-template-columns:1fr;gap:28px}
+  .footer-top{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;gap:16px;text-align:center}
+}
+@media(max-width:480px){
+  .ph-actions{flex-direction:column;align-items:flex-start}
+  .btn-white,.btn-outline-white{width:100%;justify-content:center}
+  .j-steps{grid-template-columns:1fr}
+  .pillar-tabs{gap:6px}
+  .ptab{font-size:12px;padding:8px 14px}
+}
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <a href="/index.html" class="nav-wordmark">Atlas <span>Advisory</span></a>
+  <ul class="nav-links">
+    <li><a href="/index.html"><span data-lang="pt" class="on">Início</span><span data-lang="en">Home</span><span data-lang="zh">首页</span></a></li>
+    <li><a href="/brazil.html"><span data-lang="pt" class="on">Serviços Brasil</span><span data-lang="en">Brazil Services</span><span data-lang="zh">巴西服务</span></a></li>
+    <li><a href="/hongkong.html" class="active"><span data-lang="pt" class="on">HK & China</span><span data-lang="en">HK & China</span><span data-lang="zh">香港及中国</span></a></li>
+    <li><a href="/contact.html"><span data-lang="pt" class="on">Contato</span><span data-lang="en">Contact</span><span data-lang="zh">联系我们</span></a></li>
+  </ul>
+  <div class="lang-switch">
+    <button class="lang-btn on" id="lb-pt" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" id="lb-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="lb-zh" onclick="setLang('zh')">中文</button>
+  </div>
+  <a href="/contact.html" class="nav-cta">
+    <span data-lang="pt" class="on">Consulta Gratuita</span>
+    <span data-lang="en">Free Consultation</span>
+    <span data-lang="zh">免费咨询</span>
+  </a>
+  <div class="ham" id="ham" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+</nav>
+<div class="mobile-menu" id="mmenu">
+  <a href="/index.html"><span data-lang="pt" class="on">Início</span><span data-lang="en">Home</span><span data-lang="zh">首页</span></a>
+  <a href="/brazil.html"><span data-lang="pt" class="on">Serviços Brasil</span><span data-lang="en">Brazil Services</span><span data-lang="zh">巴西服务</span></a>
+  <a href="/hongkong.html"><span data-lang="pt" class="on">HK & China</span><span data-lang="en">HK & China</span><span data-lang="zh">香港及中国</span></a>
+  <a href="/contact.html"><span data-lang="pt" class="on">Contato</span><span data-lang="en">Contact</span><span data-lang="zh">联系我们</span></a>
+  <div class="ml">
+    <button class="lang-btn on" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('zh')">中文</button>
+  </div>
+  <a href="/contact.html" class="nav-cta">
+    <span data-lang="pt" class="on">Consulta Gratuita</span>
+    <span data-lang="en">Free Consultation</span>
+    <span data-lang="zh">免费咨询</span>
+  </a>
+</div>
+
+<div class="page-hero">
+  <div class="ph-grid"></div>
+  <div class="ph-rings"><div class="ph-ring"></div><div class="ph-ring"></div><div class="ph-ring"></div></div>
+  <div class="ph-inner">
+    <div class="ph-tag">
+      <span data-lang="pt" class="on">Hong Kong & China</span>
+      <span data-lang="en">Hong Kong & China</span>
+      <span data-lang="zh">香港及中国</span>
+    </div>
+    <h1 class="ph-h1">
+      <span data-lang="pt" class="on">Sua empresa em HK.<br><em>Sua porta de entrada para o mundo.</em></span>
+      <span data-lang="en">Your HK entity.<br><em>Your gateway to the world.</em></span>
+      <span data-lang="zh">您的香港公司。<br><em>您通往世界的门户。</em></span>
+    </h1>
+    <p class="ph-sub">
+      <span data-lang="pt" class="on">Hong Kong como plataforma estratégica — para investidores chineses que querem entrar no Brasil, e para empresas brasileiras que querem crescer na Ásia. Uma empresa. Dois mercados. Totalmente gerenciado.</span>
+      <span data-lang="en">Hong Kong as a strategic platform — for Chinese investors entering Brazil, and Brazilian companies expanding into Asia. One firm. Two markets. Fully managed.</span>
+      <span data-lang="zh">香港作为战略平台——既服务于希望进入巴西的中国投资者，也服务于希望拓展亚洲业务的巴西企业。一家公司，两个市场，全程管理。</span>
+    </p>
+    <div class="ph-actions">
+      <a href="/contact.html" class="btn-white">
+        <span data-lang="pt" class="on">Agendar Consulta Gratuita</span>
+        <span data-lang="en">Book a Free Consultation</span>
+        <span data-lang="zh">预约免费咨询</span>
+        <svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+      </a>
+      <a href="#pilares" class="btn-outline-white">
+        <span data-lang="pt" class="on">Ver todos os serviços</span>
+        <span data-lang="en">See all services</span>
+        <span data-lang="zh">查看所有服务</span>
+      </a>
+    </div>
+    <div class="ph-stats">
+      <div class="ph-stat"><div class="ph-stat-num">23</div><div class="ph-stat-label"><span data-lang="pt" class="on">Serviços disponíveis</span><span data-lang="en">Services available</span><span data-lang="zh">可用服务</span></div></div>
+      <div class="ph-stat"><div class="ph-stat-num">5</div><div class="ph-stat-label"><span data-lang="pt" class="on">Pilares de serviço</span><span data-lang="en">Service pillars</span><span data-lang="zh">服务支柱</span></div></div>
+      <div class="ph-stat"><div class="ph-stat-num">7 dias</div><div class="ph-stat-label"><span data-lang="pt" class="on">Constituição em HK</span><span data-lang="en">HK incorporation</span><span data-lang="zh">香港注册时间</span></div></div>
+      <div class="ph-stat"><div class="ph-stat-num">8.25%</div><div class="ph-stat-label"><span data-lang="pt" class="on">Imposto corporativo HK</span><span data-lang="en">HK corporate tax</span><span data-lang="zh">香港企业税率</span></div></div>
+    </div>
+  </div>
+</div>
+<section class="s-adv">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow"><span data-lang="pt" class="on">Por que Hong Kong?</span><span data-lang="en">Why Hong Kong?</span><span data-lang="zh">为何选择香港？</span></div>
+      <h2 class="s-title"><span data-lang="pt" class="on">Seis vantagens que <em>mudam tudo para investidores</em></span><span data-lang="en">Six advantages that <em>change everything for investors</em></span><span data-lang="zh">六大优势，<em>为投资者带来根本改变</em></span></h2>
+    </div>
+    <div class="adv-grid">
+      <div class="adv-card reveal d1">
+        <div class="adv-num">0%</div>
+        <div class="adv-label"><span data-lang="pt" class="on">Imposto sobre ganho de capital</span><span data-lang="en">Capital gains tax</span><span data-lang="zh">资本利得税</span></div>
+        <div class="adv-title"><span data-lang="pt" class="on">Zero imposto sobre alienações de ativos</span><span data-lang="en">Zero tax on asset disposals</span><span data-lang="zh">资产处置零税负</span></div>
+        <div class="adv-desc"><span data-lang="pt" class="on">HK não tributa ganhos de capital. Para investidores brasileiros acostumados a pagar 15–22,5% de IRPF sobre alienações, isso é transformador — especialmente para saídas de investimentos asiáticos e vendas de participações societárias.</span><span data-lang="en">HK levies zero capital gains tax. For Brazilian investors accustomed to paying 15–22.5% CGT on asset disposals, this is transformative — especially for exits from Asian investments and equity stake sales.</span><span data-lang="zh">香港不征收资本利得税。对于习惯缴纳15–22.5%资本利得税的巴西投资者而言，这是颠覆性的优势——尤其是在退出亚洲投资和出售股权时。</span></div>
+      </div>
+      <div class="adv-card reveal d2">
+        <div class="adv-num">8.25%</div>
+        <div class="adv-label"><span data-lang="pt" class="on">Imposto sobre lucro corporativo</span><span data-lang="en">Corporate profits tax</span><span data-lang="zh">企业利润税</span></div>
+        <div class="adv-title"><span data-lang="pt" class="on">8,25% sobre os primeiros HK$2M de lucro</span><span data-lang="en">8.25% on first HK$2M of profit</span><span data-lang="zh">首200万港元利润税率仅8.25%</span></div>
+        <div class="adv-desc"><span data-lang="pt" class="on">vs 34% de IRPJ+CSLL no Brasil. Para estruturas holding, a diferença cria economias substanciais para investidores brasileiros com ativos e operações asiáticas.</span><span data-lang="en">vs Brazil's 34% IRPJ+CSLL. For holding structures, the difference creates substantial savings for Brazilian investors with Asian assets and operations.</span><span data-lang="zh">对比巴西34%的IRPJ+CSLL税率。通过控股架构，持有亚洲资产和业务的巴西投资者可实现可观的税务节省。</span></div>
+      </div>
+      <div class="adv-card reveal d3">
+        <div class="adv-num">7 dias</div>
+        <div class="adv-label"><span data-lang="pt" class="on">Para constituição de empresa</span><span data-lang="en">For company incorporation</span><span data-lang="zh">公司注册时间</span></div>
+        <div class="adv-title"><span data-lang="pt" class="on">Sete vezes mais rápido que o Brasil</span><span data-lang="en">Seven times faster than Brazil</span><span data-lang="zh">比巴西快七倍</span></div>
+        <div class="adv-desc"><span data-lang="pt" class="on">Uma empresa em HK pode ser constituída em 7 dias úteis — vs 4 a 8 semanas no Brasil. Para investidores ansiosos por aproveitar oportunidades asiáticas, essa agilidade é uma vantagem competitiva real.</span><span data-lang="en">A HK company can be incorporated in 7 working days — vs Brazil's 4–8 weeks. For investors eager to move quickly on Asian opportunities, this speed is a genuine competitive advantage.</span><span data-lang="zh">香港公司可在7个工作日内完成注册，而巴西需要4至8周。对于希望迅速抓住亚洲机遇的投资者而言，这种速度本身就是竞争优势。</span></div>
+      </div>
+      <div class="adv-card reveal d1">
+        <div class="adv-num">EN+ZH</div>
+        <div class="adv-label"><span data-lang="pt" class="on">Legislação bilíngue</span><span data-lang="en">Bilingual legislation</span><span data-lang="zh">双语立法</span></div>
+        <div class="adv-title"><span data-lang="pt" class="on">Common law inglês em dois idiomas</span><span data-lang="en">English common law in two languages</span><span data-lang="zh">英中双语普通法体系</span></div>
+        <div class="adv-desc"><span data-lang="pt" class="on">HK opera com direito comum inglês em inglês e chinês. Empresas brasileiras acessam a Ásia no idioma que já usam nos negócios internacionais — com toda a segurança jurídica do sistema de common law.</span><span data-lang="en">HK operates on English common law in English and Chinese. Brazilian companies access Asia in the language they already use internationally — with full common law legal certainty.</span><span data-lang="zh">香港以英文和中文运行英国普通法体系。巴西企业可用其国际业务惯用语言进入亚洲市场——并享有完整的普通法法律确定性。</span></div>
+      </div>
+      <div class="adv-card reveal d2">
+        <div class="adv-num">100+</div>
+        <div class="adv-label"><span data-lang="pt" class="on">Tratados de dupla tributação</span><span data-lang="en">Double tax treaties</span><span data-lang="zh">双重征税协定</span></div>
+        <div class="adv-title"><span data-lang="pt" class="on">Redução de impostos retidos na fonte</span><span data-lang="en">Reduced withholding on cross-border flows</span><span data-lang="zh">降低跨境资金预提税</span></div>
+        <div class="adv-desc"><span data-lang="pt" class="on">O tratado HK–China reduz o imposto retido na fonte sobre dividendos para 5–10%, em vez de 20%. Para investidores com operações na China, isso representa uma economia significativa em cada distribuição de lucros ao longo dos anos.</span><span data-lang="en">The HK–China treaty reduces withholding tax on dividends to 5–10% instead of 20%. For investors with China operations, this represents significant savings on every profit distribution year after year.</span><span data-lang="zh">香港–中国协定将股息预提税从20%降至5–10%。对于在中国有业务的投资者，每次利润分配均可年复一年地实现可观节省。</span></div>
+      </div>
+      <div class="adv-card reveal d3">
+        <div class="adv-num">GBA</div>
+        <div class="adv-label"><span data-lang="pt" class="on">Grande Área da Baía</span><span data-lang="en">Greater Bay Area</span><span data-lang="zh">大湾区</span></div>
+        <div class="adv-title"><span data-lang="pt" class="on">Gateway para 86M consumidores e US$1,9T de PIB</span><span data-lang="en">Gateway to 86M consumers and US$1.9T GDP</span><span data-lang="zh">通往8600万消费者和1.9万亿美元GDP的门户</span></div>
+        <div class="adv-desc"><span data-lang="pt" class="on">HK é o hub financeiro da Grande Área da Baía, que inclui Shenzhen, Guangzhou e Macau. Empresas que entram via HK têm acesso direto a esse ecossistema econômico — o maior do mundo depois dos EUA e da China continental.</span><span data-lang="en">HK is the financial hub of the Greater Bay Area including Shenzhen, Guangzhou, and Macau. Companies entering via HK have direct access to this economic ecosystem — the largest in the world after the US and mainland China.</span><span data-lang="zh">香港是大湾区的金融枢纽，辐射深圳、广州和澳门。通过香港进入的企业可直接接入这一经济生态系统——仅次于美国和中国大陆的全球第三大经济圈。</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="s-insight">
+  <div class="container">
+    <div class="insight-inner">
+      <div class="reveal">
+        <div class="eyebrow" style="color:var(--teal2)"><span data-lang="pt" class="on">A vantagem que poucos conhecem</span><span data-lang="en">The advantage few know about</span><span data-lang="zh">鲜为人知的优势</span></div>
+        <blockquote class="insight-quote">
+          <span data-lang="pt" class="on">"A maioria das empresas brasileiras chega na China financiando suas operações a 18% ao ano. As que vencem chegam financiadas a 4%. A diferença é Hong Kong."</span>
+          <span data-lang="en">"Most Brazilian companies enter China financing operations at 18% per year. The ones that win do it at 4%. The difference is Hong Kong."</span>
+          <span data-lang="zh">"大多数巴西企业进入中国时，运营融资成本高达年利率18%。而成功者的成本仅为4%。差距就在于——香港。"</span>
+        </blockquote>
+        <p class="insight-sub">
+          <span data-lang="pt" class="on">Depois de 20 anos no corredor Brasil–Ásia, esta é a percepção mais transformadora que compartilhamos com nossos clientes. O custo do capital em HK a 3–6% a.a. versus o Brasil a 12–20% cria uma vantagem competitiva estrutural que paga os honorários da Atlas Advisory muitas vezes ao ano.</span>
+          <span data-lang="en">After 20 years in the Brazil–Asia corridor, this is the most transformative insight we share with clients. HK's cost of capital at 3–6% p.a. vs Brazil's 12–20% creates a structural competitive advantage that covers Atlas Advisory's annual fees many times over.</span>
+          <span data-lang="zh">经过20年深耕巴西–亚洲走廊，这是我们向客户分享的最具变革性的洞见。香港3–6%的年度资金成本对比巴西12–20%，带来的结构性竞争优势每年可抵消Atlas Advisory服务费的数倍。</span>
+        </p>
+      </div>
+      <div class="reveal d2">
+        <div class="insight-cards">
+          <div class="ins-card bad">
+            <div class="ins-card-label"><span data-lang="pt" class="on">Crédito corporativo no Brasil</span><span data-lang="en">Brazilian corporate credit</span><span data-lang="zh">巴西企业信贷</span></div>
+            <div class="ins-card-num">12–20%</div>
+            <div class="ins-card-sub"><span data-lang="pt" class="on">Taxa anual típica</span><span data-lang="en">Typical annual rate</span><span data-lang="zh">典型年利率</span></div>
+          </div>
+          <div class="ins-card good">
+            <div class="ins-card-label"><span data-lang="pt" class="on">Crédito corporativo em HK</span><span data-lang="en">HK corporate credit</span><span data-lang="zh">香港企业信贷</span></div>
+            <div class="ins-card-num">3–6%</div>
+            <div class="ins-card-sub"><span data-lang="pt" class="on">Taxa anual — trade finance</span><span data-lang="en">Annual trade finance rate</span><span data-lang="zh">贸易融资年利率</span></div>
+          </div>
+          <div class="ins-card delta" style="grid-column:1/-1">
+            <div class="ins-card-label"><span data-lang="pt" class="on">Economia anual em linha de US$5M</span><span data-lang="en">Annual saving on US$5M facility</span><span data-lang="zh">500万美元融资额度的年度节省</span></div>
+            <div class="ins-card-num">~R$920K</div>
+            <div class="ins-card-sub"><span data-lang="pt" class="on">Cobre os honorários da Atlas Advisory muitas vezes ao ano</span><span data-lang="en">Covers Atlas Advisory fees many times per year</span><span data-lang="zh">每年可抵消Atlas Advisory服务费的数倍</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="s-hksg">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow"><span data-lang="pt" class="on">Hong Kong vs Singapura</span><span data-lang="en">Hong Kong vs Singapore</span><span data-lang="zh">香港 vs 新加坡</span></div>
+      <h2 class="s-title"><span data-lang="pt" class="on">Para investimento no Brasil,<br><em>Hong Kong ganha em quase tudo</em></span><span data-lang="en">For Brazil investment,<br><em>Hong Kong wins on almost everything</em></span><span data-lang="zh">就巴西投资而言，<br><em>香港几乎全面胜出</em></span></h2>
+    </div>
+    <div style="overflow-x:auto;margin-top:40px;">
+      <table class="hksg-table reveal">
+        <thead><tr>
+          <th><span data-lang="pt" class="on">Critério</span><span data-lang="en">Factor</span><span data-lang="zh">比较维度</span></th>
+          <th>🇭🇰 Hong Kong</th>
+          <th>🇸🇬 <span data-lang="pt" class="on">Singapura</span><span data-lang="en">Singapore</span><span data-lang="zh">新加坡</span></th>
+        </tr></thead>
+        <tbody>
+          <tr class="win"><td><span data-lang="pt" class="on">Diretor local obrigatório</span><span data-lang="en">Local director required</span><span data-lang="zh">是否需要本地董事</span></td><td><span class="hk-badge">HK</span> <span data-lang="pt" class="on">Não — 100% remoto</span><span data-lang="en">No — 100% remote</span><span data-lang="zh">否——100%远程</span></td><td><span data-lang="pt" class="on">Sim — ~S$1.500/ano adicional</span><span data-lang="en">Yes — ~S$1,500/yr extra</span><span data-lang="zh">是——每年额外约1,500新加坡元</span></td></tr>
+          <tr class="win"><td><span data-lang="pt" class="on">Imposto corporativo</span><span data-lang="en">Corporate tax</span><span data-lang="zh">企业税率</span></td><td><span class="hk-badge">HK</span> <span data-lang="pt" class="on">8,25% sobre os primeiros HK$2M</span><span data-lang="en">8.25% on first HK$2M</span><span data-lang="zh">首200万港元利润税率8.25%</span></td><td><span data-lang="pt" class="on">17% fixo + GST de 9%</span><span data-lang="en">17% flat + 9% GST</span><span data-lang="zh">固定17% + 9%商品及服务税</span></td></tr>
+          <tr class="win"><td><span data-lang="pt" class="on">Familiaridade com o Brasil</span><span data-lang="en">Brazil familiarity</span><span data-lang="zh">对巴西的熟悉程度</span></td><td><span class="hk-badge">HK</span> <span data-lang="pt" class="on">Bacen e advogados brasileiros aceitam estruturas HK</span><span data-lang="en">Bacen & Brazilian lawyers accept HK structures</span><span data-lang="zh">巴西央行和律师接受香港架构</span></td><td><span data-lang="pt" class="on">Menos familiar — gera questionamentos no Brasil</span><span data-lang="en">Less familiar — creates friction in Brazil</span><span data-lang="zh">知名度较低——在巴西容易引发质疑</span></td></tr>
+          <tr class="win"><td><span data-lang="pt" class="on">Centro de RMB offshore</span><span data-lang="en">Offshore RMB centre</span><span data-lang="zh">离岸人民币中心</span></td><td><span class="hk-badge">HK</span> <span data-lang="pt" class="on">O maior centro offshore de RMB do mundo</span><span data-lang="en">World's largest offshore RMB centre</span><span data-lang="zh">全球最大离岸人民币中心</span></td><td><span data-lang="pt" class="on">Disponível, mas menor e menos líquido</span><span data-lang="en">Available but smaller and less liquid</span><span data-lang="zh">可用，但规模较小且流动性较低</span></td></tr>
+          <tr class="win"><td><span data-lang="pt" class="on">Custo de capital</span><span data-lang="en">Cost of capital</span><span data-lang="zh">资金成本</span></td><td><span class="hk-badge">HK</span> <span data-lang="pt" class="on">3–6% a.a. — vantagem competitiva estrutural</span><span data-lang="en">3–6% p.a. — structural competitive advantage</span><span data-lang="zh">年利率3–6%——结构性竞争优势</span></td><td><span data-lang="pt" class="on">Similar, mas infraestrutura menos relevante para o corredor BR</span><span data-lang="en">Similar but less relevant trade finance for BR corridor</span><span data-lang="zh">相近，但贸易融资对巴西走廊的针对性较弱</span></td></tr>
+          <tr class="win"><td><span data-lang="pt" class="on">Custo total de constituição</span><span data-lang="en">All-in setup cost</span><span data-lang="zh">注册总成本</span></td><td><span class="hk-badge">HK</span> <span data-lang="pt" class="on">A partir de HK$7.740 — sem diretor local</span><span data-lang="en">From HKD 7,740 — no nominee director needed</span><span data-lang="zh">起价港元7,740——无需本地董事</span></td><td><span data-lang="pt" class="on">Mais caro devido ao custo de diretor local</span><span data-lang="en">Higher due to mandatory nominee director cost</span><span data-lang="zh">因强制本地董事成本而更高</span></td></tr>
+          <tr><td><span data-lang="pt" class="on">Melhor para expansão ASEAN</span><span data-lang="en">Best for ASEAN expansion</span><span data-lang="zh">最适合东盟市场扩张</span></td><td><span data-lang="pt" class="on">Limitado — HK não é membro da ASEAN</span><span data-lang="en">Limited — HK is not an ASEAN member</span><span data-lang="zh">有限——香港非东盟成员</span></td><td><span class="hk-badge" style="background:var(--g50);color:var(--g600);">SG</span> <span data-lang="pt" class="on">Gateway para 660M consumidores da ASEAN</span><span data-lang="en">Gateway to 660M ASEAN consumers</span><span data-lang="zh">通往6.6亿东盟消费者的门户</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="s-journey">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow"><span data-lang="pt" class="on">A jornada do investidor</span><span data-lang="en">The investor journey</span><span data-lang="zh">投资者历程</span></div>
+      <h2 class="s-title"><span data-lang="pt" class="on">De HK ao Brasil — <em>passo a passo</em></span><span data-lang="en">From HK to Brazil — <em>step by step</em></span><span data-lang="zh">从香港到巴西——<em>步步为营</em></span></h2>
+    </div>
+    <div class="j-steps reveal">
+      <div class="j-step"><div class="j-dot">1</div><div class="j-phase"><span data-lang="pt" class="on">Estrutura</span><span data-lang="en">Structure</span><span data-lang="zh">架构</span></div><div class="j-title"><span data-lang="pt" class="on">Constituição em HK</span><span data-lang="en">HK entity setup</span><span data-lang="zh">香港实体设立</span></div><div class="j-services"><span data-lang="pt" class="on">Private Ltd · Secretary · Address</span><span data-lang="en">Private Ltd · Secretary · Address</span><span data-lang="zh">私人有限公司·秘书·地址</span></div></div>
+      <div class="j-step"><div class="j-dot">2</div><div class="j-phase"><span data-lang="pt" class="on">Tributário</span><span data-lang="en">Tax</span><span data-lang="zh">税务</span></div><div class="j-title"><span data-lang="pt" class="on">Estrutura fiscal</span><span data-lang="en">Tax structure</span><span data-lang="zh">税务架构</span></div><div class="j-services"><span data-lang="pt" class="on">Holding · 0% CGT · Tratados</span><span data-lang="en">Holding · 0% CGT · DTT</span><span data-lang="zh">控股·零资本利得税·协定</span></div></div>
+      <div class="j-step"><div class="j-dot">3</div><div class="j-phase"><span data-lang="pt" class="on">Bancário</span><span data-lang="en">Banking</span><span data-lang="zh">银行</span></div><div class="j-title"><span data-lang="pt" class="on">Acesso financeiro</span><span data-lang="en">Financial access</span><span data-lang="zh">金融准入</span></div><div class="j-services"><span data-lang="pt" class="on">HSBC · Airwallex · Trade finance</span><span data-lang="en">HSBC · Airwallex · Trade finance</span><span data-lang="zh">汇丰·Airwallex·贸易融资</span></div></div>
+      <div class="j-step"><div class="j-dot">4</div><div class="j-phase"><span data-lang="pt" class="on">Operação</span><span data-lang="en">Operations</span><span data-lang="zh">运营</span></div><div class="j-title"><span data-lang="pt" class="on">Gestão em HK</span><span data-lang="en">HK management</span><span data-lang="zh">香港管理</span></div><div class="j-services"><span data-lang="pt" class="on">Contabilidade PT · Auditoria</span><span data-lang="en">PT accounting · Audit</span><span data-lang="zh">葡语会计·审计</span></div></div>
+      <div class="j-step"><div class="j-dot">5</div><div class="j-phase"><span data-lang="pt" class="on">Brasil / China</span><span data-lang="en">Brazil / China</span><span data-lang="zh">巴西/中国</span></div><div class="j-title"><span data-lang="pt" class="on">Destino final</span><span data-lang="en">Final destination</span><span data-lang="zh">最终目的地</span></div><div class="j-services"><span data-lang="pt" class="on">RDE-IED · CNPJ · China</span><span data-lang="en">RDE-IED · CNPJ · China</span><span data-lang="zh">RDE-IED·CNPJ·中国</span></div></div>
+    </div>
+  </div>
+</section>
+<section class="s-pillars" id="pilares">
+  <div class="container">
+    <div class="reveal">
+      <div class="eyebrow"><span data-lang="pt" class="on">Serviços completos</span><span data-lang="en">Complete services</span><span data-lang="zh">全套服务</span></div>
+      <h2 class="s-title"><span data-lang="pt" class="on">23 serviços em <em>5 pilares</em></span><span data-lang="en">23 services across <em>5 pillars</em></span><span data-lang="zh">5大支柱，<em>23项服务</em></span></h2>
+    </div>
+    <div class="pillar-tabs">
+      <button class="ptab on" onclick="showPillar(1)"><span data-lang="pt" class="on">01 — Jurídico & Societário</span><span data-lang="en">01 — Legal & Corporate</span><span data-lang="zh">01 — 法律与公司</span></button>
+      <button class="ptab" onclick="showPillar(2)"><span data-lang="pt" class="on">02 — Planejamento Tributário</span><span data-lang="en">02 — Tax Planning</span><span data-lang="zh">02 — 税务规划</span></button>
+      <button class="ptab" onclick="showPillar(3)"><span data-lang="pt" class="on">03 — Administração Empresarial</span><span data-lang="en">03 — Business Administration</span><span data-lang="zh">03 — 企业行政</span></button>
+      <button class="ptab" onclick="showPillar(4)"><span data-lang="pt" class="on">04 — Bancário & Financeiro</span><span data-lang="en">04 — Banking & Finance</span><span data-lang="zh">04 — 银行与金融</span></button>
+      <button class="ptab" onclick="showPillar(5)"><span data-lang="pt" class="on">05 — Acesso ao Mercado Chinês</span><span data-lang="en">05 — China Market Access</span><span data-lang="zh">05 — 中国市场准入</span></button>
+    </div>
+    <!-- PILLAR 1 -->
+    <div class="pillar-panel on" id="pillar-1">
+      <div class="pillar-header"><div class="p-num">01</div><div><div class="p-tag"><span data-lang="pt" class="on">Fundação — todo investidor começa aqui</span><span data-lang="en">Foundation — every investor starts here</span><span data-lang="zh">基础——每位投资者的起点</span></div><div class="p-title"><span data-lang="pt" class="on">Jurídico & Societário em Hong Kong</span><span data-lang="en">Legal & Corporate Setup in Hong Kong</span><span data-lang="zh">香港法律与公司架构</span></div></div></div>
+      <p class="p-lead"><span data-lang="pt" class="on">A base legal que todo investidor brasileiro ou chinês precisa para operar em Hong Kong — constituída com rapidez, mantida com rigor, e gerenciada integralmente em português. Nenhuma outra firma do mercado oferece essa combinação.</span><span data-lang="en">The legal foundation every Brazilian or Chinese investor needs to operate in Hong Kong — incorporated quickly, maintained rigorously, and managed entirely in Portuguese. No other firm in the market offers this combination.</span><span data-lang="zh">每位巴西或中国投资者在香港运营所需的法律基础——快速注册、严格维护，并全程以葡萄牙语管理。市场上没有其他公司能提供这种组合。</span></p>
+      <div class="services-grid">
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Constituição de empresa em HK (Private Limited)</span><span data-lang="en">HK company incorporation (Private Limited)</span><span data-lang="zh">香港公司注册（私人有限公司）</span></div><span class="svc-badge badge-once"><span data-lang="pt" class="on">Pontual</span><span data-lang="en">One-time</span><span data-lang="zh">一次性</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Constituição de Private Limited Company em HK para investidores brasileiros, HNWIs, exportadores de agronegócio e escritórios de família. Cobre reserva de nome, Memorando e Artigos de Associação, registro no Companies Registry e Certificado de Registro Empresarial (IRD). Concluído em 7 a 10 dias úteis. Totalmente guiado em português — o cliente nunca interage com as autoridades de HK diretamente.</span><span data-lang="en">Formation of a HK Private Limited Company for Brazilian investors, HNWIs, agribusiness exporters and family offices. Covers name reservation, Memorandum & Articles, Companies Registry filing, and Business Registration Certificate (IRD). Completed in 7–10 working days. Fully guided in Portuguese — the client never interacts with HK authorities directly.</span><span data-lang="zh">为巴西投资者、高净值人士、农业出口商和家族办公室设立香港私人有限公司。涵盖公司名称预留、公司章程及细则、公司注册处申报和商业登记证（税务局）。7至10个工作日完成。全程以葡萄牙语提供指导——客户无需直接与香港当局联系。</span></p>
+          <div class="svc-tags"><span class="svc-tag">Companies Registry</span><span class="svc-tag"><span data-lang="pt" class="on">7–10 dias úteis</span><span data-lang="en">7–10 working days</span><span data-lang="zh">7–10个工作日</span></span><span class="svc-tag"><span data-lang="pt" class="on">Guiado em PT</span><span data-lang="en">Guided in PT</span><span data-lang="zh">葡语指导</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Design e constituição de estrutura holding</span><span data-lang="en">Holding structure design & setup</span><span data-lang="zh">控股架构设计与设立</span></div><span class="svc-badge badge-high"><span data-lang="pt" class="on">Alto valor</span><span data-lang="en">High value</span><span data-lang="zh">高价值</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Design e implantação de estruturas holding em HK para clientes brasileiros que investem na Ásia ou usam HK como hub regional. Cobre estruturas de um ou múltiplos níveis, acordos de acionistas, nomeação de diretores e arranjos de nominee onde aplicável. Construído em torno da residência fiscal brasileira do cliente para maximizar a eficiência transfronteiriça — onde a posição única da Atlas Advisory gera o maior valor.</span><span data-lang="en">Design and implementation of HK holding structures for Brazilian clients investing in Asia or using HK as a regional hub. Covers single-tier and multi-tier arrangements, shareholder agreements, director appointments, and nominee arrangements where appropriate. Built around the client's Brazilian tax residency to maximise cross-border efficiency — where Atlas Advisory's unique position creates the most value.</span><span data-lang="zh">为投资亚洲或将香港作为区域枢纽的巴西客户设计并实施香港控股架构。涵盖单层和多层安排、股东协议、董事任命，以及适当情况下的代名人安排。围绕客户在巴西的税务居民身份构建，以最大化跨境效率——这正是Atlas Advisory独特定位最能创造价值之处。</span></p>
+          <div class="svc-tags"><span class="svc-tag">Holding</span><span class="svc-tag"><span data-lang="pt" class="on">Acordo de sócios</span><span data-lang="en">Shareholder agreement</span><span data-lang="zh">股东协议</span></span><span class="svc-tag">Nominee</span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Endereço registrado e secretário societário</span><span data-lang="en">Registered address & company secretary</span><span data-lang="zh">注册地址与公司秘书</span></div><span class="svc-badge badge-recur"><span data-lang="pt" class="on">Anual</span><span data-lang="en">Annual</span><span data-lang="zh">年度</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Endereço registrado em HK (obrigatório por lei) e secretário societário licenciado. Mantém os livros e registros estatutários, rascunha resoluções de diretores e sócios, e arquiva alterações no Companies Registry. Todos os atos estatutários são comunicados em resumos em português ao proprietário brasileiro — eliminando completamente a barreira de idioma na gestão corporativa.</span><span data-lang="en">Mandatory HK registered address and licensed company secretary. Maintains statutory books and registers, drafts directors' and shareholders' resolutions, and files changes with the Companies Registry. All statutory actions communicated in Portuguese-language summaries to the Brazilian owner — completely eliminating the language barrier in corporate governance.</span><span data-lang="zh">强制要求的香港注册地址和持牌公司秘书。维护法定账簿和登记册，起草董事及股东决议，向公司注册处申报变更。所有法定事项以葡萄牙语摘要形式通知巴西业主——彻底消除公司治理中的语言障碍。</span></p>
+          <div class="svc-tags"><span class="svc-tag"><span data-lang="pt" class="on">Obrigatório</span><span data-lang="en">Mandatory</span><span data-lang="zh">强制要求</span></span><span class="svc-tag"><span data-lang="pt" class="on">Resumos em PT</span><span data-lang="en">PT summaries</span><span data-lang="zh">葡语摘要</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Relatório anual e obrigações de compliance</span><span data-lang="en">Annual return & compliance filings</span><span data-lang="zh">年度申报与合规申报</span></div><span class="svc-badge badge-recur"><span data-lang="pt" class="on">Anual</span><span data-lang="en">Annual</span><span data-lang="zh">年度</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Depósito do Annual Return no HK Companies Registry, renovação do Business Registration com o IRD e gestão do calendário de compliance. Alertas de prazo proativos em português para que proprietários brasileiros nunca percam uma obrigação. Inclui atas de assembleias anuais e redação de resoluções.</span><span data-lang="en">Annual Return filing with the HK Companies Registry, Business Registration renewal with IRD, and compliance calendar management. Proactive deadline alerts in Portuguese so Brazilian owners never miss a filing. Includes annual general meeting minutes and resolution drafting.</span><span data-lang="zh">向香港公司注册处提交年度申报表、在税务局续期商业登记，以及合规日历管理。以葡萄牙语发送主动截止日期提醒，确保巴西业主不错过任何申报。包括周年大会记录和决议起草。</span></p>
+          <div class="svc-tags"><span class="svc-tag">Annual Return</span><span class="svc-tag">IRD</span><span class="svc-tag"><span data-lang="pt" class="on">Alertas em PT</span><span data-lang="en">PT alerts</span><span data-lang="zh">葡语提醒</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Reestruturação e cancelamento societário</span><span data-lang="en">Corporate restructuring & deregistration</span><span data-lang="zh">公司重组与注销</span></div><span class="svc-badge badge-once"><span data-lang="pt" class="on">Projeto</span><span data-lang="en">Project</span><span data-lang="zh">项目制</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Reestruturação de entidades HK existentes — alteração de diretores, sócios, capital social ou objeto social. Cancelamento voluntário de empresas HK inativas ou desnecessárias, incluindo aprovação das contas finais e pedido formal junto ao Companies Registry. Gerenciado do início ao fim em português para clientes brasileiros, sem que o cliente precise envolver-se diretamente com as autoridades.</span><span data-lang="en">Restructuring of existing HK entities — changes to directors, shareholders, share capital, or business activity. Voluntary deregistration of dormant or no-longer-needed HK companies, including final accounts sign-off and formal Companies Registry application. Managed end-to-end in Portuguese for Brazilian clients, without the client needing direct involvement with authorities.</span><span data-lang="zh">对现有香港实体进行重组——更改董事、股东、股本或业务活动。自愿注销休眠或不再需要的香港公司，包括最终账目确认和向公司注册处提交正式申请。全程以葡萄牙语为巴西客户管理，客户无需直接与当局接触。</span></p>
+          <div class="svc-tags"><span class="svc-tag"><span data-lang="pt" class="on">Reestruturação</span><span data-lang="en">Restructuring</span><span data-lang="zh">重组</span></span><span class="svc-tag"><span data-lang="pt" class="on">Cancelamento</span><span data-lang="en">Deregistration</span><span data-lang="zh">注销</span></span></div>
+        </div>
+      </div>
+    </div>
+    <!-- PILLAR 2 -->
+    <div class="pillar-panel" id="pillar-2">
+      <div class="pillar-header"><div class="p-num">02</div><div><div class="p-tag"><span data-lang="pt" class="on">Alta margem — diferença tributária cria economias reais</span><span data-lang="en">High margin — tax differential creates real savings</span><span data-lang="zh">高利润——税收差异带来真实节省</span></div><div class="p-title"><span data-lang="pt" class="on">Planejamento Tributário & Otimização</span><span data-lang="en">Tax Planning & Optimization</span><span data-lang="zh">税务规划与优化</span></div></div></div>
+      <p class="p-lead"><span data-lang="pt" class="on">Com imposto corporativo de 8,25%, zero sobre ganhos de capital e tratados estratégicos com a China, HK oferece um ambiente tributário que pode reduzir radicalmente a carga fiscal de investidores e empresas brasileiras com ativos asiáticos. Este é o pilar de maior impacto financeiro para a maioria dos clientes.</span><span data-lang="en">With 8.25% corporate tax, zero capital gains tax, and strategic treaties with China, HK offers a tax environment that can radically reduce the fiscal burden on Brazilian investors and companies with Asian assets. This is the highest financial-impact pillar for most clients.</span><span data-lang="zh">香港拥有8.25%的企业税率、零资本利得税以及与中国的战略性税务协定，为持有亚洲资产的巴西投资者和企业提供了可大幅降低税务负担的税收环境。对大多数客户而言，这是财务影响最大的服务支柱。</span></p>
+      <div class="services-grid">
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Planejamento fiscal de estrutura holding em HK</span><span data-lang="en">HK holding structure tax planning</span><span data-lang="zh">香港控股架构税务规划</span></div><span class="svc-badge badge-high"><span data-lang="pt" class="on">Alta margem</span><span data-lang="en">High margin</span><span data-lang="zh">高利润</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Design de estruturas holding em HK otimizadas para reduzir a alíquota efetiva de imposto do cliente brasileiro sobre receitas provenientes da Ásia. Imposto de 16,5% em HK vs 34% de IRPJ+CSLL no Brasil cria oportunidades de economia substanciais. Inclui análise de reivindicações de renda offshore, equivalentes de isenção de participação e planejamento do fluxo de dividendos de subsidiárias asiáticas para o sócio ou HNWI brasileiro.</span><span data-lang="en">Design of HK holding structures optimised to reduce the Brazilian client's effective tax rate on Asia-sourced income. HK's 16.5% profits tax vs Brazil's 34% IRPJ+CSLL creates substantial savings opportunities. Includes analysis of offshore income claims, participation exemption equivalents, and dividend flow planning from Asian subsidiaries to the Brazilian partner or HNWI.</span><span data-lang="zh">设计经过优化的香港控股架构，以降低巴西客户在亚洲来源收入上的实际税率。香港16.5%的利润税对比巴西34%的IRPJ+CSLL，创造了可观的节税机会。包括离岸收入豁免分析、参与豁免等值分析，以及从亚洲子公司向巴西合伙人或高净值人士的股息流规划。</span></p>
+          <div class="svc-tags"><span class="svc-tag">16.5% vs 34%</span><span class="svc-tag"><span data-lang="pt" class="on">Renda offshore</span><span data-lang="en">Offshore income</span><span data-lang="zh">离岸收入</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Otimização de ganho de capital — 0% em HK</span><span data-lang="en">Capital gains optimization — 0% in HK</span><span data-lang="zh">资本利得优化——香港0%税率</span></div><span class="svc-badge badge-high"><span data-lang="pt" class="on">Alto valor</span><span data-lang="en">High value</span><span data-lang="zh">高价值</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">HK não tributa ganhos de capital — transformador para investidores brasileiros acostumados a pagar 15–22,5% sobre alienações. Estruturamos investimentos e alienações de ativos para capturar essa vantagem legalmente, incluindo planejamento para saídas de investimentos chineses, alienações de imóveis asiáticos e venda de participações societárias mantidas por meio de entidades em HK.</span><span data-lang="en">HK levies zero capital gains tax — transformative for Brazilian investors used to paying 15–22.5% CGT on disposals. We structure investments and asset disposals to capture this advantage legally, including planning for exits from Chinese investments, Asian property disposals, and equity stake sales held through HK entities.</span><span data-lang="zh">香港不征收资本利得税——对于习惯缴纳15–22.5%资本利得税的巴西投资者具有颠覆性意义。我们依法构建投资和资产处置架构，以合法方式获取这一优势，包括规划从中国投资退出、处置亚洲房产以及出售通过香港实体持有的股权。</span></p>
+          <div class="svc-tags"><span class="svc-tag">0% CGT</span><span class="svc-tag"><span data-lang="pt" class="on">Planejamento de saída</span><span data-lang="en">Exit planning</span><span data-lang="zh">退出规划</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Planejamento do tratado BR–HK–CN</span><span data-lang="en">BR–HK–CN tax treaty planning</span><span data-lang="zh">巴西–香港–中国税务协定规划</span></div><span class="svc-badge badge-high"><span data-lang="pt" class="on">Complexo, premium</span><span data-lang="en">Complex, premium</span><span data-lang="zh">复杂，高端</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Uso estratégico dos tratados de dupla tributação Brasil–China e HK–China para minimizar o imposto retido na fonte sobre dividendos, juros e royalties entre entidades brasileiras e chinesas. Inclui análise de risco de treaty shopping, requisitos de substância para acesso ao tratado e posicionamento da entidade HK para otimizar o corredor tributário BR–CN — particularmente relevante para fluxos comerciais do agronegócio e retornos de investimento.</span><span data-lang="en">Strategic use of Brazil–China and HK–China double tax treaties to minimize withholding tax on dividends, interest, and royalties flowing between Brazilian and Chinese entities. Includes treaty shopping risk analysis, substance requirements for treaty access, and HK entity positioning to optimise the BR–CN tax corridor — particularly relevant for agribusiness trade flows and investment returns.</span><span data-lang="zh">战略性运用巴西–中国和香港–中国双重征税协定，最大限度降低巴西与中国实体间股息、利息和特许权使用费的预提税。包括避税安排风险分析、协定准入实质要求，以及香港实体定位以优化巴西–中国税务走廊——对农业贸易流和投资回报尤为重要。</span></p>
+          <div class="svc-tags"><span class="svc-tag">DTT</span><span class="svc-tag">BR–HK–CN</span><span class="svc-tag">5–10% WHT</span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Repatriação de lucros: China → HK → Brasil</span><span data-lang="en">Profit repatriation: China → HK → Brazil</span><span data-lang="zh">利润汇回：中国→香港→巴西</span></div><span class="svc-badge badge-recur"><span data-lang="pt" class="on">Recorrente</span><span data-lang="en">Recurring</span><span data-lang="zh">持续服务</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Estruturação completa do fluxo de lucros de operações chinesas, via entidades em HK, de volta a sócios brasileiros. A China impõe retenção na fonte de 10% sobre dividendos para HK (reduzido de 20% pelo tratado HK–China). Planejamos o timing, a estrutura e a documentação para minimizar esse custo e garantir que as regras brasileiras de CFC sejam gerenciadas corretamente no recebimento.</span><span data-lang="en">End-to-end structuring of profit flows from Chinese operations through HK entities back to Brazilian shareholders. China imposes 10% withholding on dividends to HK (reduced from 20% by the HK–China treaty). We plan timing, structure and documentation to minimise this cost and ensure Brazilian CFC rules are managed correctly on receipt.</span><span data-lang="zh">对从中国业务通过香港实体汇回巴西股东的利润流进行端到端架构设计。中国对汇往香港的股息征收10%预提税（依香港–中国协定从20%降低）。我们规划时机、架构和文件，以最小化这一成本，并确保在收款时正确管理巴西受控外国公司规则。</span></p>
+          <div class="svc-tags"><span class="svc-tag">10% WHT</span><span class="svc-tag">CFC</span><span class="svc-tag">ROF / Bacen</span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Declaração e conformidade do imposto sobre lucros de HK</span><span data-lang="en">HK profits tax compliance & return filing</span><span data-lang="zh">香港利润税合规与申报</span></div><span class="svc-badge badge-recur"><span data-lang="pt" class="on">Anual</span><span data-lang="en">Annual</span><span data-lang="zh">年度</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Preparação e depósito anual da declaração de imposto sobre lucros de HK junto ao IRD. Inclui cálculo de imposto, provisões de depreciação, reivindicações de renda offshore quando aplicável e comunicação com o IRD em caso de consultas. Entregue com resumo em português da posição e obrigação fiscal para proprietários brasileiros — coordenado com a auditoria anual onde necessário.</span><span data-lang="en">Annual HK profits tax return preparation and filing with the Inland Revenue Department. Includes tax computation, depreciation allowances, offshore income claims where applicable, and IRD query liaison. Delivered with a Portuguese-language summary of tax position and liability for Brazilian owners — coordinated with the annual audit where required.</span><span data-lang="zh">每年准备并向税务局提交香港利润税申报表。包括税款计算、折旧免税额、适用时的离岸收入申索，以及就查询事项与税务局联络。以葡萄牙语摘要呈现税务状况和纳税义务，供巴西业主参阅——如需要则与年度审计协调进行。</span></p>
+          <div class="svc-tags"><span class="svc-tag">IRD</span><span class="svc-tag"><span data-lang="pt" class="on">Renda offshore</span><span data-lang="en">Offshore claim</span><span data-lang="zh">离岸申索</span></span><span class="svc-tag"><span data-lang="pt" class="on">Resumo PT</span><span data-lang="en">PT summary</span><span data-lang="zh">葡语摘要</span></span></div>
+        </div>
+      </div>
+    </div>
+    <!-- PILLAR 3 -->
+    <div class="pillar-panel" id="pillar-3">
+      <div class="pillar-header"><div class="p-num">03</div><div><div class="p-tag"><span data-lang="pt" class="on">Administração remota — o Osome de HK com camada em português</span><span data-lang="en">Remote administration — HK's Osome with a Portuguese layer</span><span data-lang="zh">远程管理——香港版Osome，配备葡语服务层</span></div><div class="p-title"><span data-lang="pt" class="on">Administração Empresarial em Hong Kong</span><span data-lang="en">Business Administration in Hong Kong</span><span data-lang="zh">香港企业行政管理</span></div></div></div>
+      <p class="p-lead"><span data-lang="pt" class="on">Nenhuma firma de administração em HK entrega relatórios em português para proprietários brasileiros. Este é o maior diferencial da Atlas Advisory no lado de HK — gestão completa da empresa a partir de São Paulo, com todos os relatórios no seu idioma, sem barreiras de idioma ou fuso horário.</span><span data-lang="en">No HK admin firm currently delivers Portuguese-language reporting to Brazilian owners. This is Atlas Advisory's clearest blue ocean on the HK side — complete company management from São Paulo, with all reporting in your language, without language or timezone barriers.</span><span data-lang="zh">目前没有任何香港行政管理公司以葡萄牙语向巴西业主提供报告。这是Atlas Advisory在香港业务中最鲜明的蓝海优势——从圣保罗远程进行完整的公司管理，所有报告均以您的语言呈现，无语言或时区障碍。</span></p>
+      <div class="services-grid">
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Contabilidade mensal com relatórios em português</span><span data-lang="en">Monthly accounting with Portuguese-language reports</span><span data-lang="zh">月度会计与葡语报告</span></div><span class="svc-badge badge-recur"><span data-lang="pt" class="on">Mensal</span><span data-lang="en">Monthly</span><span data-lang="zh">月度</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Contabilidade mensal em conformidade com HK GAAP, contas de gestão mensais (DRE, balanço, fluxo de caixa) e relatórios financeiros entregues em português. Proprietários brasileiros em São Paulo recebem resumos mensais claros sem barreiras de idioma ou fuso horário. O único serviço deste tipo no mercado — nenhuma outra firma de HK oferece relatórios em português.</span><span data-lang="en">Full-service HK accounting compliant with HK GAAP, monthly management accounts (P&L, balance sheet, cash flow), and financial reporting delivered in Portuguese. Brazilian owners in São Paulo receive clear monthly summaries without language or timezone barriers. The only service of its kind in the market — no other HK firm offers Portuguese-language reporting.</span><span data-lang="zh">符合香港会计准则的全面月度会计服务、月度管理账目（损益表、资产负债表、现金流量表）以及以葡萄牙语提交的财务报告。圣保罗的巴西业主可收到清晰的月度摘要，无语言或时区障碍。市场上独一无二的服务——没有其他香港公司提供葡语报告。</span></p>
+          <div class="svc-tags"><span class="svc-tag">HK GAAP</span><span class="svc-tag"><span data-lang="pt" class="on">Único no mercado</span><span data-lang="en">Unique in market</span><span data-lang="zh">市场独有</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Coordenação de auditoria anual</span><span data-lang="en">Annual audit coordination</span><span data-lang="zh">年度审计协调</span></div><span class="svc-badge badge-recur"><span data-lang="pt" class="on">Anual</span><span data-lang="en">Annual</span><span data-lang="zh">年度</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">HK exige que todas as sociedades limitadas tenham suas contas auditadas anualmente por um CPA licenciado. Coordenamos o processo de auditoria completo com uma firma CPA parceira em HK — preparando os livros para auditoria, fazendo a ligação com os auditores, revisando o relatório e entregando resumos em português ao proprietário brasileiro. Elimina completamente a complexidade de gerenciar uma auditoria estrangeira a partir do Brasil.</span><span data-lang="en">HK requires all limited companies to have accounts audited annually by a licensed CPA. We coordinate the full audit process with a licensed HK CPA partner firm — preparing books for audit, liaising with auditors, reviewing the report, and delivering Portuguese-language summaries to the Brazilian owner. Completely removes the complexity of managing an overseas audit from Brazil.</span><span data-lang="zh">香港要求所有有限公司每年由持牌会计师审计账目。我们与持牌香港注册会计师合作事务所协调完整的审计流程——准备账簿、与审计师联络、审阅报告，并向巴西业主提供葡萄牙语摘要。彻底消除从巴西管理境外审计的复杂性。</span></p>
+          <div class="svc-tags"><span class="svc-tag"><span data-lang="pt" class="on">Obrigatório</span><span data-lang="en">Mandatory</span><span data-lang="zh">强制要求</span></span><span class="svc-tag">CPA HK</span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Escritório virtual e endereço premium (Central / Sheung Wan)</span><span data-lang="en">Virtual office & premium address (Central / Sheung Wan)</span><span data-lang="zh">虚拟办公室与高端地址（中环/上环）</span></div><span class="svc-badge badge-recur"><span data-lang="pt" class="on">Mensal</span><span data-lang="en">Monthly</span><span data-lang="zh">月度</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Endereço comercial profissional em HK em localização prime (Central ou Sheung Wan) para entidades brasileiras que operam remotamente. Inclui recebimento e digitalização de correspondências, gerenciamento de courier, acesso a salas de reunião para visitas a HK e serviço de atendimento telefônico. Um endereço em Central ou Sheung Wan é, por si só, um sinal de credibilidade para compradores chineses e bancos de HK — comunica estabelecimento e seriedade.</span><span data-lang="en">Professional HK business address in a prime location (Central or Sheung Wan) for Brazilian-owned entities operating remotely. Includes mail handling and digitisation, courier management, meeting room access for HK visits, and telephone answering. A Central or Sheung Wan address is itself a credibility signal to Chinese buyers and HK banks — communicating establishment and seriousness.</span><span data-lang="zh">为远程运营的巴西实体提供位于黄金地段（中环或上环）的专业香港商业地址。包括邮件处理和数字化、快递管理、访港时的会议室使用权，以及电话应答服务。中环或上环地址本身即是向中国买家和香港银行传递信誉的信号——彰显公司的正规性和专业性。</span></p>
+          <div class="svc-tags"><span class="svc-tag">Central / Sheung Wan</span><span class="svc-tag"><span data-lang="pt" class="on">Sinal de credibilidade</span><span data-lang="en">Credibility signal</span><span data-lang="zh">信誉信号</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Calendário de obrigações e monitoramento regulatório</span><span data-lang="en">Compliance calendar & regulatory monitoring</span><span data-lang="zh">合规日历与监管监控</span></div><span class="svc-badge badge-recur"><span data-lang="pt" class="on">Incluído</span><span data-lang="en">Included</span><span data-lang="zh">含于套餐</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Gerenciamento proativo de todos os prazos estatutários de HK — depósitos no Companies Registry, submissões ao IRD, renovações do Business Registration e contribuições ao MPF (fundo de previdência obrigatório). Relatório mensal de status de compliance em português com prazos futuros e ações necessárias. Monitoramento de mudanças regulatórias de HK que afetam entidades de propriedade brasileira.</span><span data-lang="en">Proactive management of all HK statutory deadlines — Companies Registry filings, IRD submissions, Business Registration renewals, and MPF contributions. Monthly compliance status report in Portuguese with upcoming deadlines and required actions. Monitoring of HK regulatory changes affecting Brazilian-owned entities.</span><span data-lang="zh">主动管理所有香港法定截止日期——公司注册处申报、税务局提交、商业登记续期和强积金供款。以葡萄牙语提供月度合规状态报告，列明即将到来的截止日期和所需行动。监控影响巴西控股实体的香港监管变化。</span></p>
+          <div class="svc-tags"><span class="svc-tag">MPF</span><span class="svc-tag">IRD</span><span class="svc-tag"><span data-lang="pt" class="on">Alertas em PT</span><span data-lang="en">PT alerts</span><span data-lang="zh">葡语提醒</span></span></div>
+        </div>
+      </div>
+    </div>
+    <!-- PILLAR 4 -->
+    <div class="pillar-panel" id="pillar-4">
+      <div class="pillar-header"><div class="p-num">04</div><div><div class="p-tag"><span data-lang="pt" class="on">Diferencial-chave — resolve a maior dor operacional de clientes em HK</span><span data-lang="en">Key differentiator — solves the biggest operational pain point for clients in HK</span><span data-lang="zh">核心差异化——解决客户在香港最大的运营痛点</span></div><div class="p-title"><span data-lang="pt" class="on">Bancário & Acesso a Serviços Financeiros</span><span data-lang="en">Banking & Financial Services Access</span><span data-lang="zh">银行与金融服务准入</span></div></div></div>
+      <p class="p-lead"><span data-lang="pt" class="on">Abrir uma conta bancária corporativa em HK como entidade estrangeira é notoriamente difícil. Bancos impõem requisitos rigorosos de KYC/AML que clientes sem relacionamentos locais simplesmente não conseguem cumprir sozinhos. A promessa de resolver este problema é frequentemente o que converte um prospect em cliente da Atlas Advisory.</span><span data-lang="en">Opening a corporate bank account in HK as a foreign-owned entity is notoriously difficult. Banks impose strict KYC/AML requirements that clients without local relationships cannot navigate alone. The promise of solving this problem is often what converts a prospect into an Atlas Advisory client.</span><span data-lang="zh">作为外资实体在香港开设企业银行账户出了名地困难。银行实施严格的KYC/AML要求，没有本地关系的客户根本无法独自应对。解决这一问题的承诺，往往是将潜在客户转化为Atlas Advisory正式客户的关键。</span></p>
+      <div class="services-grid">
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Abertura de conta bancária corporativa (bancos tradicionais)</span><span data-lang="en">Corporate bank account facilitation (major banks)</span><span data-lang="zh">企业银行账户开设（主要银行）</span></div><span class="svc-badge badge-key"><span data-lang="pt" class="on">Diferencial-chave</span><span data-lang="en">Key differentiator</span><span data-lang="zh">核心差异化</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Assessoria na seleção do banco (HSBC, Standard Chartered, Hang Seng ou Bank of China — cada um com perfil de cliente diferente), preparação completa do pacote de documentação KYC/AML em inglês, coordenação de tradução certificada e apostilas para documentos brasileiros, revisão pré-submissão, acompanhamento em reuniões bancárias quando necessário, e follow-up com gestores de relacionamento. Taxas de rejeição sem assistência são muito altas — com a Atlas Advisory, documentação estruturada e relacionamentos conhecidos fazem toda a diferença.</span><span data-lang="en">Bank selection advisory (HSBC, Standard Chartered, Hang Seng or Bank of China — each with a different client profile), full KYC/AML documentation package in English, certified translation and apostille coordination for Brazilian documents, pre-submission review, accompaniment to bank meetings when needed, and follow-up with relationship managers. Rejection rates without assistance are very high — with Atlas Advisory, structured documentation and known relationships make all the difference.</span><span data-lang="zh">银行选择咨询（汇丰、渣打、恒生或中国银行——各有不同的客户画像）、以英文准备完整的KYC/AML文件包、巴西文件的认证翻译和海牙认证协调、提交前审核、必要时陪同参加银行会面，以及与关系经理的后续跟进。无协助申请的拒绝率非常高——有了Atlas Advisory，完善的文件和已有的银行关系将发挥决定性作用。</span></p>
+          <div class="svc-tags"><span class="svc-tag">HSBC</span><span class="svc-tag">Standard Chartered</span><span class="svc-tag">KYC/AML</span><span class="svc-tag">Hang Seng</span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Bancos digitais e neobancos (Airwallex)</span><span data-lang="en">Digital banking & neobank setup (Airwallex)</span><span data-lang="zh">数字银行与新型银行设置（Airwallex）</span></div><span class="svc-badge badge-once"><span data-lang="pt" class="on">Projeto</span><span data-lang="en">Project</span><span data-lang="zh">项目制</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Para clientes que precisam de acesso bancário mais rápido ou operações em múltiplas moedas, facilitamos configuração no Airwallex (recomendação principal para fluxos BR↔HK↔CN), Neat e Statrys. O Airwallex é regulamentado em HK, suporta mais de 150 moedas e tem funcionalidade específica para o corredor BR↔CN — ideal para importadores atacadistas brasileiros e empresas de agronegócio que precisam de pagamentos transfronteiriços rápidos e eficientes.</span><span data-lang="en">For clients needing faster banking access or multi-currency operations, we facilitate setup on Airwallex (primary recommendation for BR↔HK↔CN flows), Neat, and Statrys. Airwallex is HK-regulated, supports 150+ currencies, and has specific functionality for the BR↔CN corridor — ideal for Brazilian wholesale importers and agribusiness companies needing fast, efficient cross-border payments.</span><span data-lang="zh">对于需要更快银行准入或多币种运营的客户，我们协助在Airwallex（BR↔HK↔CN贸易流首选推荐）、Neat和Statrys上完成设置。Airwallex受香港监管，支持150多种货币，并针对BR↔CN走廊提供专项功能——非常适合需要快速高效跨境支付的巴西批发进口商和农业企业。</span></p>
+          <div class="svc-tags"><span class="svc-tag">Airwallex</span><span class="svc-tag">Neat / Statrys</span><span class="svc-tag"><span data-lang="pt" class="on">Multi-moeda</span><span data-lang="en">Multi-currency</span><span data-lang="zh">多币种</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Trade finance & cartas de crédito</span><span data-lang="en">Trade finance & letters of credit</span><span data-lang="zh">贸易融资与信用证</span></div><span class="svc-badge badge-high"><span data-lang="pt" class="on">Alto valor</span><span data-lang="en">High value</span><span data-lang="zh">高价值</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Para exportadores brasileiros de agronegócio e fabricantes que importam da China, HK é o principal hub de trade finance da Ásia. Facilitamos acesso a cartas de crédito (L/C) para fluxos de commodities Brasil→China, cobranças documentárias, financiamento da cadeia de suprimentos — coordenando entre o exportador brasileiro, o banco de HK e o comprador chinês, com suporte documental em português durante todo o processo.</span><span data-lang="en">For Brazilian agribusiness exporters and manufacturers importing from China, HK is Asia's premier trade finance hub. We facilitate access to letters of credit (L/C) for Brazil→China commodity flows, documentary collections, and supply chain financing — coordinating between the Brazilian exporter, HK bank, and Chinese buyer with Portuguese-language documentation support throughout.</span><span data-lang="zh">对于从中国进口的巴西农业出口商和制造商，香港是亚洲首屈一指的贸易融资枢纽。我们协助获取巴西→中国大宗商品流的信用证（L/C）、跟单托收和供应链融资——全程协调巴西出口商、香港银行和中国买家之间的沟通，并提供葡萄牙语文件支持。</span></p>
+          <div class="svc-tags"><span class="svc-tag">L/C</span><span class="svc-tag"><span data-lang="pt" class="on">Agronegócio BR→CN</span><span data-lang="en">Agribusiness BR→CN</span><span data-lang="zh">农业BR→CN</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Capital de giro em HK — 3–6% a.a. vs 12–20% no Brasil</span><span data-lang="en">HK working capital financing — 3–6% p.a. vs Brazil's 12–20%</span><span data-lang="zh">香港营运资金融资——年利率3–6% vs 巴西12–20%</span></div><span class="svc-badge badge-key"><span data-lang="pt" class="on">Vantagem estrutural</span><span data-lang="en">Structural advantage</span><span data-lang="zh">结构性优势</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Para empresas brasileiras chegando com custo de capital a 12–20% a.a., a mudança para financiamento baseado em HK a 3–6% a.a. pode ser transformadora. Facilitamos acesso a linhas de trade finance de bancos de HK, facilidades de capital de giro para importação/exportação e financiamento de estoque — estruturados por meio da entidade HK do cliente. O diferencial de taxa de juros, por si só, frequentemente cobre os honorários anuais da Atlas Advisory muitas vezes.</span><span data-lang="en">For Brazilian companies arriving with financing costs of 12–20% p.a., switching to HK-based financing at 3–6% p.a. can be transformative. We facilitate access to HK bank trade finance lines, import/export working capital facilities, and inventory finance — structured through the client's HK entity. The interest rate differential alone often covers Atlas Advisory's annual fees many times over.</span><span data-lang="zh">对于以巴西12–20%年利率融资的企业而言，转向香港3–6%年利率融资可带来根本性变革。我们协助获取香港银行贸易融资额度、进出口营运资金融资和库存融资——通过客户的香港实体进行架构设计。仅利率差异本身，通常就能抵消Atlas Advisory年费的数倍。</span></p>
+          <div class="svc-tags"><span class="svc-tag">3–6% p.a.</span><span class="svc-tag"><span data-lang="pt" class="on">vs 12–20% Brasil</span><span data-lang="en">vs Brazil 12–20%</span><span data-lang="zh">对比巴西12–20%</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Gestão de câmbio e repatriação para o Brasil</span><span data-lang="en">FX management & Brazil repatriation</span><span data-lang="zh">外汇管理与汇回巴西</span></div><span class="svc-badge badge-recur"><span data-lang="pt" class="on">Contínuo</span><span data-lang="en">Ongoing</span><span data-lang="zh">持续服务</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Gestão de fluxos de câmbio entre HK, China e Brasil — incluindo conversões USD/HKD/BRL, estratégia de timing para minimizar perdas cambiais e coordenação de repatriação de lucros de volta ao Brasil. Os requisitos de registro ROF do Bacen para câmbio de entrada são gerenciados na íntegra, para que clientes brasileiros recebam recursos limpos sem complicações regulatórias.</span><span data-lang="en">Management of FX flows between HK, China, and Brazil — including USD/HKD/BRL conversions, timing strategy to minimise FX losses, and coordination of profit repatriation back to Brazil. Brazil's Bacen ROF registration requirements for inbound FX are handled in full, so Brazilian clients receive clean funds without regulatory complications.</span><span data-lang="zh">管理香港、中国和巴西之间的外汇流动——包括美元/港元/雷亚尔兑换、最小化汇兑损失的时机策略，以及利润汇回巴西的协调。全面处理巴西央行关于入境外汇的ROF登记要求，使巴西客户能够收到合规资金，无监管复杂性。</span></p>
+          <div class="svc-tags"><span class="svc-tag">ROF / Bacen</span><span class="svc-tag">BRL/HKD/USD</span><span class="svc-tag"><span data-lang="pt" class="on">Câmbio</span><span data-lang="en">FX</span><span data-lang="zh">外汇</span></span></div>
+        </div>
+      </div>
+    </div>
+    <!-- PILLAR 5 -->
+    <div class="pillar-panel" id="pillar-5">
+      <div class="pillar-header"><div class="p-num">05</div><div><div class="p-tag"><span data-lang="pt" class="on">Motor de crescimento — 20+ anos de rede pessoal na China</span><span data-lang="en">Growth engine — 20+ years of personal network in China</span><span data-lang="zh">增长引擎——20余年中国个人人脉网络</span></div><div class="p-title"><span data-lang="pt" class="on">Acesso ao Mercado Chinês & Desenvolvimento de Negócios</span><span data-lang="en">China Market Access & Business Development</span><span data-lang="zh">中国市场准入与业务拓展</span></div></div></div>
+      <p class="p-lead"><span data-lang="pt" class="on">O maior erro de empresas brasileiras na China não é a estratégia — é chegar sem o guia certo, sem a estrutura certa e sem os relacionamentos certos. Com mais de 20 anos de rede pessoal construída na China, este é o pilar mais exclusivo da Atlas Advisory — o único serviço que depende de décadas de confiança construída pessoalmente e que não pode ser replicado por nenhuma outra firma.</span><span data-lang="en">The biggest mistake Brazilian companies make in China is not the strategy — it is arriving without the right guide, the right structure, and the right relationships. With 20+ years of personal network built in China, this is Atlas Advisory's most exclusive pillar — the only service that depends on decades of personally built trust and cannot be replicated by any other firm.</span><span data-lang="zh">巴西企业在中国犯的最大错误不是战略失误，而是在没有合适向导、合适架构和合适人脉的情况下贸然进入。凭借20多年在中国积累的个人网络，这是Atlas Advisory最具专属性的服务支柱——唯一依赖于数十年个人信任积累的服务，任何其他公司都无法复制。</span></p>
+      <div class="services-grid">
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Sourcing e procurement na China</span><span data-lang="en">China sourcing & procurement</span><span data-lang="zh">中国采购与寻源</span></div><span class="svc-badge badge-high"><span data-lang="pt" class="on">Alta demanda</span><span data-lang="en">High demand</span><span data-lang="zh">需求旺盛</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Identificação de fornecedores e fábricas chinesas por categoria de produto, due diligence e verificação de fábricas, visitas físicas e inspeções de qualidade (via parceiro confiável na China), negociação de preços e MOQ em mandarim, gerenciamento do processo de pedido de compra, coordenação de inspeção de QC pré-embarque e logística do porto chinês ao Brasil. Atualizações em português durante todo o processo — o cliente nunca se comunica diretamente em chinês. Uma vez estabelecido, este serviço gera fidelização muito alta — o cliente raramente deixa.</span><span data-lang="en">Chinese supplier and factory identification by product category, due diligence and background checks, physical factory visits and quality inspections (via trusted China-based partner), price and MOQ negotiation in Mandarin, purchase order management, pre-shipment QC inspection, and logistics from Chinese port to Brazil. Portuguese-language updates throughout — the client never communicates directly in Chinese. Once established, this service creates very high client retention.</span><span data-lang="zh">按产品类别识别中国供应商和工厂、尽职调查和背景核查、实地工厂参观和质量检验（通过中国可信合作伙伴）、以普通话进行价格和最小订购量谈判、采购订单管理、装运前质量检验，以及从中国港口到巴西的物流。全程以葡萄牙语提供更新——客户无需直接以中文沟通。一旦建立，这项服务创造了极高的客户忠诚度。</span></p>
+          <div class="svc-tags"><span class="svc-tag">QC</span><span class="svc-tag">Yiwu / Guangzhou / Shenzhen</span><span class="svc-tag"><span data-lang="pt" class="on">Alta retenção</span><span data-lang="en">High retention</span><span data-lang="zh">高留存率</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Facilitação de exportações do agronegócio brasileiro para a China</span><span data-lang="en">Agribusiness export facilitation to China</span><span data-lang="zh">巴西农产品出口中国促进服务</span></div><span class="svc-badge badge-high"><span data-lang="pt" class="on">Alto volume</span><span data-lang="en">High volume</span><span data-lang="zh">高交易量</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">O Brasil é o maior fornecedor agrícola da China — soja (1º exportador mundial), carne bovina, café, açúcar e algodão fluem em enormes volumes. Conectamos exportadores a importadores chineses verificados e empresas de comércio estatal (COFCO, SINOGRAIN), estruturamos o trade finance (L/C via entidade HK), posicionamos a entidade HK como intermediária para eficiência tributária e cambial, e gerenciamos o relacionamento com compradores chineses em mandarim. Orientação GACC e CNCA para certificações incluída.</span><span data-lang="en">Brazil is China's largest agricultural supplier — soy (world's #1 exporter), beef, coffee, sugar, and cotton flow in enormous volumes. We connect exporters with vetted Chinese importers and state trading companies (COFCO, SINOGRAIN), structure trade finance (L/C via HK entity), position the HK entity as intermediary for tax and FX efficiency, and manage Chinese buyer relationships in Mandarin. GACC and CNCA certification guidance included.</span><span data-lang="zh">巴西是中国最大的农产品供应国——大豆（全球最大出口国）、牛肉、咖啡、糖和棉花的流通量巨大。我们将出口商与经过核查的中国进口商及国家贸易公司（中粮、中储粮）对接，设计贸易融资架构（通过香港实体的信用证），将香港实体定位为提高税务和外汇效率的中间商，并以普通话管理与中国买家的关系。包含GACC和CNCA认证指导。</span></p>
+          <div class="svc-tags"><span class="svc-tag">GACC / CNCA</span><span class="svc-tag">COFCO / SINOGRAIN</span><span class="svc-tag"><span data-lang="pt" class="on">Soja · Carne · Café</span><span data-lang="en">Soy · Beef · Coffee</span><span data-lang="zh">大豆·牛肉·咖啡</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Introduções à rede de compradores chineses — guanxi (关系)</span><span data-lang="en">Chinese buyer network introductions — guanxi (关系)</span><span data-lang="zh">中国买家网络引荐——关系（Guanxi）</span></div><span class="svc-badge badge-high"><span data-lang="pt" class="on">Insubstituível</span><span data-lang="en">Irreplaceable</span><span data-lang="zh">不可替代</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Introduções diretas a importadores, distribuidores e compradores de empresas estatais chinesas verificados — construídas ao longo de 20+ anos de operação na China. A introdução é feita em mandarim, com contexto completo sobre a empresa brasileira. Na cultura empresarial chinesa, o guanxi (关系) — uma introdução de alguém de confiança — vale infinitamente mais do que qualquer material de marketing ou abordagem fria. Este é o serviço mais defensável e insubstituível de todo o mapa da Atlas Advisory.</span><span data-lang="en">Direct introductions to vetted Chinese importers, distributors, and state-owned enterprise buyers — built from 20+ years of operating in China. The introduction is made in Mandarin, with full context on the Brazilian company. In Chinese business culture, guanxi (关系) — a trusted introduction — is worth infinitely more than any marketing material or cold approach. This is the most defensible and irreplaceable service in the entire Atlas Advisory map.</span><span data-lang="zh">直接引荐经过核查的中国进口商、经销商和国有企业买家——基于20多年在中国经营积累的人脉。引荐以普通话进行，并附有关于巴西公司的完整背景信息。在中国商业文化中，关系——来自可信人士的引荐——其价值远超任何营销材料或冷接触。这是Atlas Advisory整个服务体系中最具防御性和不可替代性的服务。</span></p>
+          <div class="svc-tags"><span class="svc-tag">关系 Guanxi</span><span class="svc-tag">SOE</span><span class="svc-tag"><span data-lang="pt" class="on">20+ anos de rede</span><span data-lang="en">20+ year network</span><span data-lang="zh">20年以上人脉</span></span></div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-top"><div class="svc-name"><span data-lang="pt" class="on">Estratégia de entrada na China & assessoria WFOE</span><span data-lang="en">China market entry strategy & WFOE advisory</span><span data-lang="zh">中国市场进入战略与外商独资企业咨询</span></div><span class="svc-badge badge-once"><span data-lang="pt" class="on">Projeto</span><span data-lang="en">Project</span><span data-lang="zh">项目制</span></span></div>
+          <p class="svc-desc"><span data-lang="pt" class="on">Para empresas brasileiras prontas para estabelecer presença direta na China. Avaliamos se WFOE, JV ou Escritório de Representação é a estrutura certa, requisitos regulatórios do setor (MOFCOM, licenças), estratégia de localização (Xangai vs Shenzhen vs Guangzhou), sequenciamento HK + China e requisitos de capital registrado. Entregue como relatório de entrada no mercado em português, com recomendações claras e plano de ação em fases. Escritório de Representação: baixa complexidade. WFOE: alta complexidade, operações completas. JV: setores restritos ou agilidade local.</span><span data-lang="en">For Brazilian companies ready for a direct China presence. We assess whether WFOE, JV, or Representative Office is appropriate, sector regulatory requirements (MOFCOM, licences), location strategy (Shanghai vs Shenzhen vs Guangzhou), HK + China sequencing, and registered capital requirements. Delivered as a structured market entry report in Portuguese with clear recommendations and a phased action plan. Rep Office: low complexity. WFOE: high complexity, full operations. JV: restricted sectors or local speed.</span><span data-lang="zh">面向准备在中国建立直接业务的巴西企业。我们评估外商独资企业、合资企业或代表处哪种架构更合适，行业监管要求（商务部、许可证），选址策略（上海vs深圳vs广州），香港+中国设立顺序，以及注册资本要求。以葡萄牙语结构化市场进入报告的形式呈现，附有明确建议和分阶段行动计划。代表处：低复杂度。外商独资企业：高复杂度，全面运营。合资企业：限制性行业或本地化速度。</span></p>
+          <div class="svc-tags"><span class="svc-tag">WFOE</span><span class="svc-tag">JV</span><span class="svc-tag">MOFCOM</span><span class="svc-tag"><span data-lang="pt" class="on">Relatório PT</span><span data-lang="en">PT report</span><span data-lang="zh">葡语报告</span></span></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /container -->
+</section>
+
+<div class="s-cta">
+  <div class="cta-inner">
+    <div class="reveal">
+      <h2 class="cta-title"><span data-lang="pt" class="on">Pronto para começar em Hong Kong?<br><em>Vamos conversar.</em></span><span data-lang="en">Ready to get started in Hong Kong?<br><em>Let's talk.</em></span><span data-lang="zh">准备好在香港开始了吗？<br><em>让我们谈谈。</em></span></h2>
+      <p class="cta-sub"><span data-lang="pt" class="on">30 minutos. Sem compromisso. Em português, inglês ou mandarim — você escolhe. Explicaremos a estrutura ideal, os impostos que você economiza e exatamente o que gerenciamos por você.</span><span data-lang="en">30 minutes. No commitment. In Portuguese, English or Mandarin — your choice. We'll explain the ideal structure, the taxes you save, and exactly what we manage on your behalf.</span><span data-lang="zh">30分钟。无需承诺。葡萄牙语、英语或普通话——由您选择。我们将为您说明最优架构、可节省的税务，以及我们代您管理的具体事项。</span></p>
+    </div>
+    <div class="reveal d2"><a href="/contact.html" class="btn-navy"><span data-lang="pt" class="on">Agendar Consulta Gratuita</span><span data-lang="en">Book Free Consultation</span><span data-lang="zh">预约免费咨询</span><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div><div class="f-brand-name">Atlas Advisory</div><p class="f-tagline"><span data-lang="pt" class="on">Seu guia no Brasil, Hong Kong & China — jurídico, tributário e acesso a mercados.</span><span data-lang="en">Your guide across Brazil, Hong Kong & China — legal, tax, and market access.</span><span data-lang="zh">您在巴西、香港和中国的向导——法律、税务和市场准入。</span></p><div class="f-contact"></div></div>
+    <div class="f-col"><div class="f-col-title"><span data-lang="pt" class="on">Brasil</span><span data-lang="en">Brazil</span><span data-lang="zh">巴西</span></div><ul><li><a href="/brazil.html"><span data-lang="pt" class="on">Constituição de empresa</span><span data-lang="en">Company incorporation</span><span data-lang="zh">公司注册</span></a></li><li><a href="/brazil.html"><span data-lang="pt" class="on">Incentivos fiscais</span><span data-lang="en">Tax incentives</span><span data-lang="zh">税收激励</span></a></li><li><a href="/brazil.html"><span data-lang="pt" class="on">Administração</span><span data-lang="en">Administration</span><span data-lang="zh">企业行政</span></a></li><li><a href="/brazil.html"><span data-lang="pt" class="on">Desenvolvimento de mercado</span><span data-lang="en">Market development</span><span data-lang="zh">市场开发</span></a></li></ul></div>
+    <div class="f-col"><div class="f-col-title">Hong Kong & China</div><ul><li><a href="/hongkong.html"><span data-lang="pt" class="on">Empresa em HK</span><span data-lang="en">HK company setup</span><span data-lang="zh">香港公司注册</span></a></li><li><a href="/hongkong.html"><span data-lang="pt" class="on">Planejamento tributário</span><span data-lang="en">Tax planning</span><span data-lang="zh">税务规划</span></a></li><li><a href="/hongkong.html"><span data-lang="pt" class="on">Acesso bancário</span><span data-lang="en">Banking access</span><span data-lang="zh">银行开户</span></a></li><li><a href="/hongkong.html"><span data-lang="pt" class="on">Mercado chinês</span><span data-lang="en">China market</span><span data-lang="zh">中国市场</span></a></li></ul></div>
+    <div class="f-col"><div class="f-col-title"><span data-lang="pt" class="on">Atlas Advisory</span><span data-lang="en">Atlas Advisory</span><span data-lang="zh">关于我们</span></div><ul><li><a href="/contact.html"><span data-lang="pt" class="on">Sobre nós</span><span data-lang="en">About us</span><span data-lang="zh">关于我们</span></a></li><li><a href="/contact.html"><span data-lang="pt" class="on">Contato</span><span data-lang="en">Contact</span><span data-lang="zh">联系我们</span></a></li><li><a href="/contact.html"><span data-lang="pt" class="on">Consulta gratuita</span><span data-lang="en">Free consultation</span><span data-lang="zh">免费咨询</span></a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><span class="f-copy">© 2026 Atlas Advisory · atlasadvisory.com.br</span><div class="f-langs"><button class="f-lang-btn on" id="flb-pt" onclick="setLang('pt')">PT</button><button class="f-lang-btn" id="flb-en" onclick="setLang('en')">EN</button><button class="f-lang-btn" id="flb-zh" onclick="setLang('zh')">中文</button></div></div>
+</footer>
+
+<script>
+let lang='pt';
+function setLang(l){
+  lang=l;
+  document.querySelectorAll('[data-lang]').forEach(el=>el.classList.toggle('on',el.dataset.lang===l));
+  ['pt','en','zh'].forEach(x=>{
+    const b=document.getElementById('lb-'+x),fb=document.getElementById('flb-'+x);
+    if(b)b.classList.toggle('on',x===l);
+    if(fb)fb.classList.toggle('on',x===l);
+  });
+  document.querySelectorAll('.mobile-menu .lang-btn').forEach(b=>{
+    const t=b.textContent.trim();
+    b.classList.toggle('on',(t==='PT'&&l==='pt')||(t==='EN'&&l==='en')||(t==='中文'&&l==='zh'));
+  });
+  document.documentElement.lang=l==='zh'?'zh-Hans':l;
+  try{localStorage.setItem('atlas_lang',l);}catch(e){}
+}
+(function(){
+  let s;try{s=localStorage.getItem('atlas_lang');}catch(e){}
+  if(s&&['pt','en','zh'].includes(s)){setLang(s);return;}
+  const n=(navigator.language||'').toLowerCase();
+  if(n.startsWith('zh'))setLang('zh');
+  else if(n.startsWith('en'))setLang('en');
+  else setLang('pt');
+})();
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>10),{passive:true});
+function toggleMenu(){document.getElementById('ham').classList.toggle('open');document.getElementById('mmenu').classList.toggle('open');}
+document.addEventListener('click',e=>{
+  const m=document.getElementById('mmenu'),h=document.getElementById('ham');
+  if(m.classList.contains('open')&&!m.contains(e.target)&&!h.contains(e.target)){m.classList.remove('open');h.classList.remove('open');}
+});
+const ro=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');ro.unobserve(e.target);}});
+},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+function showPillar(n){
+  document.querySelectorAll('.ptab').forEach((t,i)=>t.classList.toggle('on',i===n-1));
+  document.querySelectorAll('.pillar-panel').forEach((p,i)=>p.classList.toggle('on',i===n-1));
+  document.querySelectorAll('#pillar-'+n+' .reveal').forEach(el=>{if(!el.classList.contains('vis'))ro.observe(el);});
+}
+</script>
+</body>
+</html>
