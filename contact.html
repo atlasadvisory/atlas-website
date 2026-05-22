@@ -74,12 +74,6 @@ li[data-lang].on{display:list-item!important}
 .form-title{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--ink);margin-bottom:6px}
 .form-sub{font-size:14px;color:var(--g600);margin-bottom:28px;line-height:1.6}
 .tally-wrap{border-radius:12px;overflow:hidden;background:var(--g50);min-height:480px}
-.tally-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:48px 24px;text-align:center;min-height:480px}
-.tally-placeholder-icon{width:52px;height:52px;background:var(--navy05);border-radius:12px;display:flex;align-items:center;justify-content:center}
-.tally-placeholder-icon svg{width:26px;height:26px;stroke:var(--navy5);fill:none;stroke-width:1.5}
-.tally-placeholder-title{font-family:var(--serif);font-size:18px;font-weight:400;color:var(--ink)}
-.tally-placeholder-desc{font-size:13px;color:var(--g600);line-height:1.7;max-width:300px}
-.tally-placeholder-code{font-size:12px;background:var(--g100);border-radius:6px;padding:5px 12px;color:var(--navy5);font-family:monospace}
 .tally-note{font-size:12px;color:var(--g400);text-align:center;margin-top:14px;line-height:1.6}
 
 /* INFO SIDE */
@@ -226,20 +220,30 @@ footer{background:#1C2B3A;padding:72px 5% 36px}
           <span data-lang="zh">请填写下方表格。我们将在24小时内以您的首选语言回复您。</span>
         </p>
         <div class="tally-wrap">
-          <!-- Substitua TALLY_FORM_ID pelo seu ID real do Tally -->
-          <iframe
+          <!-- PT -->
+          <iframe data-lang="pt" class="on"
             data-tally-src="https://tally.so/embed/0QD72Q?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
             loading="lazy" width="100%" height="480" frameborder="0"
             marginheight="0" marginwidth="0"
             title="Formulário de Contato — Atlas Advisory"
-            style="border:none;background:transparent;">
+            style="border:none;background:transparent;display:block;">
           </iframe>
-          <div class="tally-placeholder" id="tally-placeholder">
-            <div class="tally-placeholder-icon"><svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M9 8h6M5 3h14a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2z"/></svg></div>
-            <p class="tally-placeholder-title"><span data-lang="pt" class="on">Formulário em configuração</span><span data-lang="en">Form setup in progress</span><span data-lang="zh">表单配置中</span></p>
-            <p class="tally-placeholder-desc"><span data-lang="pt" class="on">Crie sua conta em tally.so, configure o formulário e substitua o ID no código HTML.</span><span data-lang="en">Create your account at tally.so, set up the form, and replace the ID in the HTML.</span><span data-lang="zh">在tally.so创建账户，配置表单后将ID替换到HTML代码中。</span></p>
-            <span class="tally-placeholder-code">0QD72Q → seu ID real</span>
-          </div>
+          <!-- EN -->
+          <iframe data-lang="en"
+            data-tally-src="https://tally.so/embed/EkNl7l?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy" width="100%" height="480" frameborder="0"
+            marginheight="0" marginwidth="0"
+            title="Contact Form — Atlas Advisory"
+            style="border:none;background:transparent;display:none;">
+          </iframe>
+          <!-- ZH -->
+          <iframe data-lang="zh"
+            data-tally-src="https://tally.so/embed/81RLll?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+            loading="lazy" width="100%" height="480" frameborder="0"
+            marginheight="0" marginwidth="0"
+            title="联系表单 — Atlas Advisory"
+            style="border:none;background:transparent;display:none;">
+          </iframe>
         </div>
         <p class="tally-note">
           <span data-lang="pt" class="on">🔒 Dados protegidos pela GDPR · Empresa belga · Sem spam</span>
@@ -361,7 +365,14 @@ footer{background:#1C2B3A;padding:72px 5% 36px}
 let lang='pt';
 function setLang(l){
   lang=l;
-  document.querySelectorAll('[data-lang]').forEach(el=>el.classList.toggle('on',el.dataset.lang===l));
+  document.querySelectorAll('[data-lang]').forEach(el=>{
+    const on = el.dataset.lang===l;
+    el.classList.toggle('on', on);
+    // iframes need display toggled directly — class system uses display:none/revert
+    if(el.tagName==='IFRAME'){
+      el.style.display = on ? 'block' : 'none';
+    }
+  });
   ['pt','en','zh'].forEach(x=>{
     const b=document.getElementById('lb-'+x),fb=document.getElementById('flb-'+x);
     if(b)b.classList.toggle('on',x===l);
@@ -394,12 +405,6 @@ const ro=new IntersectionObserver(entries=>{
 },{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
 function toggleFaq(item){item.classList.toggle('open');}
-document.querySelectorAll('iframe[data-tally-src]').forEach(iframe=>{
-  iframe.addEventListener('load',()=>{
-    const ph=document.getElementById('tally-placeholder');
-    if(ph)ph.style.display='none';
-  });
-});
 </script>
 </body>
 </html>
